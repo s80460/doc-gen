@@ -1,0 +1,110 @@
+from jinja2 import Environment, FileSystemLoader
+from faker import Faker
+from datetime import datetime
+import random
+import os
+import json
+import uuid
+from collections import defaultdict
+
+fake = Faker('de_DE')
+
+# Funktion zum Formatieren des Datums
+def format_date(value, format='%d.%m.%Y'):
+    date_object = datetime.strptime(value, '%Y-%m-%d')
+    return date_object.strftime(format)
+
+# Konfigurationen
+script_dir = os.path.dirname(__file__)
+output_dir = os.path.join(script_dir, 'fertigeHTML-Dokumente')
+templates_dir = script_dir
+json_file_path = os.path.join(script_dir, '../../static/data', 'beschreibungen.json')
+
+
+os.makedirs(output_dir, exist_ok=True)
+
+def load_json_data(filepath):
+    with open(filepath, 'r', encoding='utf-8') as file:
+        return json.load(file)
+
+json_data = load_json_data(json_file_path)
+
+
+class_counter = defaultdict(int)
+
+def get_next_class_id(class_name):
+    class_counter[class_name] += 1
+    return class_counter[class_name]
+
+def generate_value_with_unit():
+    units = json_data["einheiten"]
+    value = random.randint(1, 1500)
+    unit = random.choice(units)
+    return {"value": value, "unit": unit}
+
+def generate_third_fourth_level(min_level=1, max_level=3):
+    roman_numerals = ["I", "II", "III", "IV"] 
+    third_level_count = random.randint(min_level, max_level)
+    third_level = {}
+    display_mode = random.choice(["inline", "block"])
+    for i in range(third_level_count):
+        key = roman_numerals[i]
+        value_with_unit = generate_value_with_unit()
+        third_level[key] = {"value": value_with_unit, "display": display_mode}
+    return third_level
+
+
+def generate_second_level():
+    alphabet = list("abcdefghijklmnopqrstuvwxyz")
+    zweite_ebene_keys = random.sample(list(json_data['zweiteEbene'].keys()), k=random.randint(1, 6))
+
+    zweite_ebene = {}
+    for key in zweite_ebene_keys:
+
+        for letter in alphabet:
+            if letter not in zweite_ebene:
+                zweite_ebene[letter] = generate_third_fourth_level()
+                break 
+
+    return zweite_ebene
+
+def generate_first_level():
+    erste_ebene_keys = random.sample(list(json_data['ersteEbene'].keys()), k=random.randint(2, 6))
+    table_structure = {json_data['ersteEbene'][key]: generate_second_level() for key in erste_ebene_keys}
+    return table_structure
+
+table_data = generate_first_level()
+
+daten = {
+    'hauptueberschrift': fake.sentence(),
+    'typueberschrift': fake.sentence(),
+    'zwischenueberschrift': fake.sentence(),
+    'artikelueberschrift': fake.sentence(),
+    'artikel': fake.paragraphs(nb=3),
+    'datum': fake.date(),
+    'bildpfad': f"../../../static/images/stempel/stempel ({random.randint(1, 90)}).png",
+    'bildpfad_stempel_unten_mittig': f"../../../static/images/stempel/unten_mittig/stempel_unten_mittig ({random.randint(1, 49)}).png",
+    'klammer_bildpfad': f"../../../static/images/bueroklammern/Klammer ({random.randint(1, 16)}).png",
+    'table_data': table_data,
+    'unique_class_ids': {name: get_next_class_id(name) for name in ["hauptueberschrift", "typueberschrift", "zwischenueberschrift", "artikelueberschrift"]},
+    'fake': fake,
+    'zweiteEbene': json_data['zweiteEbene'],
+}
+
+
+env = Environment(loader=FileSystemLoader(templates_dir),
+                  trim_blocks=True,  # Entfernt den ersten Zeilenumbruch nach einem Block
+                  lstrip_blocks=True)  # Entfernt führende Leerzeichen vor einem Block
+env.filters['format_date'] = format_date
+template = env.get_template('gen19-to-html.html')
+
+env.globals.update({
+    'randint': random.randint,
+    'fake': fake,
+    'get_next_class_id': get_next_class_id
+})
+
+
+output_html_path = os.path.join(output_dir, 'doc19.html')
+with open(output_html_path, 'w', encoding='utf-8') as file:
+    file.write(template.render(daten))

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <title>Typgutachten</title>
+    <style>
+      {#-/* Zufällige left-px-Berechnung für Büroklammerbild*/-#}
+      {%- set left_position_klammer = range(5, 100)|random -%}
+
+      {#-/* Zufällige Positions-px-Berechnung für allgemeine StempelBilder*/-#}
+      {%- set stempelbild_position_top = range(1100, 1180)|random -%}
+      {%- set stempelbild_position_left = range(350, 380)|random -%}
+
+      {#-/* Zufällige Positions-px-Berechnung für StempelBilder, welche nur unten_mittig sind!!! */-#}
+      {%- set stempelbild_unten_mittig_position_top = range(1400, 1500)|random -%}
+      {%- set stempelbild_unten_mittig_position_left = range(300, 350)|random -%}
+
+      {#- /* Zufällige Positions-px-Berechnung für StempelBilder */ -#}
+      {%- set datum_position_top = range(820, 825)|random -%}
+      {%- set datum_position_left = range(325, 380)|random -%}
+
+      {#- /* Zufällige Positions-px-Berechnung für StempelBilder */ -#}
+      {%- set adresse_position_top = range(90, 100)|random -%}
+      {%- set adresse_position_left = range(860, 915)|random -%}
+
+      {#- /* Zufällige Positions-px-Berechnung für Sondertext (meist rechts oben) */ -#}
+      {%- set sonder_Text_position_top = range(60, 90)|random -%}
+      {%- set sonder_Text_position_left = range(180, 120)|random -%}
+
+      {#- /* Zufällige Positions-px-Berechnung für Seitenbilder */ -#}
+      {%- set seitennummer_position_top = range(1630, 1700)|random -%}
+      {%- set seitennummer_position_left = range(1090, 1120)|random -%}
+
+      {#- /* zeigt "entfällt" ODER eine Zufallszahl an -> Siehe in Liste */ -#}
+      {% set option = ['entfällt', fake.random_int(550, 950)] | random %}
+      {{ option if option == 'entfällt' else option ~ ' kg' }}
+
+
+
+
+        @font-face {
+            font-family: "Corona 3 Typewriter";
+            src: url("../static/fonts/Corona-3-Typewriter.ttf") format("truetype");
+        }
+
+        html {
+            font-family: "Corona-3-Typewriter";
+        }
+
+        body {
+            margin: 7rem 2rem 0;
+            padding: 0;
+            font-family: "Corona 3 Typewriter";
+            background: white;
+            font-size: 22px;
+            margin-left: 4rem;
+        }
+
+        .sonder_Text {
+          position: absolute;
+          top: {{- sonder_Text_position_top -}}px;
+          left: {{- sonder_Text_position_left -}}px;
+          font-size: 24px;
+      }
+  
+      .sonder_Text .company-name {
+        letter-spacing: 6px; /* Beispiel: Buchstabenabstand von 2 Pixel */
+    }
+
+    .seitennummer {
+      position: absolute;
+      top: {{- seitennummer_position_top -}}px;
+      left: {{- seitennummer_position_left -}}px;
+      font-size: 24px;
+  }
+
+        .haupt_tabelle {
+            width: 95%;
+            border-collapse: collapse;
+            margin-top: 13rem;
+            margin-left: 2.2rem;
+            border: none;            
+        }
+
+        .haupt_tabelle th, .haupt_tabelle td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            vertical-align: top;
+            font-weight: normal;
+            border: none;
+        }
+
+        .haupt_tabelle th span {
+          text-decoration: underline;
+        }
+
+        .haupt_tabelle td[colspan] {
+            text-align: left;
+        }
+
+        /* Erste und zweite innere Tabelle */
+        .inner_tabelle_1, .inner_tabelle_2 {
+            width: 100%;
+            border-collapse: c
+            border: none;
+        }
+
+        .inner_tabelle_1 th, .inner_tabelle_1 td, .inner_tabelle_2 th, .inner_tabelle_2 td {
+            border: 1px solid black;
+            padding: 8px;
+            vertical-align: middle;
+            text-align: center;
+            line-height: 0.2;
+            height: 3rem;
+            border: none;
+        }
+
+        .cell-number-line_1, .cell-number-line_2 {
+            text-align: left;
+            margin-left: 4rem;
+            margin-right: 4rem;
+        }
+
+        .cell-content_1, .cell-content_2 {
+            display: inline-block;
+            text-align: center;
+        }
+
+        /* Dritte innere Tabelle */
+        .inner_tabelle_3 {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 4px;
+            border: none;
+        }
+
+        .inner_tabelle_3 th, .inner_tabelle_3 td {
+            border: 1px solid black;
+            padding: 1px;
+            vertical-align: middle;
+            text-align: center;
+            border: none;
+        }
+
+
+        /* Vierte innere Tabelle */
+        .inner_tabelle_4 {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 4px;
+          border: none;
+      }
+
+      .inner_tabelle_4 th, .inner_tabelle_4 td {
+          border: 1px solid black;
+          padding: 1px;
+          vertical-align: middle;
+          text-align: center;
+          border: none;
+      }
+
+
+      /* Fünfte innere Tabelle */
+      .inner_tabelle_5 {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 4px;
+        border: none;
+    }
+
+    .inner_tabelle_5 th, .inner_tabelle_5 td {
+        border: 1px solid black;
+        padding: 1px;
+        vertical-align: middle;
+        text-align: center;
+        border: none;
+    }
+
+
+    /* Sechste innere Tabelle */
+    .inner_tabelle_6 {
+      width: 30%;
+      border-collapse: collapse;
+      margin-top: 4px;
+      border: none;
+  }
+
+  .inner_tabelle_6 th, .inner_tabelle_6 td {
+      border: 1px solid black;
+      padding: 1px;
+      vertical-align: middle;
+      text-align: left;
+      border: none;
+  }
+
+
+  /* Siebte innere Tabelle */
+  .inner_tabelle_7 {
+    width: 30%;
+    border-collapse: collapse;
+    margin-top: 4px;
+    border: none;
+}
+
+.inner_tabelle_7 th, .inner_tabelle_7 td {
+    border: 1px solid black;
+    padding: 1px;
+    vertical-align: middle;
+    text-align: left;
+    border: none;
+}
+
+
+/* Siebte innere Tabelle */
+.inner_tabelle_8 {
+  width: 40%;
+  border-collapse: collapse;
+  margin-top: 4px;
+  border: none;
+}
+
+.inner_tabelle_8 th, .inner_tabelle_8 td {
+  border: 1px solid black;
+  padding: 1px;
+  vertical-align: middle;
+  text-align: left;
+  border: none;
+}
+
+
+/* Siebte innere Tabelle */
+.inner_tabelle_9 {
+  width: 40%;
+  border-collapse: collapse;
+  margin-top: 4px;
+  border: none;
+}
+
+.inner_tabelle_9 th, .inner_tabelle_9 td {
+  border: 1px solid black;
+  padding: 1px;
+  vertical-align: middle;
+  text-align: left;
+  border: none;
+}
+
+hr {
+  margin: 8px 0;
+  border: none;
+  border-top: 1px solid black;
+}
+
+.bueroklammer-img {
+  display: block;
+  margin: 0 auto; /* Zentriert das Bild */
+  width: 35px; /* Breite des Bildes */
+  position: absolute;
+  top: 0px;
+  left: {{- left_position }}px; /* Dynamischer Abstand von links */
+}
+
+    </style>
+</head>
+<body>
+
+  <div class="sonder_Text">
+    <span class="company-name">Nr.</span>  <span>{{ fake.random_int(10, 800) }}</span><br>‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾<br>
+    <span>Typ:</span> <span>{{ fake.random_int(10, 800) }}</span>  
+  </div>
+
+<table class="haupt_tabelle">
+    <tr>
+        <th><span>3.</span> <span>Hersteller des Fahrgestelles:</span></th>
+        <td><span>{{ fake.company().replace("GmbH", "Corp").replace("AG", "Industries") }}</span></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <span>4.</span> <span>Gewichte :</span><br><span>a)</span> <span>Leergewicht des Fahrzeuges:</span>
+            <!-- Erste innere Tabelle -->
+            <table class="inner_tabelle_1">
+                <tr>
+                    <td><span>mit Aufbau</span></td>
+                    <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+                    <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+                    <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+                </tr>
+                <tr>
+                  <td><span>mit Aufbau</span></td>
+                  <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+                  <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+                  <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+              </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <th><span>b)</span> <span>Eigengewicht des Fahrzeuges:</span></th>
+        <td><span>wie unter</span> <span>4 a)</span></td>
+    </tr>
+    <tr>
+      <th><span>5.</span> <span>Zul. Belastung:</span></th>
+      <td><span>{{ option if option == 'entfällt' else option ~ ' kg' }}</span></td>
+  </tr>
+    <tr>
+        <th><span>6.</span> <span>Zul. Gesamtgewicht:</span></th>
+        <td><span>{{ fake.random_int(550, 950) }} </span> <span>kg</span></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <span>7.</span> <span>Nutzlast:</span><br><span>Lastanhänger:</span>
+            <!-- Zweite innere Tabelle -->
+            <table class="inner_tabelle_2">
+              <tr>
+                <td><span>mit Aufbau</span></td>
+                <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+                <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+                <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+            </tr>
+            <tr>
+              <td><span>mit Aufbau</span></td>
+              <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+              <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+              <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+          </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <th><span>8.</span> <span>Laderaum</span> <span>(nur bei Lastanhänger):</span>
+          <table class="inner_tabelle_3">
+            <tr>
+                <td><span>a)</span></td>
+                <td><span>Länge:</span></td>
+                <td><span>beim</span></td>
+                <td><span>Aufbau</span></td>
+                <td><span>70:</span></td>
+            </tr>
+            <tr><td></td><td></td><td>''</td><td>''</td><td><span>{{ fake.random_int(55, 98) }}:</span></td></tr>
+            <tr><td></td><td></td><td>''</td><td>''</td><td><span>{{ fake.random_int(55, 98) }}:</span></td></tr>
+            <tr><td></td><td></td><td>''</td><td>''</td><td><span>{{ fake.random_int(55, 98) }}:</span></td></tr>
+            <tr><td></td><td></td><td>''</td><td>''</td><td><span>{{ fake.random_int(55, 98) }}:</span></td></tr>
+            <tr><td></td><td></td><td>''</td><td>''</td><td><span>{{ fake.random_int(55, 98) }}:</span></td></tr>
+
+        </table>
+
+        <table class="inner_tabelle_4">
+          <tr>
+              <td><span>a)</span></td>
+              <td><span>Breite:</span></td>
+              <td><span>beim</span></td>
+              <td><span>Aufbau</span></td>
+              <td><span>70:</span></td>
+          </tr>
+          <tr><td></td><td></td><td>''</td><td>''</td><td><span>{{ fake.random_int(55, 98) }}:</span></td></tr>
+          <tr><td></td><td></td><td>''</td><td>''</td><td><span>{{ fake.random_int(55, 98) }}:</span></td></tr>
+          <tr><td></td><td></td><td>''</td><td>''</td><td><span>{{ fake.random_int(55, 98) }}:</span></td></tr>
+          <tr><td></td><td></td><td>''</td><td>''</td><td><span>{{ fake.random_int(55, 98) }}:</span></td></tr>
+          <tr><td></td><td></td><td>''</td><td>''</td><td><span>{{ fake.random_int(55, 98) }}:</span></td></tr>
+
+      </table>
+
+      <table class="inner_tabelle_5">
+        <tr>
+            <td><span>a)</span></td>
+            <td><span>Höhe:</span></td>
+            <td><span>beim</span></td>
+            <td><span>Aufbau</span></td>
+            <td><span>{{ fake.random_int(55, 98) }}</span>, <span>{{ fake.random_int(55, 98) }}</span>, <span>{{ fake.random_int(55, 98) }}</span></td>
+        </tr>
+        <tr><td></td><td></td><td>''</td><td>''</td><td><span>{{ fake.random_int(55, 98) }}:</span></td></tr>
+        <tr><td></td><td></td><td>''</td><td>''</td><td><span>{{ fake.random_int(55, 98) }}:</span></td></tr>  
+
+    </table>
+
+  
+        </th>
+        <th>
+          <br>
+          <table class="inner_tabelle_6">
+            <tr>
+                <td><span>{{ fake.random_int(1100, 3800) }}</span></td>
+                <td><span>mm</span></td>                
+            </tr>
+            <tr><td><span>{{ fake.random_int(800, 5999) }}</span></td><td><span>mm</span></td></tr>
+            <tr><td><span>{{ fake.random_int(800, 5999) }}</span></td><td><span>mm</span></td></tr>
+            <tr><td><span>{{ fake.random_int(800, 5999) }}</span></td><td><span>mm</span></td></tr>
+            <tr><td><span>{{ fake.random_int(800, 5999) }}</span></td><td><span>mm</span></td></tr>
+            <tr><td><span>{{ fake.random_int(800, 5999) }}</span></td><td><span>mm</span></td></tr>
+      
+        </table>
+
+        <table class="inner_tabelle_7">
+          <tr>
+            <td><span>{{ fake.random_int(1100, 3800) }}</span></td>
+            <td><span>mm</span></td>                 
+          </tr>
+          <tr><td><span>{{ fake.random_int(800, 5999) }}</span></td><td><span>mm</span></td></tr>
+          <tr><td><span>{{ fake.random_int(800, 5999) }}</span></td><td><span>mm</span></td></tr>
+          <tr><td><span>{{ fake.random_int(800, 5999) }}</span></td><td><span>mm</span></td></tr>
+          <tr><td><span>{{ fake.random_int(800, 5999) }}</span></td><td><span>mm</span></td></tr>
+          <tr><td><span>{{ fake.random_int(800, 5999) }}</span></td><td><span>mm</span></td></tr>
+    
+      </table>
+
+      <table class="inner_tabelle_6">
+        <tr>
+          <td><span>{{ fake.random_int(1100, 3800) }}</span></td>
+          <td><span>mm</span></td>                
+        </tr>
+        <tr><td><span>{{ fake.random_int(800, 5999) }}</span></td><td><span>mm</span></td></tr>
+        <tr><td><span>{{ fake.random_int(1100, 3800) }}</span></td><td><span>mm</span></td></tr>  
+    </table>
+    
+        </th>
+        <td>
+                       
+        </td>
+    </tr>
+    <tr>
+        <th><span>b)</span> <span>Höhe der Ladefläche über der Fahrbahn:</span><br><span>c)</span> <span>Art und Stärke des Bodens:</span></th>
+        <td>
+          <table class="inner_tabelle_8">
+          <tr>
+              <td><span>{{ fake.random_int(350, 999) }}</span> <span>mm</span></td>                              
+          </tr>
+          <tr><td><span>Holz {{ fake.random_int(14, 48) }}</span> <span>mm.</span></td></tr>                   
+      </table>
+    </td>
+    </tr>
+    <tr>
+        <th><span>9.</span> <span>Bereifung</span><br><span>a)</span> <span>Art der Bereifung:</span><br><span>b)</span> <span>Mindestgröße der Bereifung;</span></th>
+        <td><table class="inner_tabelle_8">
+          <tr>
+              <td><span>{{ fake.random_int(800, 5999) }}</span> <span>mm</span></td>
+                             
+          </tr>
+          <tr><td><span>{{ fake.random_int(800, 5999) }}</span> <span>mm</span></td></tr>                   
+      </table></td>
+    </tr>
+</table>
+
+
+<span class="seitennummer">- {{ fake.random_int(1, 9) }} -</span>
+
+</body>
+</html>

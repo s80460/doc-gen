@@ -1,0 +1,1150 @@
+<!-- Ab hier Jinja-Tabelle zu html-table umbauen -->
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dokumentvorlage</title>
+    <style>
+      
+                 
+
+      
+      
+      
+
+      
+      
+      
+
+      
+      
+                  
+
+      
+      
+
+                  /* Random Artikellänge */
+
+
+                                /* Ihre CSS-Stile */
+                                @font-face {
+                      font-family: "Corona 3 Typewriter";
+                      src: url("file:///C:/doc-gen/static/fonts/Corona-3-Typewriter.ttf") format("truetype");
+                  }
+
+            html {
+                font-family: "Corona-3-Typewriter";
+            }
+
+            body {
+              margin-left: 40px;
+                padding: 0;
+                font-family: "Corona 3 Typewriter";
+                font-size: 22px;
+                background: white;
+            }
+
+
+
+            
+            
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_1 {
+                font-size: 22px;
+                line-height: 1.6;
+                margin: 5px;
+                padding: 2px;
+                text-decoration: underline overline;
+                font-weight: bold;
+                letter-spacing: 3px;
+                text-align: center;
+                text-transform: none;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_2 {
+                font-size: 22px;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
+                text-decoration: underline overline;
+                font-weight: bold;
+                letter-spacing: normal;
+                text-align: center;
+                text-transform: none;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_3 {
+                font-size: 22px;
+                line-height: 1.1;
+                margin: 5px;
+                padding: 8px;
+                text-decoration: underline;
+                font-weight: bold;
+                letter-spacing: 3px;
+                text-align: center;
+                text-transform: none;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_4 {
+                font-size: 21px;
+                line-height: 1.5;
+                margin: 0;
+                padding: 0;
+                text-decoration: none;
+                font-weight: 400;
+                letter-spacing: 2px;
+                text-align: center;
+                text-transform: none;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_5 {
+                font-size: 22px;
+                line-height: 1.6;
+                margin: 0;
+                padding: 8px;
+                text-decoration: underline overline;
+                font-weight: 400;
+                letter-spacing: 3px;
+                text-align: center;
+                text-transform: none;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_6 {
+                font-size: 22px;
+                line-height: 1.5;
+                margin: 0;
+                padding: 0;
+                text-decoration: underline;
+                font-weight: normal;
+                letter-spacing: normal;
+                text-align: justify;
+                text-transform: none;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_7 {
+                font-size: 22px;
+                line-height: 1.1;
+                margin: 15px;
+                padding: 0;
+                text-decoration: underline;
+                font-weight: normal;
+                letter-spacing: normal;
+                text-align: center;
+                text-transform: uppercase;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_8 {
+                font-size: 21px;
+                line-height: 1.2;
+                margin: 10px;
+                padding: 2px;
+                text-decoration: underline overline;
+                font-weight: 600;
+                letter-spacing: 2px;
+                text-align: center;
+                text-transform: uppercase;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_9 {
+                font-size: 22px;
+                line-height: 1.3;
+                margin: 10px;
+                padding: 8px;
+                text-decoration: underline overline;
+                font-weight: normal;
+                letter-spacing: 2px;
+                text-align: center;
+                text-transform: none;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_10 {
+                font-size: 22px;
+                line-height: 1.4;
+                margin: 10px;
+                padding: 2px;
+                text-decoration: underline;
+                font-weight: 400;
+                letter-spacing: 2px;
+                text-align: center;
+                text-transform: none;
+            }
+          
+          
+          
+
+      
+/* Automatisiert CSS für typueberschrift HTML-Tag-Klassen erzeugen */
+  
+.typueberschrift_11 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: justify;
+  letter-spacing: normal;
+  margin-top: 6px;
+  margin-right: 20px;
+  margin-bottom: 4px;
+  margin-left: 20px;
+  padding-top: 2px;
+  padding-right: 0;
+  padding-bottom: 3px;
+  padding-left: 5px;
+  break-before: auto;
+}
+  
+.typueberschrift_12 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: justify;
+  letter-spacing: normal;
+  margin-top: 4px;
+  margin-right: 10px;
+  margin-bottom: 6px;
+  margin-left: 15px;
+  padding-top: 2px;
+  padding-right: 5px;
+  padding-bottom: 3px;
+  padding-left: 0;
+  break-before: auto;
+}
+  
+.typueberschrift_13 {
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: left;
+  letter-spacing: 1px;
+  margin-top: 5px;
+  margin-right: 20px;
+  margin-bottom: 4px;
+  margin-left: 20px;
+  padding-top: 2px;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 15px;
+  break-before: column;
+}
+  
+.typueberschrift_14 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: justify;
+  letter-spacing: 1px;
+  margin-top: 6px;
+  margin-right: 10px;
+  margin-bottom: 4px;
+  margin-left: 0;
+  padding-top: 4px;
+  padding-right: 10px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  break-before: auto;
+}
+  
+.typueberschrift_15 {
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: left;
+  letter-spacing: normal;
+  margin-top: 4px;
+  margin-right: 10px;
+  margin-bottom: 6px;
+  margin-left: 15px;
+  padding-top: 4px;
+  padding-right: 5px;
+  padding-bottom: 3px;
+  padding-left: 15px;
+  break-before: auto;
+}
+  
+.typueberschrift_16 {
+  font-size: 22px;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-top: 4px;
+  margin-right: 15px;
+  margin-bottom: 6px;
+  margin-left: 15px;
+  padding-top: 2px;
+  padding-right: 5px;
+  padding-bottom: 4px;
+  padding-left: 0;
+  break-before: auto;
+}
+  
+.typueberschrift_17 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-top: 6px;
+  margin-right: 10px;
+  margin-bottom: 6px;
+  margin-left: 10px;
+  padding-top: 2px;
+  padding-right: 0;
+  padding-bottom: 3px;
+  padding-left: 15px;
+  break-before: auto;
+}
+  
+.typueberschrift_18 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: justify;
+  letter-spacing: 1px;
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-bottom: 4px;
+  margin-left: 0;
+  padding-top: 2px;
+  padding-right: 5px;
+  padding-bottom: 4px;
+  padding-left: 0;
+  break-before: column;
+}
+  
+.typueberschrift_19 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-top: 6px;
+  margin-right: 15px;
+  margin-bottom: 0;
+  margin-left: 25px;
+  padding-top: 4px;
+  padding-right: 10px;
+  padding-bottom: 4px;
+  padding-left: 15px;
+  break-before: auto;
+}
+  
+.typueberschrift_20 {
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: left;
+  letter-spacing: 2px;
+  margin-top: 4px;
+  margin-right: 10px;
+  margin-bottom: 0;
+  margin-left: 20px;
+  padding-top: 2px;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 0;
+  break-before: column;
+}
+     
+
+
+/* Automatisiert CSS für zwischenueberschrift HTML-Tag-Klassen erzeugen */
+
+.zwischenueberschrift_21 {
+  font-size: 21px;
+    line-height: 1.3;
+    text-align: left;
+    letter-spacing: normal;
+    margin-right: 0;
+    padding-top: 8px;
+    padding-right: 0;
+    padding-bottom: 0;
+    break-before: column;
+}
+
+
+
+
+
+
+
+
+
+.artikelueberschrift_31 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: 2px;
+  
+  margin-right: 20px;
+  
+  
+  
+  padding-right: 0;
+  padding-bottom: 4px;
+  
+  break-before: auto;  
+}
+
+.artikelueberschrift_32 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: left;
+  letter-spacing: normal;
+  
+  margin-right: 0;
+  
+  
+  
+  padding-right: 0;
+  padding-bottom: 0;
+  
+  break-before: column;  
+}
+
+.artikelueberschrift_33 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: 2px;
+  
+  margin-right: 25px;
+  
+  
+  
+  padding-right: 5px;
+  padding-bottom: 3px;
+  
+  break-before: column;  
+}
+
+.artikelueberschrift_34 {
+  font-size: 22px;
+  line-height: 1.3;
+  text-align: justify;
+  letter-spacing: 2px;
+  
+  margin-right: 15px;
+  
+  
+  
+  padding-right: 0;
+  padding-bottom: 0;
+  
+  break-before: auto;  
+}
+
+.artikelueberschrift_35 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: justify;
+  letter-spacing: 2px;
+  
+  margin-right: 20px;
+  
+  
+  
+  padding-right: 0;
+  padding-bottom: 3px;
+  
+  break-before: auto;  
+}
+
+.artikelueberschrift_36 {
+  font-size: 22px;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: 2px;
+  
+  margin-right: 15px;
+  
+  
+  
+  padding-right: 0;
+  padding-bottom: 4px;
+  
+  break-before: auto;  
+}
+
+.artikelueberschrift_37 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: left;
+  letter-spacing: normal;
+  
+  margin-right: 10px;
+  
+  
+  
+  padding-right: 5px;
+  padding-bottom: 0;
+  
+  break-before: column;  
+}
+
+.artikelueberschrift_38 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: left;
+  letter-spacing: normal;
+  
+  margin-right: 10px;
+  
+  
+  
+  padding-right: 10px;
+  padding-bottom: 4px;
+  
+  break-before: auto;  
+}
+
+.artikelueberschrift_39 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: justify;
+  letter-spacing: 2px;
+  
+  margin-right: 15px;
+  
+  
+  
+  padding-right: 0;
+  padding-bottom: 0;
+  
+  break-before: auto;  
+}
+
+.artikelueberschrift_40 {
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: left;
+  letter-spacing: normal;
+  
+  margin-right: 25px;
+  
+  
+  
+  padding-right: 5px;
+  padding-bottom: 3px;
+  
+  break-before: column;  
+}
+
+
+
+
+
+.artikel_41 {
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: left;
+  
+ margin-top: 20px;
+  margin-right: 15px;
+  margin-bottom: 6px;
+  margin-left: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 10px;
+  break-before: column;
+  position: relative;
+  display: block;
+}
+
+.artikel_42 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: left;
+  
+ margin-top: 20px;
+  margin-right: 0;
+  margin-bottom: 4px;
+  margin-left: 25px;
+  padding-top: 0;
+  padding-right: 12px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  break-before: column;
+  position: relative;
+  display: block;
+}
+
+.artikel_43 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: left;
+  
+ margin-top: 20px;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 20px;
+  padding-top: 5px;
+  padding-right: 12px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+  break-before: auto;
+  position: relative;
+  display: block;
+}
+
+.artikel_44 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: left;
+  
+ margin-top: 10px;
+  margin-right: 25px;
+  margin-bottom: 4px;
+  margin-left: 10px;
+  padding-top: 0;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  break-before: column;
+  position: relative;
+  display: block;
+}
+
+.artikel_45 {
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: left;
+  
+ margin-top: 10px;
+  margin-right: 20px;
+  margin-bottom: 0;
+  margin-left: 20px;
+  padding-top: 5px;
+  padding-right: 12px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  break-before: auto;
+  position: relative;
+  display: block;
+}
+
+.artikel_46 {
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: justify;
+  
+ margin-top: 10px;
+  margin-right: 20px;
+  margin-bottom: 4px;
+  margin-left: 0;
+  padding-top: 0;
+  padding-right: 12px;
+  padding-bottom: 10px;
+  padding-left: 12px;
+  break-before: column;
+  position: relative;
+  display: block;
+}
+
+.artikel_47 {
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: justify;
+  
+ margin-top: 20px;
+  margin-right: 15px;
+  margin-bottom: 0;
+  margin-left: 15px;
+  padding-top: 0;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 12px;
+  break-before: column;
+  position: relative;
+  display: block;
+}
+
+.artikel_48 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: justify;
+  
+ margin-top: 20px;
+  margin-right: 25px;
+  margin-bottom: 4px;
+  margin-left: 0;
+  padding-top: 0;
+  padding-right: 12px;
+  padding-bottom: 0;
+  padding-left: 10px;
+  break-before: column;
+  position: relative;
+  display: block;
+}
+
+.artikel_49 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: justify;
+  
+ margin-top: 10px;
+  margin-right: 20px;
+  margin-bottom: 4px;
+  margin-left: 0;
+  padding-top: 0;
+  padding-right: 12px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  break-before: column;
+  position: relative;
+  display: block;
+}
+
+.artikel_50 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: left;
+  
+ margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 0;
+  margin-left: 15px;
+  padding-top: 5px;
+  padding-right: 12px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  break-before: column;
+  position: relative;
+  display: block;
+}
+
+
+
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+  border: 1px solid #000;
+  padding: 8px;
+}
+
+.data-table tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.level-2-group {
+  display: inline-block;
+  vertical-align: top;
+  width: 33.33%; /* Anpassen, um die gewünschte Anzahl an Einträgen pro Zeile zu erreichen */
+  box-sizing: border-box;
+}
+
+
+  
+
+             body {
+                 font-family: "Corona 3 Typewriter";
+                   padding: 20px;
+             }
+
+
+                    
+                    
+                    .datum_51 {
+                      position: absolute;
+                      top: 787px;
+                      left: 363px;
+                    }
+                    
+                    
+
+
+                    
+                    
+                    .stempelbild_61 img {
+                      display: block;
+                      margin: 0 auto; /* Zentriert das Bild */
+                      position: absolute;
+                      top: 780px;
+                      left: 151px;
+                      max-width: 200px; /* Verhindert, dass das Bild größer als seine natürliche Breite angezeigt wird */
+                      max-height: 100%; /* Verhindert, dass das Bild größer als seine natürliche Höhe angezeigt wird */
+                      width: auto; /* Behält das Seitenverhältnis bei, wenn die Höhe angepasst wird */
+                      height: auto; /* Behält das Seitenverhältnis bei, wenn die Breite angepasst wird */
+                    }
+                    
+                    
+                    
+                    
+                    .stempelbild_unten_mittig_71 img {
+                      display: block;
+                      margin: 0 auto; /* Zentriert das Bild */
+                      position: absolute;
+                      top: 871px;
+                      left: 227px;
+                      max-width: 400px; /* Verhindert, dass das Bild größer als seine natürliche Breite angezeigt wird */
+                      max-height: 100%; /* Verhindert, dass das Bild größer als seine natürliche Höhe angezeigt wird */
+                      width: auto; /* Behält das Seitenverhältnis bei, wenn die Höhe angepasst wird */
+                      height: auto; /* Behält das Seitenverhältnis bei, wenn die Breite angepasst wird */
+                    }
+                    
+
+                    .bueroklammer-img {
+                    display: block;
+                    margin: 0 auto; /* Zentriert das Bild */
+                    width: 35px; /* Breite des Bildes */
+                    position: absolute;
+                    top: 0px;
+                    left: px; /* Dynamischer Abstand von links */
+                  }
+    </style>
+  </head>
+  <body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+<div class="hauptueberschrift_1">
+  <span>Drei nennen bald</span>
+</div>
+
+
+
+
+
+<div class="artikel_41">
+    <span>Können Geld rennen. Sicher Fuß Uhr dann heißen Geschenk Tisch. Winter Jahr gehen schaffen sagen nun. Steigen natürlich Fahrrad alle Lehrer. Wird wie weil gefährlich ins natürlich. Abend springen krank Fenster dich Mutter Arbeit. Frau weil immer las. Schiff offen schenken Fußball Opa Buch zwei. Garten weinen wird im Geschichte Kopf reich. Mal Eltern schauen Licht Musik ob über zurück.</span>
+</div>
+
+
+  <br><br><br>
+
+
+  <table class="data-table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Beschreibung</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td><span>1).</span></td>
+            <td><span>Kleinste Bodenfreiheit</span></td>
+            <td>
+                
+                <div class="level-2-group">
+                    <strong>y:</strong>
+                    <div>
+                        
+                        <span>I: 132 Watt</span><br>
+                        
+                        <span>II: 403 MHz</span><br>
+                        
+                        <span>III: 427 mm</span><br>
+                        
+                    </div>
+                </div>
+                
+                <div class="level-2-group">
+                    <strong>q:</strong>
+                    <div>
+                        
+                        <span>I: 327 Volt</span><br>
+                        
+                        <span>II: 399 Watt</span><br>
+                        
+                        <span>III: 464 MHz</span><br>
+                        
+                    </div>
+                </div>
+                
+            </td>
+        </tr>
+        
+        <tr>
+            <td><span>2).</span></td>
+            <td><span>Beschreibt die Bereifung</span></td>
+            <td>
+                
+                <div class="level-2-group">
+                    <strong>o:</strong>
+                    <div>
+                        
+                        <span>I: 191 Nm</span><br>
+                        
+                        <span>II: 398 m³</span><br>
+                        
+                        <span>III: 351 g/cm³</span><br>
+                        
+                        <span>IV: 737 Nm</span><br>
+                        
+                    </div>
+                </div>
+                
+                <div class="level-2-group">
+                    <strong>l:</strong>
+                    <div>
+                        
+                        <span>I: 932 kW</span><br>
+                        
+                        <span>II: 299 cm³</span><br>
+                        
+                        <span>III: 15 kg</span><br>
+                        
+                        <span>IV: 268 MHz</span><br>
+                        
+                    </div>
+                </div>
+                
+                <div class="level-2-group">
+                    <strong>y:</strong>
+                    <div>
+                        
+                        <span>I: 72 Ampere</span><br>
+                        
+                        <span>II: 317 Ohm</span><br>
+                        
+                        <span>III: 517 Ohm</span><br>
+                        
+                    </div>
+                </div>
+                
+                <div class="level-2-group">
+                    <strong>v:</strong>
+                    <div>
+                        
+                        <span>I: 428 km/h</span><br>
+                        
+                        <span>II: 845 g/cm³</span><br>
+                        
+                        <span>III: 637 dB</span><br>
+                        
+                    </div>
+                </div>
+                
+            </td>
+        </tr>
+        
+        <tr>
+            <td><span>3).</span></td>
+            <td><span>Beschreibt die Beschleunigung</span></td>
+            <td>
+                
+                <div class="level-2-group">
+                    <strong>d:</strong>
+                    <div>
+                        
+                        <span>I: 24 MHz</span><br>
+                        
+                        <span>II: 944 cm³</span><br>
+                        
+                        <span>III: 286 PS</span><br>
+                        
+                    </div>
+                </div>
+                
+                <div class="level-2-group">
+                    <strong>z:</strong>
+                    <div>
+                        
+                        <span>I: 984 Ohm</span><br>
+                        
+                        <span>II: 45 Volt</span><br>
+                        
+                        <span>III: 816 Liter</span><br>
+                        
+                        <span>IV: 520 Liter</span><br>
+                        
+                    </div>
+                </div>
+                
+                <div class="level-2-group">
+                    <strong>f:</strong>
+                    <div>
+                        
+                        <span>I: 765 Liter</span><br>
+                        
+                        <span>II: 693 kg</span><br>
+                        
+                        <span>III: 887 PS</span><br>
+                        
+                        <span>IV: 921 MHz</span><br>
+                        
+                    </div>
+                </div>
+                
+            </td>
+        </tr>
+        
+    </tbody>
+</table>
+
+
+    <div class="typueberschrift_11">
+      <span>Glauben wer unten stellen sonst</span>
+    </div>
+    
+
+
+      <div class="artikel_42">
+        <span>Frei vorbei Fußball öffnen viel dunkel im aber schnell.</span>
+    </div>
+    
+
+    <div class="datum_51">
+      <span>2021-06-08</span>
+  </div>
+  
+
+      
+
+
+      <div class="stempelbild_61">
+        <img src="../../../static/images/stempel/stempel (82).png" alt="Stempelbild" />
+    </div>
+    
+
+    <div class="stempelbild_unten_mittig_71">
+        <img src="../../../static/images/stempel/unten_mittig/stempel_unten_mittig (34).png" alt="Stempelbild_unten_mittig" />
+    </div>
+    
+
+
+    </body>
+  </html>

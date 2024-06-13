@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <title>Typgutachten</title>
+    <style>        740 kg
+        @font-face {
+            font-family: "Corona 3 Typewriter";
+            src: url("../static/fonts/Corona-3-Typewriter.ttf") format("truetype");
+        }
+
+        html {
+            font-family: "Corona-3-Typewriter";
+        }
+
+        body {
+            margin: 7rem 2rem 0;
+            padding: 0;
+            font-family: "Corona 3 Typewriter";
+            background: white;
+            font-size: 22px;
+            margin-left: 4rem;
+        }
+
+
+        .fixed-width-cell {
+            width: 260px; /* Festgelegte Breite der Zelle */
+            word-wrap: break-word; /* Text innerhalb der Zelle umbrechen */
+            white-space: normal; /* Normalen Umbruch des Texts aktivieren */
+        }
+
+
+        .custom-left-shift {
+            margin-left: -130px; /* Passen Sie diesen Wert entsprechend an */
+        }
+
+
+
+        .sonder_Text {
+            position: absolute;
+            top:87px;
+            left:px;
+            font-size: 24px;
+            line-height: 0.4;
+        }
+          
+        .sonder_Text .company-name {
+            letter-spacing: 6px; /* Beispiel: Buchstabenabstand von 6 Pixel */
+        }
+          
+        .sonder_Text .line {
+            display: block;
+            border-bottom: 1px solid black;
+            margin: 10px 0; /* Passt den Abstand an, damit die Linie in der Mitte ist */
+        }
+
+        .seitennummer_1 {
+            position: absolute;
+            top:41px;
+            left:610px;
+            font-size: 24px;
+        }
+
+        .seitennummer_2 {
+            position: absolute;
+            top:1545px;
+            left:1118px;
+            font-size: 24px;
+        }
+
+        .haupt_tabelle {
+            width: 90%;
+            margin-top: 13rem;
+            margin-left: 2.2rem;
+            border: none;
+        }
+
+        .haupt_tabelle th, .haupt_tabelle td {
+            padding: 0px;
+            text-align: left;
+            vertical-align: top;
+            font-weight: normal;
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
+
+        .haupt_tabelle th span {
+            text-decoration: none;
+        }
+
+
+
+        .haupt_tabelle th .unterstrichen {
+            text-decoration: underline;
+        }
+
+        .haupt_tabelle td[colspan] {
+            text-align: left;
+        }
+
+
+
+        .unterstrichen {
+            text-decoration: underline;
+        }
+
+        /* Erste und zweite innere Tabelle */
+        .inner_tabelle_1, .inner_tabelle_2 {            
+            width: 100%;
+            border-collapse: collapse;
+            border: none;
+            margin-left: 30px; /* Einheitlicher Einzug für alle Tabellen */
+        }
+
+        .inner_tabelle_1 th, .inner_tabelle_1 td, .inner_tabelle_2 th, .inner_tabelle_2 td {
+            padding-top: 8px;
+            padding-right: 8px;
+            vertical-align: middle;
+            text-align: center;
+            line-height: 0.2;
+            height: 3rem;
+
+        }
+
+        .cell-number-line_1, .cell-number-line_2 {
+            text-align: left;
+            margin-left: 4rem;
+            margin-right: 4rem;
+        }
+
+        .cell-content_1, .cell-content_2 {
+            display: inline-block;
+            text-align: center;
+        }
+
+
+
+        /* Dritte, vierte und fünfte innere Tabelle */
+        .inner_tabelle_3 {
+            width: 440px;
+            border-collapse: collapse;
+            margin-top: 4px;
+        }
+
+    
+        .inner_tabelle_3 td:nth-child(3) { /* Fünfte Spalte auswählen */
+            padding-left: 5px;
+            padding-right: 5px;
+                    }
+
+        .inner_tabelle_3 td:nth-child(4) { /* Fünfte Spalte auswählen */
+            padding-left: 5px;
+            padding-right: 5px;
+                    }
+
+        .inner_tabelle_3 td:nth-child(5) { /* Fünfte Spalte auswählen */
+            padding-left: 5px;
+            padding-right: 5px;
+                    }
+
+
+
+
+
+
+        .inner_tabelle_4 {
+            width: 300px;
+            border-collapse: collapse;
+            margin-top: 4px;
+        }
+
+        .inner_tabelle_4 td:nth-child(2) { /* Fünfte Spalte auswählen */
+            padding-right: 5px;
+                    }
+
+        .inner_tabelle_4 td:nth-child(3) { /* Fünfte Spalte auswählen */
+            padding-left: 5px;
+            padding-right: 5px;
+                    }
+
+        .inner_tabelle_4 td:nth-child(4) { /* Fünfte Spalte auswählen */
+            padding-left: 5px;
+            padding-right: 5px;
+                    }
+
+        .inner_tabelle_4 td:nth-child(5) { /* Fünfte Spalte auswählen */
+            padding-left: 5px;
+            padding-right: 5px;
+                    }
+
+
+
+
+
+                    
+        .inner_tabelle_5 {
+            width: 300px;
+            border-collapse: collapse;
+            margin-top: 4px;
+        }
+
+        .inner_tabelle_5 td:nth-child(3) { /* Fünfte Spalte auswählen */
+            padding-left: 5px;
+            padding-right: 5px;
+                    }
+
+        .inner_tabelle_5 td:nth-child(4) { /* Fünfte Spalte auswählen */
+            padding-left: 5px;
+            padding-right: 5px;
+                    }
+
+        .inner_tabelle_5 td:nth-child(5) { /* Fünfte Spalte auswählen */
+            padding-left: 5px;
+            padding-right: 5px;
+                    }
+
+
+
+
+        .inner_tabelle_3, .inner_tabelle_4, .inner_tabelle_5 {
+            line-height: 0.7;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
+
+        .inner_tabelle_6, .inner_tabelle_7, .inner_tabelle_8 {
+            line-height: 0.52;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
+
+
+        .inner_tabelle_6, .inner_tabelle_7, .inner_tabelle_8, .inner_tabelle_9, .inner_tabelle_10 {
+            margin-left: -240px;
+        }
+
+
+
+
+        .nummeriert {
+            display: inline-block;
+            width: 40px; /* Breite der Spalte für die Nummern */
+            text-align: left;
+        }
+
+        .text-nach-nummer {
+            display: inline-block;
+            text-align: left;
+            vertical-align: top; /* sorgt dafür, dass der Text oben ausgerichtet wird */
+        }
+
+
+        .spezieller-einzug {
+            margin-left: 50px; /* Oder den genauen Wert, der für "a)" verwendet wird */
+        }
+
+        hr {
+            margin: 8px 0;
+             
+            border-top: 1px solid black;
+        }
+
+        .bueroklammer-img {
+            display: block;
+            margin: 0 auto; /* Zentriert das Bild */
+            width: 35px; /* Breite des Bildes */
+            position: absolute;
+            top: 0px;
+            left:13px; /* Dynamischer Abstand von links */
+        }
+
+        
+                /* Neue Klassen für Einzüge */
+        .indent-0 {
+            padding-left: 50px; /* Einzug für erste Ebene */
+        }
+
+        /* Neue Klassen für Einzüge */
+        .indent-1 {
+            padding-left: 40px; /* Einzug für erste Ebene */
+        }
+
+        .indent-2 {
+            padding-left: 45px; /* Einzug für zweite Ebene */
+        }
+
+        .indent-3 {
+            padding-left: 45px; /* Einzug für dritte Ebene */
+        }
+
+        
+
+    </style>
+</head>
+<body>
+
+        <span class="bueroklammer-img">
+          <img src="../../../static/images/bueroklammern/Klammer (12).png"
+               alt="Büroklammer"
+               class="bueroklammer-img" />
+        </span>
+
+    <span class="seitennummer_1">- 2 -</span>
+
+    <div class="sonder_Text">
+        <span class="company-name">Nr.</span>  <span>178</span>
+        <span class="line"></span>
+        <span>Typ:</span> <span>469</span>  
+    </div>
+
+    <table class="haupt_tabelle">
+        <tr>
+            <th><span class="nummeriert">10.</span> <span class="unterstrichen">Beschreibt das Baujahr:</span></th>
+            <td class="fixed-width-cell">
+                <span class="custom-left-shift">Kuhl</span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <span class="nummeriert">11.</span>
+                <span class="text-nach-nummer">
+                    <span class="unterstrichen">Beschreibt das Kofferraumvolumen:</span><br>
+                    <span>a)</span><span> Anhängelast:</span>
+                </span>
+                <table class="inner_tabelle_1">
+                    <tr>
+                        <td><span>mit Aufbau</span></td>
+                        <th><div class="cell-number-line_1"><span>75 </span><hr></div><div class="cell-content_1"><span>669</span>-<span>367 </span><span>kg</span></div></th>
+                        <th><div class="cell-number-line_1"><span>60 </span><hr></div><div class="cell-content_1"><span>243</span>-<span>260 </span><span>kg</span></div></th>
+                        <th><div class="cell-number-line_1"><span>58 </span><hr></div><div class="cell-content_1"><span>815</span>-<span>472 </span><span>kg</span></div></th>
+                    </tr>
+                    <tr>
+                        <td><span>mit Aufbau</span></td>
+                        <th><div class="cell-number-line_1"><span>96 </span><hr></div><div class="cell-content_1"><span>231</span>-<span>796 </span><span>kg</span></div></th>
+                        <th><div class="cell-number-line_1"><span>87 </span><hr></div><div class="cell-content_1"><span>468</span>-<span>864 </span><span>kg</span></div></th>
+                        <th><div class="cell-number-line_1"><span>79 </span><hr></div><div class="cell-content_1"><span>442</span>-<span>754 </span><span>kg</span></div></th>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <span class="spezieller-einzug">b)</span> <span> Beschreibt die Anhängervorrichtung:</span>
+            </th>
+            <td><span style="margin-left: -200px;">wie unter</span> <span>4a)</span></td>
+        </tr>
+        <tr>
+            <th><span class="nummeriert">12.</span> <span class="unterstrichen">Beschreibt das Kofferraumvolumen:</span></th>
+            <td><span style="margin-left: -200px;">740 kg</span></td>
+        </tr>
+        <tr>
+            <th><span class="nummeriert">13.</span> <span class="unterstrichen">Beschreibt die Höchstgeschwindigkeit:</span></th>
+            <td><span style="margin-left: -200px;">676 </span> <span>kg</span></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <span class="nummeriert">14.</span> <span class="unterstrichen">Nutzlast:</span><br><span class="indent-1">&nbsp;Lastanhänger:</span>
+                <!-- Zweite innere Tabelle -->
+                <table class="inner_tabelle_2">
+                    <tr>
+                        <td><span>mit Aufbau</span></td>
+                        <th><div class="cell-number-line_1"><span>86 </span><hr></div><div class="cell-content_1"><span>307</span>-<span>722 </span><span>kg</span></div></th>
+                        <th><div class="cell-number-line_1"><span>70 </span><hr></div><div class="cell-content_1"><span>260</span>-<span>736 </span><span>kg</span></div></th>
+                        <th><div class="cell-number-line_1"><span>80 </span><hr></div><div class="cell-content_1"><span>283</span>-<span>551 </span><span>kg</span></div></th>
+                    </tr>
+                    <tr>
+                        <td><span>mit Aufbau</span></td>
+                        <th><div class="cell-number-line_1"><span>57 </span><hr></div><div class="cell-content_1"><span>600</span>-<span>797 </span><span>kg</span></div></th>
+                        <th><div class="cell-number-line_1"><span>88 </span><hr></div><div class="cell-content_1"><span>848</span>-<span>443 </span><span>kg</span></div></th>
+                        <th><div class="cell-number-line_1"><span>95 </span><hr></div><div class="cell-content_1"><span>823</span>-<span>573 </span><span>kg</span></div></th>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <th><span class="nummeriert">15.</span> <span class="unterstrichen">Gibt Gewichte an:</span>
+                <table class="inner_tabelle_3">
+                    <tr>
+                        <td></td>
+                        <td><span class="indent-0">a) </span><span> Länge:</span></td>
+                        <td><span>beim</span></td>
+                        <td><span>Aufbau</span></td>
+                        <td><span>70:</span></td>
+                    </tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 42px;">"</td><td style="width: 100px;"><span>71:</span></td></tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 42px;">"</td><td  style="width: 100px;"><span>73:</span></td></tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 42px;">"</td><td  style="width: 100px;"><span>98:</span></td></tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 42px;">"</td><td  style="width: 100px;"><span>87:</span></td></tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 42px;">"</td><td  style="width: 100px;"><span>84:</span></td></tr>
+                </table>
+
+                <table class="inner_tabelle_4">
+                    <tr> 
+                        <td></td>  
+                        <td><span class="indent-1">&nbsp;&nbsp;&nbsp;Breite:</span></td>
+                        <td><span>beim</span></td>
+                        <td><span>Aufbau</span></td>
+                        <td><span><span>56</span>,<span>96</span>,<span>74;</span></span></td>
+                    </tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 28px;">"</td><td style="width: 100px;"><span>64:</span></td></tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 28px;">"</td><td style="width: 100px;"><span>73:</span></td></tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 28px;">"</td><td style="width: 100px;"><span>98:</span></td></tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 28px;">"</td><td style="width: 100px;"><span>89:</span></td></tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 28px;">"</td><td style="width: 100px;"><span>66:</span></td></tr>
+                </table>
+
+                <table class="inner_tabelle_5">
+                    <tr>
+                        <td></td>
+                        <td><span class="indent-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Höhe:</span></td>
+                        <td><span>beim</span></td>
+                        <td><span>Aufbau</span></td>
+                        <td ><span>98</span>,<span>55</span>,<span>57;</span></td>
+                    </tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 28px;">"</td><td><span>73:</span></td></tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 28px;">"</td><td><span>76:</span></td></tr>  
+                </table>
+            </th>
+            <th style="padding-left: 40px">
+                <br>
+                <table class="inner_tabelle_6">
+                    <tr>
+                        <td><span>2859</span></td>
+                        <td><span style="padding-left: 8px;">mm</span></td>                
+                    </tr>
+                    <tr><td><span>1800</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>
+                    <tr><td><span>2128</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>
+                    <tr><td><span>2034</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>
+                    <tr><td><span>1086</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>
+                    <tr><td><span>1304</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>
+                </table>
+
+
+                <table class="inner_tabelle_7">
+                    <tr>
+                        <td><span>2248</span></td>
+                        <td><span style="padding-left: 8px;">mm</span></td>                 
+                    </tr>
+                    <tr><td><span>1510</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>
+                    <tr><td><span>1233</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>
+                    <tr><td><span>1797</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>
+                    <tr><td><span>1704</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>
+                    <tr><td><span>1022</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>
+                </table>
+
+
+                <table class="inner_tabelle_8">
+                    <tr>
+                        <td><span>366</span>-<span>928</span></td>
+                        <td><span style="padding-left: 8px;">mm</span></td>                
+                    </tr>
+                    <tr><td><span>404</span>-<span>897</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>
+                    <tr><td><span>614</span>-<span>1967</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>  
+                </table>
+
+            </th>
+            <td></td>
+        </tr>
+        <tr>
+            <th><span class="indent-1">b)</span><span>Anzahl der Räder:</span><br><span class="indent-1">c)</span><span>Anzahl der Räder:</span></th>
+            <td style="padding-left: 40px">
+                <table class="inner_tabelle_9">
+                    <tr>
+                        <td><span>463</span> <span style="padding-left: 8px;">mm</span></td>                              
+                    </tr>
+                    <tr><td><span>Holz</span> <span>26</span><span style="padding-left: 8px;">mm.</span></td></tr>                   
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <th><span class="nummeriert">16.</span><span class="unterstrichen">Anhängelast:</span><br> <span class="indent-2">a)</span><span>Beschreibt die Art des Fahrzeugs:</span><br><span class="indent-2">b)</span> <span>Beschreibt die Motorleistung:</span></th>
+            <td style="padding-left: 40px">
+                <table class="inner_tabelle_10">
+                    <tr>
+                        <td><span>Luft einfach</span></td>               
+                    </tr>
+                    <tr><td><span>4.82-10.05
+                    </span> <span>mm</span></td></tr>                   
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <span class="seitennummer_2">- 7 -</span>
+
+</body>
+</html>

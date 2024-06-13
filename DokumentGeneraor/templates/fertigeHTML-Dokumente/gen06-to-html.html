@@ -1,0 +1,1202 @@
+<!-- Ab hier Jinja-Tabelle zu html-table umbauen -->
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dokumentvorlage</title>
+    <style>
+      
+                 
+
+      
+      
+      
+
+      
+      
+      
+
+      
+      
+                  
+
+      
+      
+
+                  /* Random Artikellänge */
+
+
+                                /* Ihre CSS-Stile */
+                                @font-face {
+                      font-family: "Corona 3 Typewriter";
+                      src: url("file:///C:/doc-gen/static/fonts/Corona-3-Typewriter.ttf") format("truetype");
+                  }
+
+
+            html {
+                font-family: "Corona-3-Typewriter";
+            }
+
+            body {
+              margin-left: 80px;
+                padding: 0;
+                font-family: "Corona 3 Typewriter";
+                font-size: 22px;
+                background: white;
+            }
+
+
+
+            
+            
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_1 {
+                font-size: 22px;
+                line-height: 1.4;
+                margin: 5px;
+                padding: 0;
+                text-decoration: underline;
+                font-weight: bold;
+                letter-spacing: normal;
+                text-align: center;
+                text-transform: none;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_2 {
+                font-size: 21px;
+                line-height: 1.1;
+                margin: 15px;
+                padding: 2px;
+                text-decoration: none;
+                font-weight: normal;
+                letter-spacing: normal;
+                text-align: center;
+                text-transform: uppercase;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_3 {
+                font-size: 20px;
+                line-height: 1.1;
+                margin: 0;
+                padding: 0;
+                text-decoration: underline;
+                font-weight: normal;
+                letter-spacing: 2px;
+                text-align: center;
+                text-transform: none;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_4 {
+                font-size: 22px;
+                line-height: 1.1;
+                margin: 5px;
+                padding: 0;
+                text-decoration: none;
+                font-weight: 400;
+                letter-spacing: 2px;
+                text-align: center;
+                text-transform: none;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_5 {
+                font-size: 21px;
+                line-height: 1.6;
+                margin: 15px;
+                padding: 0;
+                text-decoration: none;
+                font-weight: 600;
+                letter-spacing: normal;
+                text-align: center;
+                text-transform: uppercase;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_6 {
+                font-size: 20px;
+                line-height: 1.3;
+                margin: 0;
+                padding: 2px;
+                text-decoration: underline;
+                font-weight: 400;
+                letter-spacing: 2px;
+                text-align: center;
+                text-transform: none;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_7 {
+                font-size: 22px;
+                line-height: 1.2;
+                margin: 5px;
+                padding: 0;
+                text-decoration: underline;
+                font-weight: 400;
+                letter-spacing: 2px;
+                text-align: center;
+                text-transform: none;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_8 {
+                font-size: 22px;
+                line-height: 1.6;
+                margin: 5px;
+                padding: 2px;
+                text-decoration: underline overline;
+                font-weight: 400;
+                letter-spacing: normal;
+                text-align: center;
+                text-transform: none;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_9 {
+                font-size: 20px;
+                line-height: 1.4;
+                margin: 15px;
+                padding: 5px;
+                text-decoration: none;
+                font-weight: 400;
+                letter-spacing: 2px;
+                text-align: center;
+                text-transform: none;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_10 {
+                font-size: 20px;
+                line-height: 1.4;
+                margin: 15px;
+                padding: 5px;
+                text-decoration: underline;
+                font-weight: 600;
+                letter-spacing: 2px;
+                text-align: center;
+                text-transform: uppercase;
+            }
+          
+          
+          
+
+      
+/* Automatisiert CSS für typueberschrift HTML-Tag-Klassen erzeugen */
+  
+.typueberschrift_11 {
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: left;
+  letter-spacing: 1px;
+  margin-top: 4px;
+  margin-right: 25px;
+  margin-bottom: 4px;
+  margin-left: 20px;
+  padding-top: 2px;
+  padding-right: 10px;
+  padding-bottom: 3px;
+  padding-left: 15px;
+  break-before: auto;
+}
+  
+.typueberschrift_12 {
+  font-size: 22px;
+  line-height: 1.3;
+  text-align: left;
+  letter-spacing: normal;
+  margin-top: 6px;
+  margin-right: 0;
+  margin-bottom: 4px;
+  margin-left: 0;
+  padding-top: 4px;
+  padding-right: 0;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  break-before: auto;
+}
+  
+.typueberschrift_13 {
+  font-size: 20px;
+  line-height: 1.3;
+  text-align: justify;
+  letter-spacing: 1px;
+  margin-top: 6px;
+  margin-right: 0;
+  margin-bottom: 4px;
+  margin-left: 20px;
+  padding-top: 4px;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 5px;
+  break-before: column;
+}
+  
+.typueberschrift_14 {
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: justify;
+  letter-spacing: 1px;
+  margin-top: 6px;
+  margin-right: 0;
+  margin-bottom: 6px;
+  margin-left: 15px;
+  padding-top: 2px;
+  padding-right: 5px;
+  padding-bottom: 0;
+  padding-left: 5px;
+  break-before: auto;
+}
+  
+.typueberschrift_15 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: justify;
+  letter-spacing: 2px;
+  margin-top: 6px;
+  margin-right: 25px;
+  margin-bottom: 6px;
+  margin-left: 0;
+  padding-top: 4px;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  break-before: auto;
+}
+  
+.typueberschrift_16 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: justify;
+  letter-spacing: normal;
+  margin-top: 6px;
+  margin-right: 25px;
+  margin-bottom: 0;
+  margin-left: 25px;
+  padding-top: 4px;
+  padding-right: 10px;
+  padding-bottom: 3px;
+  padding-left: 15px;
+  break-before: auto;
+}
+  
+.typueberschrift_17 {
+  font-size: 22px;
+  line-height: 1.3;
+  text-align: left;
+  letter-spacing: normal;
+  margin-top: 6px;
+  margin-right: 25px;
+  margin-bottom: 0;
+  margin-left: 10px;
+  padding-top: 2px;
+  padding-right: 5px;
+  padding-bottom: 3px;
+  padding-left: 0;
+  break-before: auto;
+}
+  
+.typueberschrift_18 {
+  font-size: 20px;
+  line-height: 1.1;
+  text-align: justify;
+  letter-spacing: normal;
+  margin-top: 5px;
+  margin-right: 20px;
+  margin-bottom: 6px;
+  margin-left: 15px;
+  padding-top: 2px;
+  padding-right: 5px;
+  padding-bottom: 0;
+  padding-left: 10px;
+  break-before: column;
+}
+  
+.typueberschrift_19 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-top: 5px;
+  margin-right: 15px;
+  margin-bottom: 4px;
+  margin-left: 15px;
+  padding-top: 4px;
+  padding-right: 5px;
+  padding-bottom: 0;
+  padding-left: 10px;
+  break-before: column;
+}
+  
+.typueberschrift_20 {
+  font-size: 20px;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: 6px;
+  margin-right: 20px;
+  margin-bottom: 6px;
+  margin-left: 10px;
+  padding-top: 2px;
+  padding-right: 5px;
+  padding-bottom: 3px;
+  padding-left: 15px;
+  break-before: column;
+}
+     
+
+
+/* Automatisiert CSS für zwischenueberschrift HTML-Tag-Klassen erzeugen */
+
+.zwischenueberschrift_21 {
+  font-size: 21px;
+    line-height: 1.1;
+    text-align: center;
+    letter-spacing: normal;
+    margin-right: 0;
+    padding-top: 8px;
+    padding-right: 0;
+    padding-bottom: 0;
+    break-before: auto;
+}
+
+
+
+
+
+
+
+
+
+.artikelueberschrift_31 {
+  font-size: 20px;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: normal;
+  
+  margin-right: 0;
+  
+  
+  
+  padding-right: 5px;
+  padding-bottom: 3px;
+  
+  break-before: column;  
+}
+
+.artikelueberschrift_32 {
+  font-size: 22px;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: normal;
+  
+  margin-right: 25px;
+  
+  
+  
+  padding-right: 10px;
+  padding-bottom: 4px;
+  
+  break-before: auto;  
+}
+
+.artikelueberschrift_33 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: left;
+  letter-spacing: normal;
+  
+  margin-right: 25px;
+  
+  
+  
+  padding-right: 10px;
+  padding-bottom: 3px;
+  
+  break-before: column;  
+}
+
+.artikelueberschrift_34 {
+  font-size: 20px;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: normal;
+  
+  margin-right: 20px;
+  
+  
+  
+  padding-right: 0;
+  padding-bottom: 4px;
+  
+  break-before: column;  
+}
+
+.artikelueberschrift_35 {
+  font-size: 20px;
+  line-height: 1.1;
+  text-align: justify;
+  letter-spacing: normal;
+  
+  margin-right: 15px;
+  
+  
+  
+  padding-right: 5px;
+  padding-bottom: 4px;
+  
+  break-before: auto;  
+}
+
+.artikelueberschrift_36 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: left;
+  letter-spacing: 1px;
+  
+  margin-right: 25px;
+  
+  
+  
+  padding-right: 10px;
+  padding-bottom: 4px;
+  
+  break-before: column;  
+}
+
+.artikelueberschrift_37 {
+  font-size: 20px;
+  line-height: 1.2;
+  text-align: left;
+  letter-spacing: 1px;
+  
+  margin-right: 20px;
+  
+  
+  
+  padding-right: 5px;
+  padding-bottom: 0;
+  
+  break-before: auto;  
+}
+
+.artikelueberschrift_38 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: justify;
+  letter-spacing: normal;
+  
+  margin-right: 25px;
+  
+  
+  
+  padding-right: 5px;
+  padding-bottom: 3px;
+  
+  break-before: column;  
+}
+
+.artikelueberschrift_39 {
+  font-size: 22px;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: normal;
+  
+  margin-right: 20px;
+  
+  
+  
+  padding-right: 5px;
+  padding-bottom: 4px;
+  
+  break-before: auto;  
+}
+
+.artikelueberschrift_40 {
+  font-size: 20px;
+  line-height: 1.3;
+  text-align: left;
+  letter-spacing: 1px;
+  
+  margin-right: 10px;
+  
+  
+  
+  padding-right: 5px;
+  padding-bottom: 4px;
+  
+  break-before: column;  
+}
+
+
+
+
+
+.artikel_41 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: left;
+  
+ margin-top: 10px;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 10px;
+  padding-top: 10px;
+  padding-right: 12px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  break-before: auto;
+  position: relative;
+  display: block;
+}
+
+.artikel_42 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: left;
+  
+ margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 6px;
+  margin-left: 10px;
+  padding-top: 0;
+  padding-right: 12px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+  break-before: column;
+  position: relative;
+  display: block;
+}
+
+.artikel_43 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: justify;
+  
+ margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 4px;
+  margin-left: 0;
+  padding-top: 0;
+  padding-right: 12px;
+  padding-bottom: 0;
+  padding-left: 12px;
+  break-before: column;
+  position: relative;
+  display: block;
+}
+
+.artikel_44 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: justify;
+  
+ margin-top: 20px;
+  margin-right: 25px;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 12px;
+  break-before: column;
+  position: relative;
+  display: block;
+}
+
+.artikel_45 {
+  font-size: 20px;
+  line-height: 1.3;
+  text-align: justify;
+  
+ margin-top: 20px;
+  margin-right: 15px;
+  margin-bottom: 0;
+  margin-left: 20px;
+  padding-top: 0;
+  padding-right: 12px;
+  padding-bottom: 0;
+  padding-left: 10px;
+  break-before: auto;
+  position: relative;
+  display: block;
+}
+
+.artikel_46 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: justify;
+  
+ margin-top: 10px;
+  margin-right: 25px;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-top: 5px;
+  padding-right: 12px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  break-before: column;
+  position: relative;
+  display: block;
+}
+
+.artikel_47 {
+  font-size: 20px;
+  line-height: 1.3;
+  text-align: justify;
+  
+ margin-top: 10px;
+  margin-right: 20px;
+  margin-bottom: 6px;
+  margin-left: 25px;
+  padding-top: 5px;
+  padding-right: 12px;
+  padding-bottom: 10px;
+  padding-left: 12px;
+  break-before: auto;
+  position: relative;
+  display: block;
+}
+
+.artikel_48 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: left;
+  
+ margin-top: 10px;
+  margin-right: 20px;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-top: 10px;
+  padding-right: 12px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+  break-before: auto;
+  position: relative;
+  display: block;
+}
+
+.artikel_49 {
+  font-size: 20px;
+  line-height: 1.3;
+  text-align: left;
+  
+ margin-top: 20px;
+  margin-right: 0;
+  margin-bottom: 6px;
+  margin-left: 20px;
+  padding-top: 0;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 10px;
+  break-before: auto;
+  position: relative;
+  display: block;
+}
+
+.artikel_50 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: justify;
+  
+ margin-top: 10px;
+  margin-right: 0;
+  margin-bottom: 4px;
+  margin-left: 15px;
+  padding-top: 0;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  break-before: auto;
+  position: relative;
+  display: block;
+}
+
+
+
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+  border: 1px solid #000;
+  padding: 8px;
+}
+
+.data-table tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.level-2-group {
+  display: inline-block;
+  vertical-align: top;
+  width: 33.33%; /* Anpassen, um die gewünschte Anzahl an Einträgen pro Zeile zu erreichen */
+  box-sizing: border-box;
+}
+
+
+  
+
+             body {
+                 font-family: "Corona 3 Typewriter";
+                   padding: 20px;
+             }
+
+
+                    
+                    
+                    .datum_51 {
+                      position: absolute;
+                      top: 1244px;
+                      left: 426px;
+                    }
+                    
+                    
+
+
+                    
+                    
+                    .stempelbild_61 img {
+                      display: block;
+                      margin: 0 auto; /* Zentriert das Bild */
+                      position: absolute;
+                      top: 965px;
+                      left: 155px;
+                      max-width: 200px; /* Verhindert, dass das Bild größer als seine natürliche Breite angezeigt wird */
+                      max-height: 100%; /* Verhindert, dass das Bild größer als seine natürliche Höhe angezeigt wird */
+                      width: auto; /* Behält das Seitenverhältnis bei, wenn die Höhe angepasst wird */
+                      height: auto; /* Behält das Seitenverhältnis bei, wenn die Breite angepasst wird */
+                    }
+                    
+                    
+                    
+                    
+                    .stempelbild_unten_mittig_71 img {
+                      display: block;
+                      margin: 0 auto; /* Zentriert das Bild */
+                      position: absolute;
+                      top: 1141px;
+                      left: 296px;
+                      max-width: 400px; /* Verhindert, dass das Bild größer als seine natürliche Breite angezeigt wird */
+                      max-height: 100%; /* Verhindert, dass das Bild größer als seine natürliche Höhe angezeigt wird */
+                      width: auto; /* Behält das Seitenverhältnis bei, wenn die Höhe angepasst wird */
+                      height: auto; /* Behält das Seitenverhältnis bei, wenn die Breite angepasst wird */
+                    }
+                    
+
+                    .bueroklammer-img {
+                    display: block;
+                    margin: 0 auto; /* Zentriert das Bild */
+                    width: 35px; /* Breite des Bildes */
+                    position: absolute;
+                    top: 0px;
+                    left: px; /* Dynamischer Abstand von links */
+                  }
+    </style>
+  </head>
+  <body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+<div class="hauptueberschrift_1">
+  <span>Lange Schiff ja</span>
+</div>
+
+
+
+
+
+<div class="artikel_41">
+    <span>Dazu heute los sagen weinen. Seit oft antworten rufen zu. Schon leben kommen vorbei. Fahrrad so schaffen Wort trinken. Kein wie rechnen schicken heraus reiten. Mensch Fuß vorbei. Schlimm frei Geschenk jetzt ob neun Brief. Natürlich weiter nämlich wenn lange heiß bauen.</span>
+</div>
+
+
+  <br><br><br>
+
+
+  <table class="data-table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Beschreibung</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td><span>1).</span></td>
+            <td><span>Beschreibt das Getriebetyp</span></td>
+            <td>
+                
+                <div class="level-2-group">
+                    <strong>g:</strong>
+                    <div>
+                        
+                        <span>I: 914 Nm</span><br>
+                        
+                        <span>II: 568 Watt</span><br>
+                        
+                        <span>III: 1000 PS</span><br>
+                        
+                    </div>
+                </div>
+                
+                <div class="level-2-group">
+                    <strong>o:</strong>
+                    <div>
+                        
+                        <span>I: 373 kW</span><br>
+                        
+                        <span>II: 440 m³</span><br>
+                        
+                        <span>III: 155 cm</span><br>
+                        
+                    </div>
+                </div>
+                
+                <div class="level-2-group">
+                    <strong>w:</strong>
+                    <div>
+                        
+                        <span>I: 524 mm</span><br>
+                        
+                        <span>II: 253 g/cm³</span><br>
+                        
+                        <span>III: 250 Nm</span><br>
+                        
+                        <span>IV: 399 MHz</span><br>
+                        
+                    </div>
+                </div>
+                
+                <div class="level-2-group">
+                    <strong>f:</strong>
+                    <div>
+                        
+                        <span>I: 272 kg</span><br>
+                        
+                        <span>II: 311 mm</span><br>
+                        
+                        <span>III: 248 Ampere</span><br>
+                        
+                        <span>IV: 575 Volt</span><br>
+                        
+                    </div>
+                </div>
+                
+            </td>
+        </tr>
+        
+        <tr>
+            <td><span>2).</span></td>
+            <td><span>Beschreibt die Bereifung</span></td>
+            <td>
+                
+                <div class="level-2-group">
+                    <strong>w:</strong>
+                    <div>
+                        
+                        <span>I: 768 Bar</span><br>
+                        
+                        <span>II: 185 Ohm</span><br>
+                        
+                        <span>III: 677 dB</span><br>
+                        
+                    </div>
+                </div>
+                
+                <div class="level-2-group">
+                    <strong>x:</strong>
+                    <div>
+                        
+                        <span>I: 570 MHz</span><br>
+                        
+                        <span>II: 297 cm</span><br>
+                        
+                        <span>III: 825 Volt</span><br>
+                        
+                        <span>IV: 390 PS</span><br>
+                        
+                    </div>
+                </div>
+                
+                <div class="level-2-group">
+                    <strong>r:</strong>
+                    <div>
+                        
+                        <span>I: 780 m/s²</span><br>
+                        
+                        <span>II: 91 Watt</span><br>
+                        
+                        <span>III: 703 Bar</span><br>
+                        
+                    </div>
+                </div>
+                
+            </td>
+        </tr>
+        
+        <tr>
+            <td><span>3).</span></td>
+            <td><span>Beschreibt die Art des Fahrzeugs</span></td>
+            <td>
+                
+                <div class="level-2-group">
+                    <strong>h:</strong>
+                    <div>
+                        
+                        <span>I: 99 km/h</span><br>
+                        
+                        <span>II: 428 dB</span><br>
+                        
+                        <span>III: 321 g/cm³</span><br>
+                        
+                    </div>
+                </div>
+                
+                <div class="level-2-group">
+                    <strong>u:</strong>
+                    <div>
+                        
+                        <span>I: 787 Liter</span><br>
+                        
+                        <span>II: 799 m³</span><br>
+                        
+                        <span>III: 617 m/s²</span><br>
+                        
+                        <span>IV: 477 MHz</span><br>
+                        
+                    </div>
+                </div>
+                
+                <div class="level-2-group">
+                    <strong>b:</strong>
+                    <div>
+                        
+                        <span>I: 611 Watt</span><br>
+                        
+                        <span>II: 165 dB</span><br>
+                        
+                        <span>III: 468 Watt</span><br>
+                        
+                        <span>IV: 998 Bar</span><br>
+                        
+                    </div>
+                </div>
+                
+            </td>
+        </tr>
+        
+        <tr>
+            <td><span>4).</span></td>
+            <td><span>Anzahl der Räder</span></td>
+            <td>
+                
+                <div class="level-2-group">
+                    <strong>t:</strong>
+                    <div>
+                        
+                        <span>I: 862 MHz</span><br>
+                        
+                        <span>II: 729 PS</span><br>
+                        
+                        <span>III: 857 MHz</span><br>
+                        
+                    </div>
+                </div>
+                
+                <div class="level-2-group">
+                    <strong>c:</strong>
+                    <div>
+                        
+                        <span>I: 45 °C</span><br>
+                        
+                        <span>II: 869 g/cm³</span><br>
+                        
+                        <span>III: 556 °C</span><br>
+                        
+                        <span>IV: 777 g/cm³</span><br>
+                        
+                    </div>
+                </div>
+                
+            </td>
+        </tr>
+        
+    </tbody>
+</table>
+
+
+    <div class="typueberschrift_11">
+      <span>Essen las stark dem kann Sonne halten uns</span>
+    </div>
+    
+
+
+      <div class="artikel_42">
+        <span>Mann neben Rad Leute Glück Garten leise Ball um fast aus kaufen gibt Oma dauern laufen.</span>
+    </div>
+    
+
+    <div class="datum_51">
+      <span>1980-12-06</span>
+  </div>
+  
+
+      
+
+
+      <div class="stempelbild_61">
+        <img src="../../../static/images/stempel/stempel (78).png" alt="Stempelbild" />
+    </div>
+    
+
+    <div class="stempelbild_unten_mittig_71">
+        <img src="../../../static/images/stempel/unten_mittig/stempel_unten_mittig (11).png" alt="Stempelbild_unten_mittig" />
+    </div>
+    
+
+
+    </body>
+  </html>

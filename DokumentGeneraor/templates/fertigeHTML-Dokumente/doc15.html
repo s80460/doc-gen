@@ -1,0 +1,724 @@
+<!-- Ab hier Jinja-Tabelle zu html-table umbauen -->
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dokumentvorlage</title>
+    <style>
+           
+
+
+
+            
+
+
+
+            @font-face {
+                      font-family: "Corona 3 Typewriter";
+                      src: url("file:///C:/doc-gen/static/fonts/Corona-3-Typewriter.ttf") format("truetype");
+                  }
+
+
+
+            body {
+                margin: 0;
+                margin-left: 1px;
+                padding: 0;
+                font-family: "Corona 3 Typewriter";
+                background: white;
+                margin-left: 90px;
+            }
+
+
+            h2 {
+              text-align: center;
+              text-decoration: underline;
+            }
+
+            hr.dotted {
+              border-top: 1px dashed #474747; /* Definiert die Dicke und Farbe der gepunkteten Linie */
+              border-bottom: none; /* Entfernt die standardmäßige untere Linie */
+            }
+
+
+
+          
+
+
+
+
+
+          
+            .hauptueberschrift_1 {
+                font-size: 21px;
+                margin-top: 10px;
+                margin-left: 10px;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+          
+
+
+
+
+
+          
+            .hauptueberschrift_2 {
+                font-size: 22px;
+                margin-top: 10px;
+                margin-left: 10px;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+          
+
+
+
+
+
+          
+            .hauptueberschrift_3 {
+                font-size: 22px;
+                margin-top: 10px;
+                margin-left: 10px;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+          
+
+
+
+
+
+          
+            .hauptueberschrift_4 {
+                font-size: 22px;
+                margin-top: 10px;
+                margin-left: 10px;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+          
+
+
+
+
+
+          
+            .hauptueberschrift_5 {
+                font-size: 21px;
+                margin-top: 10px;
+                margin-left: 10px;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+          
+
+
+
+
+
+          
+            .hauptueberschrift_6 {
+                font-size: 22px;
+                margin-top: 10px;
+                margin-left: 10px;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+          
+
+
+
+
+
+          
+            .hauptueberschrift_7 {
+                font-size: 22px;
+                margin-top: 10px;
+                margin-left: 10px;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+          
+
+
+
+
+
+          
+            .hauptueberschrift_8 {
+                font-size: 21px;
+                margin-top: 10px;
+                margin-left: 10px;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+          
+
+
+
+
+
+          
+            .hauptueberschrift_9 {
+                font-size: 21px;
+                margin-top: 10px;
+                margin-left: 10px;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+          
+
+
+
+
+
+          
+            .hauptueberschrift_10 {
+                font-size: 22px;
+                margin-top: 10px;
+                margin-left: 10px;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+          
+          
+
+      
+/* Automatisiert CSS für typueberschrift HTML-Tag-Klassen erzeugen */
+  .typueberschrift_11 {
+  font-size: 21px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+  .typueberschrift_12 {
+  font-size: 21px;
+  text-align: center;
+  letter-spacing: 3px;
+}
+  .typueberschrift_13 {
+  font-size: 21px;
+  text-align: center;
+  letter-spacing: 3px;
+}
+  .typueberschrift_14 {
+  font-size: 21px;
+  text-align: center;
+  letter-spacing: 3px;
+}
+  .typueberschrift_15 {
+  font-size: 22px;
+  text-align: center;
+  letter-spacing: normal;
+}
+  .typueberschrift_16 {
+  font-size: 22px;
+  text-align: center;
+  letter-spacing: normal;
+}
+  .typueberschrift_17 {
+  font-size: 21px;
+  text-align: center;
+  letter-spacing: normal;
+}
+  .typueberschrift_18 {
+  font-size: 21px;
+  text-align: center;
+  letter-spacing: 3px;
+}
+  .typueberschrift_19 {
+  font-size: 21px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+  .typueberschrift_20 {
+  font-size: 22px;
+  text-align: center;
+  letter-spacing: 3px;
+}
+     
+
+
+/* Automatisiert CSS für zwischenueberschrift HTML-Tag-Klassen erzeugen */
+.zwischenueberschrift_21 {
+  font-size: 22px;
+    text-align: :left;
+    margin-top: 6px;
+    margin-left: 25px; 
+    margin-bottom: 6px;
+}
+.zwischenueberschrift_22 {
+  font-size: 22px;
+    text-align: :left;
+    margin-top: 6px;
+    margin-left: 25px; 
+    margin-bottom: 6px;
+}
+.zwischenueberschrift_23 {
+  font-size: 21px;
+    text-align: :left;
+    margin-top: 6px;
+    margin-left: 25px; 
+    margin-bottom: 6px;
+}
+.zwischenueberschrift_24 {
+  font-size: 21px;
+    text-align: :left;
+    margin-top: 6px;
+    margin-left: 25px; 
+    margin-bottom: 6px;
+}
+.zwischenueberschrift_25 {
+  font-size: 21px;
+    text-align: :left;
+    margin-top: 6px;
+    margin-left: 25px; 
+    margin-bottom: 6px;
+}
+.zwischenueberschrift_26 {
+  font-size: 22px;
+    text-align: :left;
+    margin-top: 6px;
+    margin-left: 25px; 
+    margin-bottom: 6px;
+}
+.zwischenueberschrift_27 {
+  font-size: 22px;
+    text-align: :left;
+    margin-top: 6px;
+    margin-left: 25px; 
+    margin-bottom: 6px;
+}
+.zwischenueberschrift_28 {
+  font-size: 21px;
+    text-align: :left;
+    margin-top: 6px;
+    margin-left: 25px; 
+    margin-bottom: 6px;
+}
+
+
+.artikelueberschrift_31 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 6px;
+  text-align: left;
+  margin-left: 80px;
+}
+.artikelueberschrift_32 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 6px;
+  text-align: left;
+  margin-left: 80px;
+}
+.artikelueberschrift_33 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 6px;
+  text-align: left;
+  margin-left: 80px;
+}
+.artikelueberschrift_34 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 6px;
+  text-align: left;
+  margin-left: 80px;
+}
+.artikelueberschrift_35 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 6px;
+  text-align: left;
+  margin-left: 80px;
+}
+.artikelueberschrift_36 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 6px;
+  text-align: left;
+  margin-left: 80px;
+}
+.artikelueberschrift_37 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 6px;
+  text-align: left;
+  margin-left: 80px;
+}
+.artikelueberschrift_38 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 6px;
+  text-align: left;
+  margin-left: 80px;
+}
+.artikelueberschrift_39 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 6px;
+  text-align: left;
+  margin-left: 80px;
+}
+.artikelueberschrift_40 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 6px;
+  text-align: left;
+  margin-left: 80px;
+}
+
+
+.artikel_41 {
+  font-size: 22px;
+  line-height: 1.3;
+  text-align: left;
+  display: block;
+  margin-left: 18px;
+}
+.artikel_42 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: center;
+  display: block;
+  margin-left: 12px;
+}
+.artikel_43 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: left;
+  display: block;
+  margin-left: 18px;
+}
+.artikel_44 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: left;
+  display: block;
+  margin-left: 12px;
+}
+.artikel_45 {
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: left;
+  display: block;
+  margin-left: 12px;
+}
+.artikel_46 {
+  font-size: 22px;
+  line-height: 1.3;
+  text-align: left;
+  display: block;
+  margin-left: 12px;
+}
+.artikel_47 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: left;
+  display: block;
+  margin-left: 18px;
+}
+.artikel_48 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: left;
+  display: block;
+  margin-left: 18px;
+}
+.artikel_49 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: left;
+  display: block;
+  margin-left: 18px;
+}
+.artikel_50 {
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: left;
+  display: block;
+  margin-left: 18px;
+}
+
+
+.daten-tabelle {
+  width: 93%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 22px;
+  border-collapse: collapse;
+}
+
+
+/* Setzt Ränder nur für Zellen */
+.daten-tabelle th, .daten-tabelle td {
+  padding: 3px;
+  text-align: left;
+}
+
+/* Spezielle Stile für Kopfzeilen-Zellen */
+.daten-tabelle th {
+  background-color: #f2f2f2;
+  border-bottom: 3px solid black;
+}
+
+             body {
+                 font-family: "Corona 3 Typewriter";
+                   padding: 20px;
+             }
+
+
+                    .datum_51 {
+                      position: absolute;
+                      top: 965px;
+                      left: 583px;
+                    }
+                    
+
+
+                    .stempelbild_61 img {
+                      display: block;
+                      margin: 0 auto; /* Zentriert das Bild */
+                      position: absolute;
+                      top: 563px;
+                      left: 540px;
+                      max-width: 100px; /* Verhindert, dass das Bild größer als seine natürliche Breite angezeigt wird */
+                      max-height: 100%; /* Verhindert, dass das Bild größer als seine natürliche Höhe angezeigt wird */
+                      width: auto; /* Behält das Seitenverhältnis bei, wenn die Höhe angepasst wird */
+                      height: auto; /* Behält das Seitenverhältnis bei, wenn die Breite angepasst wird */
+                    }
+                    
+                    .stempelbild_unten_mittig_71 img {
+                      display: block;
+                      margin: 0 auto; /* Zentriert das Bild */
+                      position: absolute;
+                      top: 932px; /* Zufällige Top-Position */
+                      left: 298px; /* Zufällige Left-Position */
+                      max-width: 400px; /* Verhindert, dass das Bild größer als seine natürliche Breite angezeigt wird */
+                      max-height: 100%; /* Verhindert, dass das Bild größer als seine natürliche Höhe angezeigt wird */
+                      width: auto; /* Behält das Seitenverhältnis bei, wenn die Höhe angepasst wird */
+                      height: auto; /* Behält das Seitenverhältnis bei, wenn die Breite angepasst wird */
+                    }
+
+                    .bueroklammer-img {
+                    display: block;
+                    margin: 0 auto; /* Zentriert das Bild */
+                    width: 35px; /* Breite des Bildes */
+                    position: absolute;
+                    top: 0px;
+                    left: px; /* Dynamischer Abstand von links */
+                  }
+    </style>
+  </head>
+  <body>
+
+
+
+
+
+
+
+
+
+  
+
+
+<h2><span>Typgutachten</span></h2>
+
+  <div class="typueberschrift_11">
+      <span>Schön Baum ganz fressen hart legen</span>
+  </div>
+
+  <div class="typueberschrift_12">
+    <span>Gegen Feuer Zahl bekommen Brief Fisch wie laufen Zimmer dort</span>
+</div>
+
+<div class="typueberschrift_13">
+  <span>Uhr früh die</span>
+</div>
+
+<div class="typueberschrift_14">
+  <span>Denn hier Schwester Boden blau</span>
+</div>
+<br>
+
+
+<div class="zwischenueberschrift_21">
+  <span>Warm arbeiten hat aus ziehen bauen Fußball grün an einmal Abend bald Tante vorbei alt</span>
+</div>
+
+
+
+  <div class="zwischenueberschrift_22">
+      <span>Seite Boden Baum verstehen ihm natürlich grün schlimm weiter nehmen Vater holen Eis bei daran vielleicht</span>
+  </div>
+
+  <br>   
+
+    
+<table class="daten-tabelle">
+  <thead>
+    <tr>
+      <th><span>Ausstattung</span></th>
+      <th><span>A</span></th>
+      <th><span>Ausstattung</span></th>
+      <th><span>B</span></th>
+    </tr>
+  </thead>
+  <tbody><tr>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt das Sicherheitssystem</span></td>
+        <td style="width: 15%;"><span>433</span> <span>m³</span></td>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt das Sicherheitssystem</span></td>
+        <td style="width: 15%;"><span>606</span> <span>Bar</span></td>
+      </tr><tr>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt den Laderaum mit Maßen</span></td>
+        <td style="width: 15%;"><span>280</span> <span>cm³</span></td>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt den Laderaum mit Maßen</span></td>
+        <td style="width: 15%;"><span>386</span> <span>°C</span></td>
+      </tr><tr>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt das Getriebetyp</span></td>
+        <td style="width: 15%;"><span>121</span> <span>Watt</span></td>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt das Getriebetyp</span></td>
+        <td style="width: 15%;"><span>478</span> <span>m/s²</span></td>
+      </tr><tr>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt den Kraftstoffverbrauch</span></td>
+        <td style="width: 15%;"><span>699</span> <span>m³</span></td>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt den Kraftstoffverbrauch</span></td>
+        <td style="width: 15%;"><span>768</span> <span>kW</span></td>
+      </tr><tr>
+        <td style="text-decoration: underline; width: 35%;"><span>Gibt Gewichte an</span></td>
+        <td style="width: 15%;"><span>643</span> <span>Ohm</span></td>
+        <td style="text-decoration: underline; width: 35%;"><span>Gibt Gewichte an</span></td>
+        <td style="width: 15%;"><span>267</span> <span>Ampere</span></td>
+      </tr><tr>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt die Nutzlast</span></td>
+        <td style="width: 15%;"><span>144</span> <span>m³</span></td>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt die Nutzlast</span></td>
+        <td style="width: 15%;"><span>317</span> <span>g/cm³</span></td>
+      </tr><tr>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt das Baujahr</span></td>
+        <td style="width: 15%;"><span>35</span> <span>°C</span></td>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt das Baujahr</span></td>
+        <td style="width: 15%;"><span>66</span> <span>PS</span></td>
+      </tr><tr>
+        <td style="text-decoration: underline; width: 35%;"><span>Spurweite</span></td>
+        <td style="width: 15%;"><span>562</span> <span>g/cm³</span></td>
+        <td style="text-decoration: underline; width: 35%;"><span>Spurweite</span></td>
+        <td style="width: 15%;"><span>816</span> <span>m³</span></td>
+      </tr><tr>
+        <td style="text-decoration: underline; width: 35%;"><span>Anhängelast</span></td>
+        <td style="width: 15%;"><span>755</span> <span>Bar</span></td>
+        <td style="text-decoration: underline; width: 35%;"><span>Anhängelast</span></td>
+        <td style="width: 15%;"><span>700</span> <span>kg</span></td>
+      </tr><tr>
+        <td style="text-decoration: underline; width: 35%;"><span>Hauptabmessungen</span></td>
+        <td style="width: 15%;"><span>299</span> <span>Ohm</span></td>
+        <td style="text-decoration: underline; width: 35%;"><span>Hauptabmessungen</span></td>
+        <td style="width: 15%;"><span>318</span> <span>m/s²</span></td>
+      </tr><tr>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt die Bereifung</span></td>
+        <td style="width: 15%;"><span>994</span> <span>km/h</span></td>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt die Bereifung</span></td>
+        <td style="width: 15%;"><span>784</span> <span>kg</span></td>
+      </tr><tr>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt das zulässige Gesamtgewicht</span></td>
+        <td style="width: 15%;"><span>224</span> <span>mm</span></td>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt das zulässige Gesamtgewicht</span></td>
+        <td style="width: 15%;"><span>937</span> <span>Ampere</span></td>
+      </tr><tr>
+        <td style="text-decoration: underline; width: 35%;"><span>Drehmoment</span></td>
+        <td style="width: 15%;"><span>687</span> <span>Ohm</span></td>
+        <td style="text-decoration: underline; width: 35%;"><span>Drehmoment</span></td>
+        <td style="width: 15%;"><span>723</span> <span>Ampere</span></td>
+      </tr><tr>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt die Anzahl der Sitzplätze</span></td>
+        <td style="width: 15%;"><span>891</span> <span>Ohm</span></td>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt die Anzahl der Sitzplätze</span></td>
+        <td style="width: 15%;"><span>933</span> <span>Liter</span></td>
+      </tr><tr>
+        <td style="text-decoration: underline; width: 35%;"><span>Radstand</span></td>
+        <td style="width: 15%;"><span>526</span> <span>mm</span></td>
+        <td style="text-decoration: underline; width: 35%;"><span>Radstand</span></td>
+        <td style="width: 15%;"><span>80</span> <span>m³</span></td>
+      </tr><tr>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt die Anzahl der Airbags</span></td>
+        <td style="width: 15%;"><span>505</span> <span>mm</span></td>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt die Anzahl der Airbags</span></td>
+        <td style="width: 15%;"><span>868</span> <span>dB</span></td>
+      </tr><tr>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt den CO2-Ausstoß</span></td>
+        <td style="width: 15%;"><span>391</span> <span>kg</span></td>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt den CO2-Ausstoß</span></td>
+        <td style="width: 15%;"><span>854</span> <span>Volt</span></td>
+      </tr><tr>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt die Motorleistung</span></td>
+        <td style="width: 15%;"><span>38</span> <span>Watt</span></td>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt die Motorleistung</span></td>
+        <td style="width: 15%;"><span>559</span> <span>Ohm</span></td>
+      </tr><tr>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt die Farbe des Fahrzeugs</span></td>
+        <td style="width: 15%;"><span>321</span> <span>cm³</span></td>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt die Farbe des Fahrzeugs</span></td>
+        <td style="width: 15%;"><span>913</span> <span>MHz</span></td>
+      </tr><tr>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt die Beschleunigung</span></td>
+        <td style="width: 15%;"><span>821</span> <span>PS</span></td>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt die Beschleunigung</span></td>
+        <td style="width: 15%;"><span>251</span> <span>Ampere</span></td>
+      </tr><tr>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt die Art des Fahrzeugs</span></td>
+        <td style="width: 15%;"><span>604</span> <span>PS</span></td>
+        <td style="text-decoration: underline; width: 35%;"><span>Beschreibt die Art des Fahrzeugs</span></td>
+        <td style="width: 15%;"><span>304</span> <span>m³</span></td>
+      </tr></tbody>
+</table>
+
+
+<br><br>
+
+  <div class="artikel_41">
+    <span>Schicken Baum Hand gewinnen Wohnung über. Grün turnen danach sie Stunde damit spät Dorf. Nacht tragen man rennen glauben. Reiten Freund Bein Kind her. Genau sieben ein Maus. Nase gab wollen neben Schluss schenken beim. Essen brauchen Winter doch. Sprechen Beispiel stark Pferd stellen so hat. Licht dumm Welt für klettern Fisch einmal Nacht. Schwer treffen ins ihr Geld. Brief mit als laut. Schüler Seite Tier vorbei ich auf vergessen bald. Um wird gesund Zahl steigen Meer dem sind. Springen stehen kein. Kochen dunkel wie Papa Wiese offen. Tisch sie stark schwer. Fußball machen arbeiten man also beim. Will Meer es Sache schon drehen zu.</span>
+</div>
+
+
+
+
+<div class="datum_51">
+  <span>27.09.1979</span>
+</div>
+
+
+        <span class="bueroklammer-img">
+          <img src="../../../static/images/bueroklammern/Klammer (8).png"
+               alt="Büroklammer"
+               class="bueroklammer-img" />
+        </span>
+
+
+      <div class="stempelbild_61">
+        <img src="../../../static/images/stempel/stempel (85).png" alt="Stempelbild" />
+    </div>
+
+    <div class="stempelbild_unten_mittig_71">
+        <img src="../../../static/images/stempel/unten_mittig/stempel_unten_mittig (34).png" alt="Stempelbild" />
+    </div>
+
+
+    <br>
+
+    <hr class="dotted">
+
+    </body>
+  </html>

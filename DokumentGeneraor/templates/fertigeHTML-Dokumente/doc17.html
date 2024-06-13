@@ -1,0 +1,797 @@
+<!-- Ab hier Jinja-Tabelle zu html-table umbauen -->
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dokumentvorlage</title>
+    <style>@font-face {
+        font-family: "Corona 3 Typewriter";
+        src: url("file:///C:/doc-gen/static/fonts/Corona-3-Typewriter.ttf") format("truetype");
+                  }
+
+      html {
+        font-family: "Corona-3-Typewriter";
+        margin-left: 65px;
+          }
+
+      body {
+        font-family: "Corona 3 Typewriter";
+        font-size: 22px;
+        background: white;
+        font-family: "Corona 3 Typewriter";
+        margin-left: 120px;
+         }.hauptueberschrift_1{
+          font-size: 21px;
+            line-height:1.2;
+            margin:10px;
+            padding:2px;
+            text-decoration:none;
+            font-weight:400;
+            letter-spacing:3px;
+            text-align:center;
+            text-transform:uppercase;
+        }
+      .hauptueberschrift_2{
+          font-size: 21px;
+            line-height:1.2;
+            margin:0;
+            padding:0;
+            text-decoration:none;
+            font-weight:normal;
+            letter-spacing:normal;
+            text-align:center;
+            text-transform:none;
+        }
+      .hauptueberschrift_3{
+          font-size: 21px;
+            line-height:1.5;
+            margin:15px;
+            padding:5px;
+            text-decoration:underline overline;
+            font-weight:normal;
+            letter-spacing:3px;
+            text-align:center;
+            text-transform:uppercase;
+        }
+      .hauptueberschrift_4{
+          font-size: 21px;
+            line-height:1.1;
+            margin:5px;
+            padding:0;
+            text-decoration:underline;
+            font-weight:600;
+            letter-spacing:2px;
+            text-align:left;
+            text-transform:none;
+        }
+      .hauptueberschrift_5{
+          font-size: 20px;
+            line-height:1.1;
+            margin:10px;
+            padding:8px;
+            text-decoration:underline;
+            font-weight:400;
+            letter-spacing:normal;
+            text-align:center;
+            text-transform:none;
+        }
+      .hauptueberschrift_6{
+          font-size: 21px;
+            line-height:1.6;
+            margin:15px;
+            padding:0;
+            text-decoration:none;
+            font-weight:400;
+            letter-spacing:3px;
+            text-align:left;
+            text-transform:none;
+        }
+      .hauptueberschrift_7{
+          font-size: 20px;
+            line-height:1.2;
+            margin:5px;
+            padding:8px;
+            text-decoration:underline;
+            font-weight:400;
+            letter-spacing:normal;
+            text-align:left;
+            text-transform:none;
+        }
+      .hauptueberschrift_8{
+          font-size: 20px;
+            line-height:1.4;
+            margin:10px;
+            padding:0;
+            text-decoration:none;
+            font-weight:600;
+            letter-spacing:normal;
+            text-align:left;
+            text-transform:uppercase;
+        }
+      .hauptueberschrift_9{
+          font-size: 21px;
+            line-height:1.5;
+            margin:0;
+            padding:0;
+            text-decoration:none;
+            font-weight:bold;
+            letter-spacing:normal;
+            text-align:center;
+            text-transform:none;
+        }
+      .hauptueberschrift_10{
+          font-size: 21px;
+            line-height:1.4;
+            margin:15px;
+            padding:0;
+            text-decoration:underline;
+            font-weight:normal;
+            letter-spacing:3px;
+            text-align:left;
+            text-transform:uppercase;
+        }
+        
+          
+
+      
+      /* Automatisiert CSS für typueberschrift HTML-Tag-Klassen erzeugen */
+      .typueberschrift_11 {
+        font-size: 21px;
+        line-height: 1.3;
+        text-align: left;
+        letter-spacing: 3px;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        margin-left: 15px;
+        padding-top: 2px;
+        padding-right: 5px;
+        padding-bottom: 3px;
+        padding-left: 5px;
+      }
+      
+      .typueberschrift_12 {
+        font-size: 20px;
+        line-height: 1.3;
+        text-align: left;
+        letter-spacing: 3px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        margin-left: 15px;
+        padding-top: 2px;
+        padding-right: 10px;
+        padding-bottom: 3px;
+        padding-left: 5px;
+      }
+      
+      .typueberschrift_13 {
+        font-size: 21px;
+        line-height: 1.3;
+        text-align: left;
+        letter-spacing: 2px;
+        margin-top: 5px;
+        margin-bottom: 4px;
+        margin-left: 25px;
+        padding-top: 4px;
+        padding-right: 5px;
+        padding-bottom: 0;
+        padding-left: 10px;
+      }
+      
+      .typueberschrift_14 {
+        font-size: 20px;
+        line-height: 1.1;
+        text-align: center;
+        letter-spacing: normal;
+        margin-top: 5px;
+        margin-bottom: 0;
+        margin-left: 25px;
+        padding-top: 2px;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 10px;
+      }
+      
+      .typueberschrift_15 {
+        font-size: 21px;
+        line-height: 1.1;
+        text-align: center;
+        letter-spacing: 3px;
+        margin-top: 4px;
+        margin-bottom: 6px;
+        margin-left: 10px;
+        padding-top: 4px;
+        padding-right: 10px;
+        padding-bottom: 0;
+        padding-left: 15px;
+      }
+      
+      .typueberschrift_16 {
+        font-size: 21px;
+        line-height: 1.2;
+        text-align: left;
+        letter-spacing: 2px;
+        margin-top: 5px;
+        margin-bottom: 6px;
+        margin-left: 15px;
+        padding-top: 4px;
+        padding-right: 10px;
+        padding-bottom: 4px;
+        padding-left: 10px;
+      }
+      
+      .typueberschrift_17 {
+        font-size: 21px;
+        line-height: 1.2;
+        text-align: left;
+        letter-spacing: 1px;
+        margin-top: 4px;
+        margin-bottom: 0;
+        margin-left: 20px;
+        padding-top: 4px;
+        padding-right: 0;
+        padding-bottom: 3px;
+        padding-left: 5px;
+      }
+      
+      .typueberschrift_18 {
+        font-size: 20px;
+        line-height: 1.3;
+        text-align: center;
+        letter-spacing: normal;
+        margin-top: 5px;
+        margin-bottom: 0;
+        margin-left: 0;
+        padding-top: 2px;
+        padding-right: 10px;
+        padding-bottom: 3px;
+        padding-left: 15px;
+      }
+      
+      .typueberschrift_19 {
+        font-size: 21px;
+        line-height: 1.2;
+        text-align: center;
+        letter-spacing: 1px;
+        margin-top: 6px;
+        margin-bottom: 0;
+        margin-left: 0;
+        padding-top: 2px;
+        padding-right: 10px;
+        padding-bottom: 0;
+        padding-left: 5px;
+      }
+           
+
+
+      /* Automatisiert CSS für zwischenueberschrift HTML-Tag-Klassen erzeugen */
+      .zwischenueberschrift_21 {
+        font-size: 20px;
+          line-height: 1.1;
+          text-align: center;
+          letter-spacing: normal;
+          padding-top: 8px;
+          padding-right: 0;
+          padding-bottom: 3px;
+      }
+      .zwischenueberschrift_22 {
+        font-size: 20px;
+          line-height: 1.2;
+          text-align: justify;
+          letter-spacing: normal;
+          padding-top: 12px;
+          padding-right: 10px;
+          padding-bottom: 3px;
+      }
+      .zwischenueberschrift_23 {
+        font-size: 21px;
+          line-height: 1.3;
+          text-align: justify;
+          letter-spacing: 2px;
+          padding-top: 8px;
+          padding-right: 5px;
+          padding-bottom: 0;
+      }
+      .zwischenueberschrift_24 {
+        font-size: 21px;
+          line-height: 1.1;
+          text-align: left;
+          letter-spacing: normal;
+          padding-top: 12px;
+          padding-right: 0;
+          padding-bottom: 0;
+      }
+      .zwischenueberschrift_25 {
+        font-size: 21px;
+          line-height: 1.1;
+          text-align: center;
+          letter-spacing: normal;
+          padding-top: 12px;
+          padding-right: 5px;
+          padding-bottom: 0;
+      }
+      .zwischenueberschrift_26 {
+        font-size: 20px;
+          line-height: 1.1;
+          text-align: left;
+          letter-spacing: 1px;
+          padding-top: 8px;
+          padding-right: 5px;
+          padding-bottom: 3px;
+      }
+      .zwischenueberschrift_27 {
+        font-size: 21px;
+          line-height: 1.2;
+          text-align: center;
+          letter-spacing: 2px;
+          padding-top: 12px;
+          padding-right: 5px;
+          padding-bottom: 0;
+      }
+      .zwischenueberschrift_28 {
+        font-size: 20px;
+          line-height: 1.2;
+          text-align: left;
+          letter-spacing: 1px;
+          padding-top: 12px;
+          padding-right: 0;
+          padding-bottom: 0;
+      }
+      .zwischenueberschrift_29 {
+        font-size: 21px;
+          line-height: 1.3;
+          text-align: justify;
+          letter-spacing: 1px;
+          padding-top: 8px;
+          padding-right: 0;
+          padding-bottom: 0;
+      }
+      .artikelueberschrift_31 {
+        font-size: 21px;
+        line-height: 1.2;
+        text-align: left;
+        letter-spacing: 2px;
+        
+        
+        
+        
+        padding-right: 0;
+        padding-bottom: 0;
+          
+      }
+      .artikelueberschrift_32 {
+        font-size: 20px;
+        line-height: 1.2;
+        text-align: left;
+        letter-spacing: 1px;
+        
+        
+        
+        
+        padding-right: 5px;
+        padding-bottom: 3px;
+          
+      }
+      .artikelueberschrift_33 {
+        font-size: 21px;
+        line-height: 1.3;
+        text-align: justify;
+        letter-spacing: 1px;
+        
+        
+        
+        
+        padding-right: 0;
+        padding-bottom: 0;
+          
+      }
+      .artikelueberschrift_34 {
+        font-size: 21px;
+        line-height: 1.3;
+        text-align: center;
+        letter-spacing: 1px;
+        
+        
+        
+        
+        padding-right: 10px;
+        padding-bottom: 0;
+          
+      }
+      .artikelueberschrift_35 {
+        font-size: 21px;
+        line-height: 1.1;
+        text-align: justify;
+        letter-spacing: normal;
+        
+        
+        
+        
+        padding-right: 10px;
+        padding-bottom: 0;
+          
+      }
+      .artikelueberschrift_36 {
+        font-size: 20px;
+        line-height: 1.3;
+        text-align: center;
+        letter-spacing: 2px;
+        
+        
+        
+        
+        padding-right: 0;
+        padding-bottom: 3px;
+          
+      }
+      .artikelueberschrift_37 {
+        font-size: 20px;
+        line-height: 1.3;
+        text-align: left;
+        letter-spacing: 1px;
+        
+        
+        
+        
+        padding-right: 10px;
+        padding-bottom: 4px;
+          
+      }
+      .artikelueberschrift_38 {
+        font-size: 21px;
+        line-height: 1.1;
+        text-align: left;
+        letter-spacing: normal;
+        
+        
+        
+        
+        padding-right: 0;
+        padding-bottom: 3px;
+          
+      }
+      .artikelueberschrift_39 {
+        font-size: 20px;
+        line-height: 1.2;
+        text-align: center;
+        letter-spacing: 2px;
+        
+        
+        
+        
+        padding-right: 5px;
+        padding-bottom: 3px;
+          
+      }
+      .artikelueberschrift_40 {
+        font-size: 20px;
+        line-height: 1.1;
+        text-align: center;
+        letter-spacing: 1px;
+        
+        
+        
+        
+        padding-right: 5px;
+        padding-bottom: 3px;
+          
+      }.artikel_41 {
+        font-size: 21px;
+        line-height: 1.1;
+        text-align: left;
+        
+      margin-top: 20px;
+        margin-bottom: 4px;
+        margin-left: 25px;
+        padding-top: 0;
+        padding-right: 10px;
+        padding-bottom: 0;
+        padding-left: 12px;
+        position: relative;
+        display: block;
+      }.artikel_42 {
+        font-size: 20px;
+        line-height: 1.2;
+        text-align: justify;
+        
+      margin-top: 20px;
+        margin-bottom: 4px;
+        margin-left: 20px;
+        padding-top: 0;
+        padding-right: 12px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+        position: relative;
+        display: block;
+      }.artikel_43 {
+        font-size: 20px;
+        line-height: 1.2;
+        text-align: justify;
+        
+      margin-top: 10px;
+        margin-bottom: 0;
+        margin-left: 10px;
+        padding-top: 0;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-left: 12px;
+        position: relative;
+        display: block;
+      }.artikel_44 {
+        font-size: 21px;
+        line-height: 1.1;
+        text-align: justify;
+        
+      margin-top: 20px;
+        margin-bottom: 6px;
+        margin-left: 15px;
+        padding-top: 0;
+        padding-right: 12px;
+        padding-bottom: 0;
+        padding-left: 12px;
+        position: relative;
+        display: block;
+      }.artikel_45 {
+        font-size: 21px;
+        line-height: 1.3;
+        text-align: justify;
+        
+      margin-top: 10px;
+        margin-bottom: 4px;
+        margin-left: 0;
+        padding-top: 0;
+        padding-right: 10px;
+        padding-bottom: 5px;
+        padding-left: 12px;
+        position: relative;
+        display: block;
+      }.artikel_46 {
+        font-size: 20px;
+        line-height: 1.3;
+        text-align: left;
+        
+      margin-top: 10px;
+        margin-bottom: 6px;
+        margin-left: 20px;
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        position: relative;
+        display: block;
+      }.artikel_47 {
+        font-size: 21px;
+        line-height: 1.1;
+        text-align: left;
+        
+      margin-top: 10px;
+        margin-bottom: 0;
+        margin-left: 0;
+        padding-top: 5px;
+        padding-right: 12px;
+        padding-bottom: 0;
+        padding-left: 12px;
+        position: relative;
+        display: block;
+      }.artikel_48 {
+        font-size: 21px;
+        line-height: 1.1;
+        text-align: left;
+        
+      margin-top: 20px;
+        margin-bottom: 6px;
+        margin-left: 20px;
+        padding-top: 5px;
+        padding-right: 10px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+        position: relative;
+        display: block;
+      }.artikel_49 {
+        font-size: 20px;
+        line-height: 1.1;
+        text-align: justify;
+        
+      margin-top: 10px;
+        margin-bottom: 4px;
+        margin-left: 25px;
+        padding-top: 5px;
+        padding-right: 12px;
+        padding-bottom: 5px;
+        padding-left: 12px;
+        position: relative;
+        display: block;
+      }.artikel_50 {
+        font-size: 20px;
+        line-height: 1.3;
+        text-align: justify;
+        
+      margin-top: 20px;
+        margin-bottom: 4px;
+        margin-left: 10px;
+        padding-top: 5px;
+        padding-right: 12px;
+        padding-bottom: 0;
+        padding-left: 12px;
+        position: relative;
+        display: block;
+      }.data-table {
+        border-collapse: separate;
+        border-spacing: 0;
+        width: 95%;
+        margin: 10px 0;
+        box-shadow: 1px 4px 1px rgba(0,0,0,0.1);
+        border-radius: 2px;
+        overflow: hidden;
+        font-size: 21px;
+      }
+
+      .data-table th, .data-table td {
+        text-align: left;
+        padding: 12px 4px;
+      }
+
+      .data-table th {
+        background-color: #f0f0e6;
+        padding-left: 14px;
+        font-weight: bold;
+        color: #242424;
+        font-weight: normal;
+        font-size: 21px;
+      }
+
+      .data-table tbody tr:nth-child(odd) {
+        background-color: #f8f8f8;
+      }
+
+      .data-table tbody tr:hover {
+        background-color: #ffffff;
+      }
+
+      /* Stil für zusätzliche vertikale Linien */
+      .data-table td::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: #ebebeb;
+      }
+
+      /* Letzte Zelle einer Zeile soll keine vertikale Linie haben */
+      .data-table td:last-child::after {
+        display: none;
+      }
+
+      .level-gap {
+        display: block; /* Oder `inline-block`, je nachdem, wie Sie es anzeigen möchten */
+        margin-bottom: 6px; /* Passt den unteren Rand an, um Platz zu schaffen */
+      }
+
+      .data-table .data-content {
+        line-height: 1.5; /* Erhöht den Zeilenabstand; Wert nach Bedarf anpassen */
+      }.datum_51 {
+        position: absolute;
+        top:784px;
+        left:348px;
+      }.stempelbild_61 img {
+        display: block;
+        margin: 0 auto; /* Zentriert das Bild */
+        position: absolute;
+        top: 772px;
+        left:155px;
+        max-width: 200px; /* Verhindert, dass das Bild größer als seine natürliche Breite angezeigt wird */
+        max-height: 100%; /* Verhindert, dass das Bild größer als seine natürliche Höhe angezeigt wird */
+        width: auto; /* Behält das Seitenverhältnis bei, wenn die Höhe angepasst wird */
+        height: auto; /* Behält das Seitenverhältnis bei, wenn die Breite angepasst wird */
+      }.stempelbild_unten_mittig_71 img {
+        display: block;
+        margin: 0 auto; /* Zentriert das Bild */
+        position: absolute;
+        top:878px;
+        left:229px;
+        max-width: 400px; /* Verhindert, dass das Bild größer als seine natürliche Breite angezeigt wird */
+        max-height: 100%; /* Verhindert, dass das Bild größer als seine natürliche Höhe angezeigt wird */
+        width: auto; /* Behält das Seitenverhältnis bei, wenn die Höhe angepasst wird */
+        height: auto; /* Behält das Seitenverhältnis bei, wenn die Breite angepasst wird */
+      }.bueroklammer-img {
+      display: block;
+      margin: 0 auto; /* Zentriert das Bild */
+      width: 35px; /* Breite des Bildes */
+      position: absolute;
+      top: 0px;
+      left:px; /* Dynamischer Abstand von links */
+    }
+
+    </style>
+  </head>
+  <body>
+
+
+
+<br><br>
+
+
+<div class="hauptueberschrift_1">
+  <span>Nächste rund weiter liegen</span>
+</div><div class="artikel_41">
+  <span>Zu daran Schiff nehmen ja See. Acht setzen Nacht heißen Mann.</span>
+</div><div class="typueberschrift_11">
+  <span>Glauben Minute weinen warm Sommer Sache Schüler weiß schnell kennen grün Stadt</span>
+</div><table class="data-table">
+  <thead>
+    <tr>
+      <th colspan="3">
+        <div class="artikel_0">
+          <span>Richtig mehr Geschichte Geld Loch bald Jahr tief zehn schon für geben tun Freund wo wirklich klettern gehen klein Hilfe Glück.</span>
+        </div></th>
+    </tr>
+  </thead>
+  <tbody><tr>
+      <td>
+        <span>1</span>
+      </td>
+      <td>
+        <span>Beschreibt die Zahl der Achsen</span>
+      </td>
+      <td><strong>a)</strong><span class="level-2_1">I:</span> &nbsp;<span class="data-content">130</span> <span class="data-content">PS</span><span class="level-2_2">II:</span> &nbsp;<span class="data-content">1095</span> <span class="data-content">kg</span><span class="level-2_3">III:</span> &nbsp;<span class="data-content">240</span> <span class="data-content">Watt</span><br><strong>b)</strong><span class="level-2_4">I:</span> &nbsp;<span class="data-content">606</span> <span class="data-content">Watt</span><span class="level-2_5">II:</span> &nbsp;<span class="data-content">116</span> <span class="data-content">dB</span><span class="level-2_6">III:</span> &nbsp;<span class="data-content">1398</span> <span class="data-content">PS</span><span class="level-2_7">IV:</span> &nbsp;<span class="data-content">556</span> <span class="data-content">Watt</span><br><strong>c)</strong><span class="level-2_8">I:</span> &nbsp;<span class="data-content">1229</span> <span class="data-content">kW</span><span class="level-2_9">II:</span> &nbsp;<span class="data-content">498</span> <span class="data-content">m³</span><span class="level-2_10">III:</span> &nbsp;<span class="data-content">934</span> <span class="data-content">g/cm³</span><br></td>
+    </tr><tr>
+      <td>
+        <span>2</span>
+      </td>
+      <td>
+        <span>Beschreibt die Nutzlast</span>
+      </td>
+      <td><strong>a)</strong><span class="level-2_11">I:</span> &nbsp;<span class="data-content">1339</span> <span class="data-content">Bar</span><span class="level-2_12">II:</span> &nbsp;<span class="data-content">182</span> <span class="data-content">MHz</span><span class="level-2_13">III:</span> &nbsp;<span class="data-content">698</span> <span class="data-content">Liter</span><span class="level-2_14">IV:</span> &nbsp;<span class="data-content">518</span> <span class="data-content">kW</span><br><strong>b)</strong><span class="level-2_15">I:</span> &nbsp;<span class="data-content">658</span> <span class="data-content">cm</span><span class="level-2_16">II:</span> &nbsp;<span class="data-content">1494</span> <span class="data-content">kW</span><span class="level-2_17">III:</span> &nbsp;<span class="data-content">1300</span> <span class="data-content">kg</span><span class="level-2_18">IV:</span> &nbsp;<span class="data-content">507</span> <span class="data-content">cm</span><br><strong>c)</strong><span class="level-2_19">I:</span> &nbsp;<span class="data-content">1449</span> <span class="data-content">Watt</span><span class="level-2_20">II:</span> &nbsp;<span class="data-content">225</span> <span class="data-content">m/s²</span><span class="level-2_21">III:</span> &nbsp;<span class="data-content">1305</span> <span class="data-content">Volt</span><span class="level-2_22">IV:</span> &nbsp;<span class="data-content">776</span> <span class="data-content">cm</span><br><strong>d)</strong><span class="level-2_23">I:</span> &nbsp;<span class="data-content">519</span> <span class="data-content">kW</span><span class="level-2_24">II:</span> &nbsp;<span class="data-content">790</span> <span class="data-content">Nm</span><span class="level-2_25">III:</span> &nbsp;<span class="data-content">54</span> <span class="data-content">°C</span><span class="level-2_26">IV:</span> &nbsp;<span class="data-content">631</span> <span class="data-content">g/cm³</span><br></td>
+    </tr><tr>
+      <td>
+        <span>3</span>
+      </td>
+      <td>
+        <span>Beschreibt den Listenpreis</span>
+      </td>
+      <td><strong>a)</strong><span class="level-2_27">I:</span> &nbsp;<span class="data-content">1124</span> <span class="data-content">Ohm</span><span class="level-2_28">II:</span> &nbsp;<span class="data-content">807</span> <span class="data-content">Nm</span><span class="level-2_29">III:</span> &nbsp;<span class="data-content">391</span> <span class="data-content">km/h</span><span class="level-2_30">IV:</span> &nbsp;<span class="data-content">618</span> <span class="data-content">cm³</span><br><strong>b)</strong><span class="level-2_31">I:</span> &nbsp;<span class="data-content">1382</span> <span class="data-content">Watt</span><span class="level-2_32">II:</span> &nbsp;<span class="data-content">694</span> <span class="data-content">°C</span><span class="level-2_33">III:</span> &nbsp;<span class="data-content">441</span> <span class="data-content">m/s²</span><br><strong>c)</strong><span class="level-2_34">I:</span> &nbsp;<span class="data-content">1390</span> <span class="data-content">Bar</span><span class="level-2_35">II:</span> &nbsp;<span class="data-content">1462</span> <span class="data-content">Volt</span><span class="level-2_36">III:</span> &nbsp;<span class="data-content">1317</span> <span class="data-content">g/cm³</span><br></td>
+    </tr><tr>
+      <td>
+        <span>4</span>
+      </td>
+      <td>
+        <span>Beschreibt die Farbe des Fahrzeugs</span>
+      </td>
+      <td><strong>a)</strong><span class="level-2_37">I:</span> &nbsp;<span class="data-content">1360</span> <span class="data-content">PS</span><span class="level-2_38">II:</span> &nbsp;<span class="data-content">621</span> <span class="data-content">g/cm³</span><span class="level-2_39">III:</span> &nbsp;<span class="data-content">1213</span> <span class="data-content">g/cm³</span><span class="level-2_40">IV:</span> &nbsp;<span class="data-content">1435</span> <span class="data-content">cm</span><br><strong>b)</strong><span class="level-2_41">I:</span> &nbsp;<span class="data-content">1364</span> <span class="data-content">Bar</span><span class="level-2_42">II:</span> &nbsp;<span class="data-content">1230</span> <span class="data-content">km/h</span><span class="level-2_43">III:</span> &nbsp;<span class="data-content">1291</span> <span class="data-content">Liter</span><span class="level-2_44">IV:</span> &nbsp;<span class="data-content">1198</span> <span class="data-content">cm</span><br></td>
+    </tr><tr>
+      <td>
+        <span>5</span>
+      </td>
+      <td>
+        <span>Anzahl der Räder</span>
+      </td>
+      <td><strong>a)</strong><span class="level-2_45">I:</span> &nbsp;<span class="data-content">721</span> <span class="data-content">Volt</span><span class="level-2_46">II:</span> &nbsp;<span class="data-content">1322</span> <span class="data-content">m³</span><span class="level-2_47">III:</span> &nbsp;<span class="data-content">620</span> <span class="data-content">km/h</span><span class="level-2_48">IV:</span> &nbsp;<span class="data-content">1435</span> <span class="data-content">m³</span><br><strong>b)</strong><span class="level-2_49">I:</span> &nbsp;<span class="data-content">107</span> <span class="data-content">Ohm</span><span class="level-2_50">II:</span> &nbsp;<span class="data-content">430</span> <span class="data-content">Ampere</span><span class="level-2_51">III:</span> &nbsp;<span class="data-content">951</span> <span class="data-content">Ampere</span><span class="level-2_52">IV:</span> &nbsp;<span class="data-content">190</span> <span class="data-content">MHz</span><br><strong>c)</strong><span class="level-2_53">I:</span> &nbsp;<span class="data-content">244</span> <span class="data-content">dB</span><span class="level-2_54">II:</span> &nbsp;<span class="data-content">1232</span> <span class="data-content">kW</span><span class="level-2_55">III:</span> &nbsp;<span class="data-content">1081</span> <span class="data-content">m/s²</span><span class="level-2_56">IV:</span> &nbsp;<span class="data-content">1465</span> <span class="data-content">kg</span><br></td>
+    </tr><tr>
+      <td>
+        <span>6</span>
+      </td>
+      <td>
+        <span>Gibt Gewichte an</span>
+      </td>
+      <td><strong>a)</strong><span class="level-2_57">I:</span> &nbsp;<span class="data-content">1291</span> <span class="data-content">dB</span><span class="level-2_58">II:</span> &nbsp;<span class="data-content">1363</span> <span class="data-content">Ohm</span><span class="level-2_59">III:</span> &nbsp;<span class="data-content">984</span> <span class="data-content">g/cm³</span><br><strong>b)</strong><span class="level-2_60">I:</span> &nbsp;<span class="data-content">755</span> <span class="data-content">Nm</span><span class="level-2_61">II:</span> &nbsp;<span class="data-content">683</span> <span class="data-content">cm³</span><span class="level-2_62">III:</span> &nbsp;<span class="data-content">601</span> <span class="data-content">PS</span><br><strong>c)</strong><span class="level-2_63">I:</span> &nbsp;<span class="data-content">294</span> <span class="data-content">m³</span><span class="level-2_64">II:</span> &nbsp;<span class="data-content">154</span> <span class="data-content">m/s²</span><span class="level-2_65">III:</span> &nbsp;<span class="data-content">415</span> <span class="data-content">km/h</span><span class="level-2_66">IV:</span> &nbsp;<span class="data-content">1160</span> <span class="data-content">kg</span><br><strong>d)</strong><span class="level-2_67">I:</span> &nbsp;<span class="data-content">158</span> <span class="data-content">kg</span><span class="level-2_68">II:</span> &nbsp;<span class="data-content">89</span> <span class="data-content">Ampere</span><span class="level-2_69">III:</span> &nbsp;<span class="data-content">195</span> <span class="data-content">Nm</span><span class="level-2_70">IV:</span> &nbsp;<span class="data-content">392</span> <span class="data-content">Ohm</span><br></td>
+    </tr></tbody>
+</table>
+
+
+
+
+
+
+<div class="typueberschrift_12">
+  <span>Lachen Jahr als eigentlich klein sofort ab gleich Ferien einfach wohnen vergessen mögen denn spät nach freuen spät Hase gern reiten arbeiten packen Leute unter Licht Zeit zum vier Gesicht Eis beißen Freund Polizei dauern hoch auch springen Tür Baum halbe vergessen haben Monat müssen acht</span>
+</div><div class="artikel_42">
+  <span>Schaffen neu fest krank ob dein holen dauern neu treffen Bett fallen bin zu Licht sagen Küche wenn hinter Loch fest Sohn bald reich.</span>
+</div><div class="datum_51">
+  <span>2022-01-12</span>
+</div><div class="stempelbild_61">
+    <img src="../../../static/images/stempel/stempel (28).png" alt="Stempelbild" />
+  </div><div class="stempelbild_unten_mittig_71">
+    <img src="../../../static/images/stempel/unten_mittig/stempel_unten_mittig (16).png" alt="Stempelbild_unten_mittig" />
+  </div></body>
+  </html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <title>Typgutachten</title>
+    <style>
+        {#-/* Zufällige left-px-Berechnung für Büroklammerbild*/-#}
+        {%- set left_position_klammer = range(5, 100)|random -%}
+
+        {#-/* Zufällige Positions-px-Berechnung für allgemeine StempelBilder*/-#}
+        {%- set stempelbild_position_top = range(1100, 1180)|random -%}
+        {%- set stempelbild_position_left = range(350, 380)|random -%}
+
+        {#-/* Zufällige Positions-px-Berechnung für StempelBilder, welche nur unten_mittig sind!!! */-#}
+        {%- set stempelbild_unten_mittig_position_top = range(1400, 1500)|random -%}
+        {%- set stempelbild_unten_mittig_position_left = range(300, 350)|random -%}
+
+        {#- /* Zufällige Positions-px-Berechnung für StempelBilder */ -#}
+        {%- set datum_position_top = range(820, 825)|random -%}
+        {%- set datum_position_left = range(325, 380)|random -%}
+
+        {#- /* Zufällige Positions-px-Berechnung für Adresse */ -#}
+        {%- set adresse_position_top = range(90, 100)|random -%}
+        {%- set adresse_position_left = range(860, 915)|random -%}
+
+        {#- /* Zufällige Positions-px-Berechnung für Firmenname  (oft rechts oben) */ -#}
+        {%- set firmenname_position_top = range(60, 90)|random -%}
+        {%- set firmenname_position_left = range(180, 120)|random -%}
+
+        {#- /* Zufällige Positions-px-Berechnung für Seitennummer_1 (oben) */ -#}
+        {%- set seitennummer_1_position_top = range(30, 50)|random -%}
+        {%- set seitennummer_1_position_left = range(600, 620)|random -%}
+
+        {#- /* Zufällige Positions-px-Berechnung für Seitennummer_2 (oben) */ -#}
+        {%- set seitennummer_2_position_top = range(1530, 1600)|random -%}
+        {%- set seitennummer_2_position_left = range(1090, 1120)|random -%}
+
+        {#- /* zeigt "entfällt" ODER eine Zufallszahl an -> Siehe in Liste */ -#}
+        {% set option = ['entfällt', fake.random_int(550, 950)] | random %}
+        {{ option if option == 'entfällt' else option ~ ' kg' }}
+
+        {#- /* Nummerierung der Tabelle */ -#}
+        {% set startnummer = range(1, 14) | random %}
+        {% set num = namespace(value=startnummer) %}
+
+        @font-face {
+            font-family: "Corona 3 Typewriter";
+            src: url("../static/fonts/Corona-3-Typewriter.ttf") format("truetype");
+        }
+
+        html {
+            font-family: "Corona-3-Typewriter";
+        }
+
+        body {
+            margin: 7rem 2rem 0;
+            padding: 0;
+            font-family: "Corona 3 Typewriter";
+            background: white;
+            font-size: 22px;
+            margin-left: 4rem;
+        }
+
+
+        .fixed-width-cell {
+            width: 260px; /* Festgelegte Breite der Zelle */
+            word-wrap: break-word; /* Text innerhalb der Zelle umbrechen */
+            white-space: normal; /* Normalen Umbruch des Texts aktivieren */
+        }
+
+
+        .custom-left-shift {
+            margin-left: -130px; /* Passen Sie diesen Wert entsprechend an */
+        }
+
+
+
+        .sonder_Text {
+            position: absolute;
+            top: {{- firmenname_position_top -}}px;
+            left: {{- firmenname_position_left -}}px;
+            font-size: 24px;
+            line-height: 0.4;
+        }
+          
+        .sonder_Text .company-name {
+            letter-spacing: 6px; /* Beispiel: Buchstabenabstand von 6 Pixel */
+        }
+          
+        .sonder_Text .line {
+            display: block;
+            border-bottom: 1px solid black;
+            margin: 10px 0; /* Passt den Abstand an, damit die Linie in der Mitte ist */
+        }
+
+        .seitennummer_1 {
+            position: absolute;
+            top: {{- seitennummer_1_position_top -}}px;
+            left: {{- seitennummer_1_position_left -}}px;
+            font-size: 24px;
+        }
+
+        .seitennummer_2 {
+            position: absolute;
+            top: {{- seitennummer_2_position_top -}}px;
+            left: {{- seitennummer_2_position_left -}}px;
+            font-size: 24px;
+        }
+
+        .haupt_tabelle {
+            width: 90%;
+            margin-top: 13rem;
+            margin-left: 2.2rem;
+            border: none;
+        }
+
+        .haupt_tabelle th, .haupt_tabelle td {
+            padding: 0px;
+            text-align: left;
+            vertical-align: top;
+            font-weight: normal;
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
+
+        .haupt_tabelle th span {
+            text-decoration: none;
+        }
+
+
+
+        .haupt_tabelle th .unterstrichen {
+            text-decoration: underline;
+        }
+
+        .haupt_tabelle td[colspan] {
+            text-align: left;
+        }
+
+
+
+        .unterstrichen {
+            text-decoration: underline;
+        }
+
+        /* Erste und zweite innere Tabelle */
+        .inner_tabelle_1, .inner_tabelle_2 {            
+            width: 100%;
+            border-collapse: collapse;
+            border: none;
+            margin-left: 30px; /* Einheitlicher Einzug für alle Tabellen */
+        }
+
+        .inner_tabelle_1 th, .inner_tabelle_1 td, .inner_tabelle_2 th, .inner_tabelle_2 td {
+            padding-top: 8px;
+            padding-right: 8px;
+            vertical-align: middle;
+            text-align: center;
+            line-height: 0.2;
+            height: 3rem;
+
+        }
+
+        .cell-number-line_1, .cell-number-line_2 {
+            text-align: left;
+            margin-left: 4rem;
+            margin-right: 4rem;
+        }
+
+        .cell-content_1, .cell-content_2 {
+            display: inline-block;
+            text-align: center;
+        }
+
+
+
+        /* Dritte, vierte und fünfte innere Tabelle */
+        .inner_tabelle_3 {
+            width: 440px;
+            border-collapse: collapse;
+            margin-top: 4px;
+        }
+
+    
+        .inner_tabelle_3 td:nth-child(3) { /* Fünfte Spalte auswählen */
+            padding-left: 5px;
+            padding-right: 5px;
+                    }
+
+        .inner_tabelle_3 td:nth-child(4) { /* Fünfte Spalte auswählen */
+            padding-left: 5px;
+            padding-right: 5px;
+                    }
+
+        .inner_tabelle_3 td:nth-child(5) { /* Fünfte Spalte auswählen */
+            padding-left: 5px;
+            padding-right: 5px;
+                    }
+
+
+
+
+
+
+        .inner_tabelle_4 {
+            width: 300px;
+            border-collapse: collapse;
+            margin-top: 4px;
+        }
+
+        .inner_tabelle_4 td:nth-child(2) { /* Fünfte Spalte auswählen */
+            padding-right: 5px;
+                    }
+
+        .inner_tabelle_4 td:nth-child(3) { /* Fünfte Spalte auswählen */
+            padding-left: 5px;
+            padding-right: 5px;
+                    }
+
+        .inner_tabelle_4 td:nth-child(4) { /* Fünfte Spalte auswählen */
+            padding-left: 5px;
+            padding-right: 5px;
+                    }
+
+        .inner_tabelle_4 td:nth-child(5) { /* Fünfte Spalte auswählen */
+            padding-left: 5px;
+            padding-right: 5px;
+                    }
+
+
+
+
+
+                    
+        .inner_tabelle_5 {
+            width: 300px;
+            border-collapse: collapse;
+            margin-top: 4px;
+        }
+
+        .inner_tabelle_5 td:nth-child(3) { /* Fünfte Spalte auswählen */
+            padding-left: 5px;
+            padding-right: 5px;
+                    }
+
+        .inner_tabelle_5 td:nth-child(4) { /* Fünfte Spalte auswählen */
+            padding-left: 5px;
+            padding-right: 5px;
+                    }
+
+        .inner_tabelle_5 td:nth-child(5) { /* Fünfte Spalte auswählen */
+            padding-left: 5px;
+            padding-right: 5px;
+                    }
+
+
+
+
+        .inner_tabelle_3, .inner_tabelle_4, .inner_tabelle_5 {
+            line-height: 0.7;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
+
+        .inner_tabelle_6, .inner_tabelle_7, .inner_tabelle_8 {
+            line-height: 0.52;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
+
+
+        .inner_tabelle_6, .inner_tabelle_7, .inner_tabelle_8, .inner_tabelle_9, .inner_tabelle_10 {
+            margin-left: -240px;
+        }
+
+
+
+
+        .nummeriert {
+            display: inline-block;
+            width: 40px; /* Breite der Spalte für die Nummern */
+            text-align: left;
+        }
+
+        .text-nach-nummer {
+            display: inline-block;
+            text-align: left;
+            vertical-align: top; /* sorgt dafür, dass der Text oben ausgerichtet wird */
+        }
+
+
+        .spezieller-einzug {
+            margin-left: 50px; /* Oder den genauen Wert, der für "a)" verwendet wird */
+        }
+
+        hr {
+            margin: 8px 0;
+             
+            border-top: 1px solid black;
+        }
+
+        .bueroklammer-img {
+            display: block;
+            margin: 0 auto; /* Zentriert das Bild */
+            width: 35px; /* Breite des Bildes */
+            position: absolute;
+            top: 0px;
+            left: {{- left_position_klammer }}px; /* Dynamischer Abstand von links */
+        }
+
+        
+                /* Neue Klassen für Einzüge */
+        .indent-0 {
+            padding-left: 50px; /* Einzug für erste Ebene */
+        }
+
+        /* Neue Klassen für Einzüge */
+        .indent-1 {
+            padding-left: 40px; /* Einzug für erste Ebene */
+        }
+
+        .indent-2 {
+            padding-left: 45px; /* Einzug für zweite Ebene */
+        }
+
+        .indent-3 {
+            padding-left: 45px; /* Einzug für dritte Ebene */
+        }
+
+        
+
+    </style>
+</head>
+<body>
+
+    {% if
+        klammer_bildpfad and show_image_chance <= 35 %}
+        {# Bild anzeigen in 35% der
+      Fälle #}
+        <span class="bueroklammer-img">
+          <img src="{{ klammer_bildpfad }}"
+               alt="Büroklammer"
+               class="bueroklammer-img" />
+        </span>
+      {% endif %}
+
+    <span class="seitennummer_1">- {{ fake.random_int(1, 9) }} -</span>
+
+    <div class="sonder_Text">
+        <span class="company-name">Nr.</span>  <span>{{ fake.random_int(10, 800) }}</span>
+        <span class="line"></span>
+        <span>Typ:</span> <span>{{ fake.random_int(10, 800) }}</span>  
+    </div>
+
+    <table class="haupt_tabelle">
+        <tr>
+            <th><span class="nummeriert">{{ num.value }}.{% set num.value = num.value + 1 %}</span> <span class="unterstrichen">{{ get_random_beschreibung() }}:</span></th>
+            <td class="fixed-width-cell">
+                <span class="custom-left-shift">{{ fake.company().replace("GmbH", "Corp").replace("AG", "Industries") }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <span class="nummeriert">{{ num.value }}.{% set num.value = num.value + 1 %}</span>
+                <span class="text-nach-nummer">
+                    <span class="unterstrichen">{{ get_random_beschreibung() }}:</span><br>
+                    <span>a)</span><span> {{ get_random_beschreibung() }}:</span>
+                </span>
+                <table class="inner_tabelle_1">
+                    <tr>
+                        <td><span>mit Aufbau</span></td>
+                        <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+                        <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+                        <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+                    </tr>
+                    <tr>
+                        <td><span>mit Aufbau</span></td>
+                        <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+                        <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+                        <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <span class="spezieller-einzug">b)</span> <span> {{ get_random_beschreibung() }}:</span>
+            </th>
+            <td><span style="margin-left: -200px;">wie unter</span> <span>4a)</span></td>
+        </tr>
+        <tr>
+            <th><span class="nummeriert">{{ num.value }}.{% set num.value = num.value + 1 %}</span> <span class="unterstrichen">{{ get_random_beschreibung() }}:</span></th>
+            <td><span style="margin-left: -200px;">{{ option if option == 'entfällt' else option ~ ' kg' }}</span></td>
+        </tr>
+        <tr>
+            <th><span class="nummeriert">{{ num.value }}.{% set num.value = num.value + 1 %}</span> <span class="unterstrichen">{{ get_random_beschreibung() }}:</span></th>
+            <td><span style="margin-left: -200px;">{{ fake.random_int(550, 950) }} </span> <span>kg</span></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <span class="nummeriert">{{ num.value }}.{% set num.value = num.value + 1 %}</span> <span class="unterstrichen">Nutzlast:</span><br><span class="indent-1">&nbsp;Lastanhänger:</span>
+                <!-- Zweite innere Tabelle -->
+                <table class="inner_tabelle_2">
+                    <tr>
+                        <td><span>mit Aufbau</span></td>
+                        <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+                        <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+                        <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+                    </tr>
+                    <tr>
+                        <td><span>mit Aufbau</span></td>
+                        <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+                        <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+                        <th><div class="cell-number-line_1"><span>{{ fake.random_int(55, 98) }} </span><hr></div><div class="cell-content_1"><span>{{ fake.random_int(199, 870) }}</span>-<span>{{ fake.random_int(199, 870) }} </span><span>kg</span></div></th>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <th><span class="nummeriert">{{ num.value }}.{% set num.value = num.value + 1 %}</span> <span class="unterstrichen">{{ get_random_beschreibung() }}:</span>
+                <table class="inner_tabelle_3">
+                    <tr>
+                        <td></td>
+                        <td><span class="indent-0">a) </span><span> Länge:</span></td>
+                        <td><span>beim</span></td>
+                        <td><span>Aufbau</span></td>
+                        <td><span>70:</span></td>
+                    </tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 42px;">"</td><td style="width: 100px;"><span>{{ fake.random_int(55, 98) }}:</span></td></tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 42px;">"</td><td  style="width: 100px;"><span>{{ fake.random_int(55, 98) }}:</span></td></tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 42px;">"</td><td  style="width: 100px;"><span>{{ fake.random_int(55, 98) }}:</span></td></tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 42px;">"</td><td  style="width: 100px;"><span>{{ fake.random_int(55, 98) }}:</span></td></tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 42px;">"</td><td  style="width: 100px;"><span>{{ fake.random_int(55, 98) }}:</span></td></tr>
+                </table>
+
+                <table class="inner_tabelle_4">
+                    <tr> 
+                        <td></td>  
+                        <td><span class="indent-1">&nbsp;&nbsp;&nbsp;Breite:</span></td>
+                        <td><span>beim</span></td>
+                        <td><span>Aufbau</span></td>
+                        <td><span><span>{{ fake.random_int(55, 98) }}</span>,<span>{{ fake.random_int(55, 98) }}</span>,<span>{{ fake.random_int(55, 98) }};</span></span></td>
+                    </tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 28px;">"</td><td style="width: 100px;"><span>{{ fake.random_int(55, 98) }}:</span></td></tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 28px;">"</td><td style="width: 100px;"><span>{{ fake.random_int(55, 98) }}:</span></td></tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 28px;">"</td><td style="width: 100px;"><span>{{ fake.random_int(55, 98) }}:</span></td></tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 28px;">"</td><td style="width: 100px;"><span>{{ fake.random_int(55, 98) }}:</span></td></tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 28px;">"</td><td style="width: 100px;"><span>{{ fake.random_int(55, 98) }}:</span></td></tr>
+                </table>
+
+                <table class="inner_tabelle_5">
+                    <tr>
+                        <td></td>
+                        <td><span class="indent-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Höhe:</span></td>
+                        <td><span>beim</span></td>
+                        <td><span>Aufbau</span></td>
+                        <td ><span>{{ fake.random_int(55, 98) }}</span>,<span>{{ fake.random_int(55, 98) }}</span>,<span>{{ fake.random_int(55, 98) }};</span></td>
+                    </tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 28px;">"</td><td><span>{{ fake.random_int(55, 98) }}:</span></td></tr>
+                    <tr><td></td><td></td><td style="padding-left: 28px;">"</td><td style="padding-left: 28px;">"</td><td><span>{{ fake.random_int(55, 98) }}:</span></td></tr>  
+                </table>
+            </th>
+            <th style="padding-left: 40px">
+                <br>
+                <table class="inner_tabelle_6">
+                    <tr>
+                        <td><span>{{ fake.random_int(1100, 3800) }}</span></td>
+                        <td><span style="padding-left: 8px;">mm</span></td>                
+                    </tr>
+                    <tr><td><span>{{ fake.random_int(800, 2300) }}</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>
+                    <tr><td><span>{{ fake.random_int(800, 2300) }}</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>
+                    <tr><td><span>{{ fake.random_int(800, 2300) }}</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>
+                    <tr><td><span>{{ fake.random_int(800, 2300) }}</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>
+                    <tr><td><span>{{ fake.random_int(800, 2300) }}</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>
+                </table>
+
+
+                <table class="inner_tabelle_7">
+                    <tr>
+                        <td><span>{{ fake.random_int(1100, 3800) }}</span></td>
+                        <td><span style="padding-left: 8px;">mm</span></td>                 
+                    </tr>
+                    <tr><td><span>{{ fake.random_int(800, 2300) }}</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>
+                    <tr><td><span>{{ fake.random_int(800, 2300) }}</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>
+                    <tr><td><span>{{ fake.random_int(800, 2300) }}</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>
+                    <tr><td><span>{{ fake.random_int(800, 2300) }}</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>
+                    <tr><td><span>{{ fake.random_int(800, 2300) }}</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>
+                </table>
+
+
+                <table class="inner_tabelle_8">
+                    <tr>
+                        <td><span>{{ fake.random_int(300, 700) }}</span>-<span>{{ fake.random_int(800, 2300) }}</span></td>
+                        <td><span style="padding-left: 8px;">mm</span></td>                
+                    </tr>
+                    <tr><td><span>{{ fake.random_int(300, 700) }}</span>-<span>{{ fake.random_int(800, 2300) }}</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>
+                    <tr><td><span>{{ fake.random_int(300, 700) }}</span>-<span>{{ fake.random_int(800, 2300) }}</span></td><td><span style="padding-left: 8px;">mm</span></td></tr>  
+                </table>
+
+            </th>
+            <td></td>
+        </tr>
+        <tr>
+            <th><span class="indent-1">b)</span><span>{{ get_random_beschreibung() }}:</span><br><span class="indent-1">c)</span><span>{{ get_random_beschreibung() }}:</span></th>
+            <td style="padding-left: 40px">
+                <table class="inner_tabelle_9">
+                    <tr>
+                        <td><span>{{ fake.random_int(350, 999) }}</span> <span style="padding-left: 8px;">mm</span></td>                              
+                    </tr>
+                    <tr><td><span>Holz</span> <span>{{ fake.random_int(14, 48) }}</span><span style="padding-left: 8px;">mm.</span></td></tr>                   
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <th><span class="nummeriert">{{ num.value }}.{% set num.value = num.value + 1 %}</span><span class="unterstrichen">{{ get_random_beschreibung() }}:</span><br> <span class="indent-2">a)</span><span>{{ get_random_beschreibung() }}:</span><br><span class="indent-2">b)</span> <span>{{ get_random_beschreibung() }}:</span></th>
+            <td style="padding-left: 40px">
+                <table class="inner_tabelle_10">
+                    <tr>
+                        <td><span>Luft einfach</span></td>               
+                    </tr>
+                    <tr><td><span>{{ "%.2f"|format(fake.random_number(digits=1) + fake.random.uniform(0, 1)) }}-{{ "%.2f"|format(fake.random_number(digits=2) + fake.random.uniform(0, 1)) }}
+                    </span> <span>mm</span></td></tr>                   
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <span class="seitennummer_2">- {{ fake.random_int(1, 9) }} -</span>
+
+</body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <title>Typgutachten</title>
+    <style>        673 kg
+        
+
+        @font-face {
+            font-family: "Corona 3 Typewriter";
+            src: url("../static/fonts/Corona-3-Typewriter.ttf") format("truetype");
+        }
+
+        html {
+            font-family: "Corona-3-Typewriter";
+        }
+
+        body {
+            margin-top: 230px;
+            margin-left: 40px;
+            padding: 20px;
+            font-family: "Corona 3 Typewriter";
+            background: white;
+            font-size: 24px;
+            margin-left: 4rem;
+        }
+
+
+
+        
+        .hauptueberschrift {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 120px;
+            margin-bottom: 1rem;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+        }
+
+
+        .sonder_Text {
+            position: absolute;
+            top:167px;
+            left:px;
+            font-size: 24px;
+            line-height: 0.4;
+        }
+          
+        .sonder_Text .company-name {
+            letter-spacing: 6px; /* Beispiel: Buchstabenabstand von 6 Pixel */
+        }
+
+        .blatt_nummer {
+            letter-spacing: 6px; /* Beispiel: Buchstabenabstand von 6 Pixel */
+        }
+          
+        .sonder_Text .line {
+            display: block;
+            margin: 10px 0; /* Passt den Abstand an, damit die Linie in der Mitte ist */
+            border: 1px solid black; /* Setzt eine Linie mit 1 Pixel Dicke */
+        }
+
+        .sonder_Text, .haupt_tabelle td {
+            hyphens: auto;
+        }
+
+        .seitennummer_1 {
+            position: absolute;
+            top:144px;
+            left:616px;
+            font-size: 24px;
+        }
+
+        .seitennummer_2 {
+            position: absolute;
+            top:1581px;
+            left:1091px;
+            font-size: 24px;
+        }
+
+        .haupt_tabelle {
+            width: 95%;
+            margin-top: 20px;
+            line-height: 0.8;
+        }
+
+        .haupt_tabelle th, .haupt_tabelle td {
+            padding: 10px 10px;
+            text-align: left;
+            vertical-align: top;
+            font-weight: normal;
+        }
+
+        .haupt_tabelle td:nth-child(1) {
+            width: 7%; /* Breite der ersten Spalte */
+        }
+
+        .haupt_tabelle td:nth-child(2) {
+            width: 7%; /* Breite der ersten Spalte */
+        }
+
+        .haupt_tabelle td:nth-child(3) {
+            width: 51%; /* Breite der ersten Spalte */
+        }
+
+        .haupt_tabelle th:first-child, .haupt_tabelle td:first-child {
+            width: 49px;
+        }
+
+        .haupt_tabelle th:nth-child(3), .haupt_tabelle td:nth-child(3) {
+            min-width: 285px; /* Setzt die minimale Breite der dritten Spalte */
+
+        }
+
+
+        .haupt_tabelle th .unterstrichen {
+            text-decoration: underline;
+        }
+
+        .haupt_tabelle td[colspan] {
+            text-align: left;
+        }
+
+
+
+
+
+
+    
+
+    
+        .inner_tabelle_LBH {
+            width: 70%; /* Die Tabelle nimmt 80% der verfügbaren Breite ein */
+            table-layout: fixed; /* Erlaubt eine feste Spaltenbreite */
+            margin-left: 20px;
+        }
+        
+        .inner_tabelle_LBH td {
+            padding: 1px 4px; /* Reduzierte Padding-Werte */
+            text-align: center; /* Standardmäßige zentrale Ausrichtung */
+        }
+        
+        /* Angabe der Breite für jede Spalte */
+        .inner_tabelle_LBH td:nth-child(1) {
+            width: 10%; /* Breite der ersten Spalte */
+        }
+        
+        .inner_tabelle_LBH td:nth-child(2) {
+            width: 7%; /* Breite der zweiten Spalte */
+        }
+        
+        .inner_tabelle_LBH td:nth-child(3) {
+            width: 10%; /* Breite der dritten Spalte */
+        }
+        
+        .inner_tabelle_LBH td:nth-child(4), 
+        .inner_tabelle_LBH td:nth-child(5), 
+        .inner_tabelle_LBH td:nth-child(6) {
+            text-align: left; /* Links ausgerichteter Text für die Spalten 4, 5 und 6 */
+            width: 25%; /* Breite der vierten Spalte */
+        }
+        
+        .inner_tabelle_LBH td:nth-child(5) {
+            width: 15%; /* Breite der fünften Spalte */
+        }
+        
+        .inner_tabelle_LBH td:nth-child(6) {
+            width: 15%; /* Breite der sechsten Spalte */
+        }
+        
+        
+
+
+        .inner_tabelle_3-Spalt {
+            width: 105%; /* Die Tabelle nimmt 80% der verfügbaren Breite ein */
+            table-layout: fixed; /* Erlaubt eine feste Spaltenbreite */
+            margin-left: 60px;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .inner_tabelle_3-Spalt td {
+            padding: 1px 4px; /* Reduzierte Padding-Werte */
+            text-align: left; /* Standardmäßige zentrale Ausrichtung */
+        }
+
+        .inner_tabelle_3-Spalt td:nth-child(1) {
+            width: 7%; /* Breite der zweiten Spalte */
+        }
+
+        .inner_tabelle_3-Spalt td:nth-child(2) {
+            width: 64%; /* Breite der zweiten Spalte */
+        }
+
+        .inner_tabelle_3-Spalt td:nth-child(3) {
+            width: 76%; /* Breite der zweiten Spalte */
+        }
+
+        .inner_tabelle_3-Spalt td {
+            vertical-align: bottom;  /* Stellt sicher, dass dies überall angewendet wird */
+            height: 50px;  /* Beispielhöhe; passe dies entsprechend an */
+        }
+
+        .align-bottom {
+            vertical-align: bottom;
+        }
+
+
+
+
+        /* Alle Linien sichtbar machen
+        .haupt_tabelle th, .haupt_tabelle td {
+            border: 2px solid black;
+        }
+        
+        .inner_tabelle_LBH th, .inner_tabelle_LBH td, .inner_tabelle_3-Spalt th, .inner_tabelle_3-Spalt td {
+            border: 1px solid grey;
+        }
+        */
+
+
+        .unterstrichen {
+            text-decoration: underline;
+        }
+
+        .unterstrichen_dashed {
+            border-bottom: 4px dashed black; /* Erhöht die Dicke der gestrichelten Linie */
+            text-decoration: none;
+        }
+        
+
+        hr {          
+            border-top: 1px solid black;
+        }
+
+        .bueroklammer-img {
+            display: block;
+            margin: 0 auto; /* Zentriert das Bild */
+            width: 35px; /* Breite des Bildes */
+            position: absolute;
+            top: 0px;
+            left:97px; /* Dynamischer Abstand von links */
+        }
+
+        
+
+
+        
+
+    </style>
+</head>
+<body>
+
+
+
+
+
+    <span class="seitennummer_1">- 1 -</span>
+
+    <div class="sonder_Text">
+        <span class="blatt_nummer">Nr.</span>  <span>397</span>/<span>8</span>
+        <span class="line"></span>
+        <span>Typ:</span> <span>782</span>  
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <table class="haupt_tabelle">
+<tr>
+    <td><span>3.</span></td>
+    <td><span>b)</span></td>
+    <td>
+        <span>Bremsleuchte:<br>Hersteller, Typ und Prüfzeichen:</span>
+    </td>
+    <td><span>siehe Schlußleuchte links</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>Zahl und Ort der Anbringung:</span></td>
+    <td><span>5</span> <span>links bei der Schlußleuchte</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td><span>c)</span></td>
+    <td><span>Kennzeichenbeleuchtung:</span></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>Hersteller, Typ und Prüfzeichen:</span></td>
+    <td><span>siehe unter Schlußleuchte links</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>Ort der Anbringung:</span></td>
+    <td><span>links in Verbindung mit Schlußleuchte</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>4-poliger Stecker:</span></td>
+    <td><span>ja, durch Halter am Deichselrohr befestigt.</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>7-poliger Stecker:</span></td>
+    <td><span>nur bei Anbringung von Blinkleuchten</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td><span>d)</span></td>
+    <td><span>Rückstrahler:</span></td>
+    <td><span>Johann & Konen, Beuel früher Wuppertal-Elberfeld</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>Typ:</span></td>
+    <td><span>DR 3/4</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>Prüfzeichen:</span></td>
+    <td><span>D.</span> <span>4212</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>Anbringungshöhe über der Fahrbahn:</span></td>
+    <td><span>395</span> <span>mm</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>Abstand des Rückstrahlers von der breitesten Stelle des Fahrzeugumrisses:</span></td>
+    <td><span>57</span> <span>mm</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td><span>e)</span></td>
+    <td><span>bei Blinkleuchten:</span></td>
+    <td><span>wenn erforderlich</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>Hersteller:</span></td>
+    <td><span>Westfälische Metallindustrie<br>Hella, Lippstadt</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>Typ:</span></td>
+    <td><span>BC</span> <span>3</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>Prüfzeichen:</span></td>
+    <td><span>Y</span> <span>1</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>Höhe über der Fahrbahn:</span></td>
+    <td><span>19</span> <span>mm</span></td>
+</tr>
+<tr>
+    <td><span>4.</span></td>
+    <td colspan="2"><span class="unterstrichen_dashed">Beleuchtung:&nbsp;&nbsp;</span></td>
+    <td><span>bei geschlossener Ausführung:</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td><span>a)</span></td>
+    <td><span>Schlußleuchte:</span></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>Hersteller:</span></td>
+    <td><span>Westfälische Metallindustrie<br>Hella, Lippstadt</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>Typ:</span></td>
+    <td><span>SI11</span> <span>oder </span> <span>SK18</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>Prüfzeichen:</span></td>
+    <td><span>SR 1226</span> <span>oder</span> <span>SX 1688</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>Anbringungshöhe über der Fahrbahn:</span></td>
+    <td><span>565</span> <span>mm</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>Abstand der Schlußleuchte von der breitesten Stelle des Fahrzeugumrisses:</span></td>
+    <td><span>582</span> <span>mm</span></td>
+</tr>
+
+    </table>
+
+
+    <span class="seitennummer_2">- 2 -</span>
+
+</body>
+</html>

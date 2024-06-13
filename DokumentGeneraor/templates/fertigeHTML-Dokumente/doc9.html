@@ -1,0 +1,1161 @@
+<!-- Ab hier Jinja-Tabelle zu html-table umbauen -->
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dokumentvorlage</title>
+    <style>
+           
+
+      
+      
+             
+
+
+
+            @font-face {
+                      font-family: "Corona 3 Typewriter";
+                      src: url("file:///C:/doc-gen/static/fonts/Corona-3-Typewriter.ttf") format("truetype");
+                  }
+
+
+
+            body {
+                margin-left: 80px;
+                font-family: "Corona 3 Typewriter";
+                background: white;
+                font-size: 22px;
+            }
+
+
+
+          
+          
+            .hauptueberschrift_1 {
+                font-size: 21px;
+                line-height: 1.5;
+                margin: 0;
+                padding: 5px;
+                text-decoration: underline;
+                font-weight: normal;
+                letter-spacing: normal;
+                text-align: left;
+            }
+          
+          
+            .hauptueberschrift_2 {
+                font-size: 21px;
+                line-height: 1.5;
+                margin: 5px;
+                padding: 5px;
+                text-decoration: underline;
+                font-weight: normal;
+                letter-spacing: 3px;
+                text-align: center;
+            }
+          
+          
+            .hauptueberschrift_3 {
+                font-size: 22px;
+                line-height: 1.3;
+                margin: 10px;
+                padding: 0;
+                text-decoration: none;
+                font-weight: bold;
+                letter-spacing: 3px;
+                text-align: center;
+            }
+          
+          
+            .hauptueberschrift_4 {
+                font-size: 22px;
+                line-height: 1.3;
+                margin: 10px;
+                padding: 8px;
+                text-decoration: underline overline;
+                font-weight: 600;
+                letter-spacing: 2px;
+                text-align: justify;
+            }
+          
+          
+            .hauptueberschrift_5 {
+                font-size: 22px;
+                line-height: 1.5;
+                margin: 5px;
+                padding: 8px;
+                text-decoration: none;
+                font-weight: 400;
+                letter-spacing: 2px;
+                text-align: justify;
+            }
+          
+          
+            .hauptueberschrift_6 {
+                font-size: 21px;
+                line-height: 1.1;
+                margin: 10px;
+                padding: 8px;
+                text-decoration: underline;
+                font-weight: bold;
+                letter-spacing: 2px;
+                text-align: center;
+            }
+          
+          
+            .hauptueberschrift_7 {
+                font-size: 22px;
+                line-height: 1.2;
+                margin: 15px;
+                padding: 5px;
+                text-decoration: none;
+                font-weight: 400;
+                letter-spacing: 3px;
+                text-align: center;
+            }
+          
+          
+            .hauptueberschrift_8 {
+                font-size: 21px;
+                line-height: 1.6;
+                margin: 10px;
+                padding: 0;
+                text-decoration: none;
+                font-weight: normal;
+                letter-spacing: 2px;
+                text-align: center;
+            }
+          
+          
+            .hauptueberschrift_9 {
+                font-size: 22px;
+                line-height: 1.1;
+                margin: 10px;
+                padding: 2px;
+                text-decoration: underline overline;
+                font-weight: bold;
+                letter-spacing: 2px;
+                text-align: center;
+            }
+          
+          
+            .hauptueberschrift_10 {
+                font-size: 22px;
+                line-height: 1.1;
+                margin: 0;
+                padding: 0;
+                text-decoration: underline overline;
+                font-weight: 600;
+                letter-spacing: 3px;
+                text-align: justify;
+            }
+          
+          
+
+      
+/* Automatisiert CSS für typueberschrift HTML-Tag-Klassen erzeugen */
+  .typueberschrift_11 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: justify;
+  letter-spacing: 2px;
+  margin-top: 6px;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 25px;
+  padding-top: 4px;
+  padding-right: 10px;
+  padding-bottom: 3px;
+  padding-left: 0;
+}
+  .typueberschrift_12 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-top: 5px;
+  margin-right: 25px;
+  margin-bottom: 6px;
+  margin-left: 0;
+  padding-top: 2px;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 5px;
+}
+  .typueberschrift_13 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-top: 5px;
+  margin-right: 20px;
+  margin-bottom: 6px;
+  margin-left: 25px;
+  padding-top: 2px;
+  padding-right: 5px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+}
+  .typueberschrift_14 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-top: 5px;
+  margin-right: 15px;
+  margin-bottom: 6px;
+  margin-left: 25px;
+  padding-top: 2px;
+  padding-right: 5px;
+  padding-bottom: 3px;
+  padding-left: 0;
+}
+  .typueberschrift_15 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: justify;
+  letter-spacing: normal;
+  margin-top: 6px;
+  margin-right: 25px;
+  margin-bottom: 6px;
+  margin-left: 0;
+  padding-top: 2px;
+  padding-right: 0;
+  padding-bottom: 3px;
+  padding-left: 10px;
+}
+  .typueberschrift_16 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: normal;
+  margin-top: 5px;
+  margin-right: 15px;
+  margin-bottom: 6px;
+  margin-left: 25px;
+  padding-top: 4px;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 15px;
+}
+  .typueberschrift_17 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-top: 5px;
+  margin-right: 20px;
+  margin-bottom: 6px;
+  margin-left: 10px;
+  padding-top: 4px;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 15px;
+}
+  .typueberschrift_18 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-top: 4px;
+  margin-right: 20px;
+  margin-bottom: 6px;
+  margin-left: 20px;
+  padding-top: 2px;
+  padding-right: 5px;
+  padding-bottom: 4px;
+  padding-left: 15px;
+}
+  .typueberschrift_19 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: normal;
+  margin-top: 5px;
+  margin-right: 0;
+  margin-bottom: 4px;
+  margin-left: 20px;
+  padding-top: 4px;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 5px;
+}
+  .typueberschrift_20 {
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: justify;
+  letter-spacing: 3px;
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-bottom: 6px;
+  margin-left: 20px;
+  padding-top: 4px;
+  padding-right: 5px;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+     
+
+
+/* Automatisiert CSS für zwischenueberschrift HTML-Tag-Klassen erzeugen */
+.zwischenueberschrift_21 {
+  font-size: 21px;
+    line-height: 1.1;
+    text-align: left;
+    letter-spacing: 1px;
+    margin-right: 25px;
+    padding-top: 2px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+}
+
+
+
+
+
+
+
+.artikelueberschrift_31 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: left;
+  letter-spacing: normal;
+  margin-right: 0;
+  padding-right: 0;
+  padding-bottom: 3px;
+}
+.artikelueberschrift_32 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-right: 10px;
+  padding-right: 10px;
+  padding-bottom: 3px;
+}
+.artikelueberschrift_33 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: justify;
+  letter-spacing: normal;
+  margin-right: 15px;
+  padding-right: 5px;
+  padding-bottom: 3px;
+}
+.artikelueberschrift_34 {
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: normal;
+  margin-right: 15px;
+  padding-right: 0;
+  padding-bottom: 3px;
+}
+.artikelueberschrift_35 {
+  font-size: 22px;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-right: 0;
+  padding-right: 0;
+  padding-bottom: 4px;
+}
+.artikelueberschrift_36 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-right: 15px;
+  padding-right: 10px;
+  padding-bottom: 4px;
+}
+.artikelueberschrift_37 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-right: 0;
+  padding-right: 10px;
+  padding-bottom: 4px;
+}
+.artikelueberschrift_38 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: normal;
+  margin-right: 10px;
+  padding-right: 5px;
+  padding-bottom: 0;
+}
+.artikelueberschrift_39 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: left;
+  letter-spacing: 2px;
+  margin-right: 25px;
+  padding-right: 10px;
+  padding-bottom: 3px;
+}
+.artikelueberschrift_40 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: justify;
+  letter-spacing: 2px;
+  margin-right: 10px;
+  padding-right: 10px;
+  padding-bottom: 0;
+}
+
+
+
+.artikel_41 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: left;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 0;
+  display: block;
+}
+.artikel_42 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: left;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  padding-left: 0;
+  display: block;
+}
+.artikel_43 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: left;
+  padding-right: 0;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  display: block;
+}
+.artikel_44 {
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: left;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 10px;
+  display: block;
+}
+.artikel_45 {
+  font-size: 22px;
+  line-height: 1.3;
+  text-align: left;
+  padding-right: 0;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  display: block;
+}
+.artikel_46 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: left;
+  padding-right: 5px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  display: block;
+}
+.artikel_47 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: left;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  display: block;
+}
+.artikel_48 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: center;
+  padding-right: 0;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  display: block;
+}
+.artikel_49 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: center;
+  padding-right: 5px;
+  padding-bottom: 0;
+  padding-left: 5px;
+  display: block;
+}
+.artikel_50 {
+  font-size: 22px;
+  line-height: 1.3;
+  text-align: center;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 5px;
+  display: block;
+}
+
+
+
+/* Basiseinstellungen für die Tabelle */
+.tabelle {
+  font-size: 21px;
+  width: 70%;
+  border-collapse: collapse;
+  margin-left: 70px;
+  
+}
+
+
+/* Dynamische Stile für die verschiedenen Ebenen */
+.level-0_82, .level-1_82 {
+  padding-left: 20px;
+}
+
+.level-2_82 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_83, .level-1_83 {
+  padding-left: 20px;
+}
+
+.level-2_83 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_84, .level-1_84 {
+  padding-left: 20px;
+}
+
+.level-2_84 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_85, .level-1_85 {
+  padding-left: 20px;
+}
+
+.level-2_85 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_86, .level-1_86 {
+  padding-left: 20px;
+}
+
+.level-2_86 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_87, .level-1_87 {
+  padding-left: 20px;
+}
+
+.level-2_87 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_88, .level-1_88 {
+  padding-left: 20px;
+}
+
+.level-2_88 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_89, .level-1_89 {
+  padding-left: 20px;
+}
+
+.level-2_89 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_90, .level-1_90 {
+  padding-left: 20px;
+}
+
+.level-2_90 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_91, .level-1_91 {
+  padding-left: 20px;
+}
+
+.level-2_91 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_92, .level-1_92 {
+  padding-left: 20px;
+}
+
+.level-2_92 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_93, .level-1_93 {
+  padding-left: 20px;
+}
+
+.level-2_93 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_94, .level-1_94 {
+  padding-left: 20px;
+}
+
+.level-2_94 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_95, .level-1_95 {
+  padding-left: 20px;
+}
+
+.level-2_95 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_96, .level-1_96 {
+  padding-left: 20px;
+}
+
+.level-2_96 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_97, .level-1_97 {
+  padding-left: 20px;
+}
+
+.level-2_97 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_98, .level-1_98 {
+  padding-left: 20px;
+}
+
+.level-2_98 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_99, .level-1_99 {
+  padding-left: 20px;
+}
+
+.level-2_99 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_100, .level-1_100 {
+  padding-left: 20px;
+}
+
+.level-2_100 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_101, .level-1_101 {
+  padding-left: 20px;
+}
+
+.level-2_101 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_102, .level-1_102 {
+  padding-left: 20px;
+}
+
+.level-2_102 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_103, .level-1_103 {
+  padding-left: 20px;
+}
+
+.level-2_103 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_104, .level-1_104 {
+  padding-left: 20px;
+}
+
+.level-2_104 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_105, .level-1_105 {
+  padding-left: 20px;
+}
+
+.level-2_105 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_106, .level-1_106 {
+  padding-left: 20px;
+}
+
+.level-2_106 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_107, .level-1_107 {
+  padding-left: 20px;
+}
+
+.level-2_107 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_108, .level-1_108 {
+  padding-left: 20px;
+}
+
+.level-2_108 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_109, .level-1_109 {
+  padding-left: 20px;
+}
+
+.level-2_109 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_110, .level-1_110 {
+  padding-left: 20px;
+}
+
+.level-2_110 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_111, .level-1_111 {
+  padding-left: 20px;
+}
+
+.level-2_111 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_112, .level-1_112 {
+  padding-left: 20px;
+}
+
+.level-2_112 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_113, .level-1_113 {
+  padding-left: 20px;
+}
+
+.level-2_113 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_114, .level-1_114 {
+  padding-left: 20px;
+}
+
+.level-2_114 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_115, .level-1_115 {
+  padding-left: 20px;
+}
+
+.level-2_115 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_116, .level-1_116 {
+  padding-left: 20px;
+}
+
+.level-2_116 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_117, .level-1_117 {
+  padding-left: 20px;
+}
+
+.level-2_117 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_118, .level-1_118 {
+  padding-left: 20px;
+}
+
+.level-2_118 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_119, .level-1_119 {
+  padding-left: 20px;
+}
+
+.level-2_119 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_120, .level-1_120 {
+  padding-left: 20px;
+}
+
+.level-2_120 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_121, .level-1_121 {
+  padding-left: 20px;
+}
+
+.level-2_121 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_122, .level-1_122 {
+  padding-left: 20px;
+}
+
+.level-2_122 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_123, .level-1_123 {
+  padding-left: 20px;
+}
+
+.level-2_123 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_124, .level-1_124 {
+  padding-left: 20px;
+}
+
+.level-2_124 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_125, .level-1_125 {
+  padding-left: 20px;
+}
+
+.level-2_125 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_126, .level-1_126 {
+  padding-left: 20px;
+}
+
+.level-2_126 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_127, .level-1_127 {
+  padding-left: 20px;
+}
+
+.level-2_127 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_128, .level-1_128 {
+  padding-left: 20px;
+}
+
+.level-2_128 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_129, .level-1_129 {
+  padding-left: 20px;
+}
+
+.level-2_129 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_130, .level-1_130 {
+  padding-left: 20px;
+}
+
+.level-2_130 {
+  padding-left: 42px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+.level-0_131, .level-1_131 {
+  padding-left: 20px;
+}
+
+.level-2_131 {
+  padding-left: 40px; /* Weiterer Einzug für tiefere Ebenen */
+  font-style: italic; /* Stil für tiefere Ebenen */
+  color: #666; /* Einheitliche Farben für tiefe Ebenen */
+  border-bottom: 1px dashed; /* Keine Linien für die tiefsten Ebenen */
+}
+
+/* Allgemeine Stile */
+.span-content, .div-content {
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+          body {
+              font-family: "Corona 3 Typewriter";
+                padding: 20px;
+          }
+
+
+          .datum_51 {
+            position: absolute;
+            top: 1229px;
+            left: 497px;
+          }
+          
+
+
+          .stempelbild_61 img {
+            display: block;
+            margin: 0 auto; /* Zentriert das Bild */
+            position: absolute;
+            top: 1042px;
+            left: 153px;
+            max-width: 100px; /* Verhindert, dass das Bild größer als seine natürliche Breite angezeigt wird */
+            max-height: 100%; /* Verhindert, dass das Bild größer als seine natürliche Höhe angezeigt wird */
+            width: auto; /* Behält das Seitenverhältnis bei, wenn die Höhe angepasst wird */
+            height: auto; /* Behält das Seitenverhältnis bei, wenn die Breite angepasst wird */
+          }
+          
+          .stempelbild_unten_mittig_71 img {
+            display: block;
+            margin: 0 auto; /* Zentriert das Bild */
+            position: absolute;
+            top: 1129px; /* Zufällige Top-Position */
+            left: 320px; /* Zufällige Left-Position */
+            max-width: 400px; /* Verhindert, dass das Bild größer als seine natürliche Breite angezeigt wird */
+            max-height: 100%; /* Verhindert, dass das Bild größer als seine natürliche Höhe angezeigt wird */
+            width: auto; /* Behält das Seitenverhältnis bei, wenn die Höhe angepasst wird */
+            height: auto; /* Behält das Seitenverhältnis bei, wenn die Breite angepasst wird */
+          }
+
+          .bueroklammer-img {
+          display: block;
+          margin: 0 auto; /* Zentriert das Bild */
+          width: 35px; /* Breite des Bildes */
+          position: absolute;
+          top: 0px;
+          left: px; /* Dynamischer Abstand von links */
+        }
+    </style>
+  </head>
+  <body>
+
+
+
+
+
+
+
+
+
+  
+
+     <div class="hauptueberschrift_1">
+      <span>Gelb Weihnachten letzte tun</span>
+  </div>
+
+  <div class="typueberschrift_11">
+      <span>Hinein in kommen unser</span>
+  </div>
+
+  <div class="zwischenueberschrift_21">
+      <span>Als will Mensch Uhr etwas sprechen Oma</span>
+  </div>
+
+  
+  <div class="artikelueberschrift_31">
+      <span>Straße fallen gerade ja dumm vielleicht machen wohl im</span>
+  </div>
+
+  
+    <div class="artikel_41">
+        <span>Zug verlieren gleich klettern stark Schüler. Tür Sonntag ich genau so. Mutter wünschen versuchen vorbei natürlich Stunde.</span>
+    </div>
+
+
+    <div class="artikel_42">
+      <span>Werfen Auge Teller tragen.</span>
+  </div>
+
+
+  <div class="artikel_43">
+    <span>Sommer verstecken böse heute mehr jung deshalb. Berg ihr Ding baden Wetter. Mensch Loch ob hat. Neun Frage schreien sollen Pferd Kopf. Platz kochen schlagen rechnen. Glauben kein Lehrerin weil Bein Onkel. Zimmer genau Zeitung für Mutter Ferien scheinen Wetter. Halbe allein heiß ihr.</span>
+</div>
+
+<br>
+       
+    
+<div class="tabelle"><!-- Aufruf der Makro-Funktion `render_data` mit Ihren Daten -->
+  <div class="level-0_82"><span>Beschreibt die Anzahl der Airbags:</span><div class="level-1_82"><span>Zulässiges Gesamtgewicht:</span><div class="level-2_82"><span>I:</span> <span>27</span> <span>cm</span></div><div class="level-2_83"><span>II:</span> <span>340</span> <span>Watt</span></div></div><br>
+<div class="level-1_85"><span>Eigen(Steuer)-Gewicht:</span><div class="level-2_85"><span>I:</span> <span>427</span> <span>PS</span></div><div class="level-2_86"><span>II:</span> <span>361</span> <span>cm³</span></div></div><br>
+</div><br>
+<div class="level-0_89"><span>Beschreibt das zulässige Gesamtgewicht:</span><div class="level-1_89"><span>Art des Fahrzeugs:</span><div class="level-2_89"><span>I:</span> <span>552</span> <span>MHz</span></div></div><br>
+<div class="level-1_91"><span>Breite:</span><div class="level-2_91"><span>I:</span> <span>101</span> <span>cm³</span></div></div><br>
+<div class="level-1_93"><span>Durchmesser des Zylinders:</span><div class="level-2_93"><span>I:</span> <span>74</span> <span>Liter</span></div></div><br>
+<div class="level-1_95"><span>Hersteller:</span><div class="level-2_95"><span>I:</span> <span>327</span> <span>Nm</span></div></div><br>
+</div><br>
+<div class="level-0_98"><span>Beschreibt den Kraftstoffverbrauch:</span><div class="level-1_98"><span>Besteht Bremsanschluss für Anhängers?:</span><div class="level-2_98"><span>I:</span> <span>253</span> <span>m/s²</span></div></div><br>
+<div class="level-1_100"><span>Art des Fahrzeugs:</span><div class="level-2_100"><span>I:</span> <span>769</span> <span>km/h</span></div></div><br>
+<div class="level-1_102"><span>Betriebsbremse:</span><div class="level-2_102"><span>I:</span> <span>163</span> <span>kg</span></div></div><br>
+</div><br>
+
+</div>
+
+
+
+
+
+      <div class="artikel_44">
+        <span>Ende Angst holen unter nun lesen Katze her ganz wieder Schuh Bauer stellen Haus schlafen Schnee.</span>
+    </div>
+
+
+    <div class="datum_51">
+      <span>05.04.2013</span>
+  </div>
+
+
+
+
+
+      <div class="stempelbild_61">
+        <img src="../../../static/images/stempel/stempel (7).png" alt="Stempelbild" />
+    </div>
+
+    <div class="stempelbild_unten_mittig_71">
+        <img src="../../../static/images/stempel/unten_mittig/stempel_unten_mittig (13).png" alt="Stempelbild" />
+    </div>
+
+
+    </body>
+  </html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <title>Typgutachten</title>
+    <style>
+        {#-/* Zufällige left-px-Berechnung für Büroklammerbild*/-#}
+        {%- set left_position_klammer = range(5, 100)|random -%}
+
+        {#-/* Zufällige Positions-px-Berechnung für allgemeine StempelBilder*/-#}
+        {%- set stempelbild_position_top = range(1100, 1180)|random -%}
+        {%- set stempelbild_position_left = range(350, 380)|random -%}
+
+        {#-/* Zufällige Positions-px-Berechnung für StempelBilder, welche nur unten_mittig sind!!! */-#}
+        {%- set stempelbild_unten_mittig_position_top = range(1400, 1500)|random -%}
+        {%- set stempelbild_unten_mittig_position_left = range(300, 350)|random -%}
+
+        {#- /* Zufällige Positions-px-Berechnung für StempelBilder */ -#}
+        {%- set datum_position_top = range(820, 825)|random -%}
+        {%- set datum_position_left = range(325, 380)|random -%}
+
+        {#- /* Zufällige Positions-px-Berechnung für StempelBilder */ -#}
+        {%- set adresse_position_top = range(90, 100)|random -%}
+        {%- set adresse_position_left = range(860, 915)|random -%}
+
+        {#- /* Zufällige Positions-px-Berechnung für Sondertext (meist rechts oben) */ -#}
+        {%- set sonder_Text_position_top = range(60, 90)|random -%}
+        {%- set sonder_Text_position_left = range(780, 820)|random -%}
+
+        {#- /* Zufällige Positions-px-Berechnung für Seitenbilder */ -#}
+        {%- set seitennummer_position_top = range(1630, 1700)|random -%}
+        {%- set seitennummer_position_left = range(1090, 1120)|random -%}
+
+
+        {#-/* Zufällige Einzugs-px-Berechnung für Tabellen-Level*/-#}
+        {%- set margin_left_level_1 = range(60, 400)|random -%}
+
+        @font-face {
+            font-family: "Corona 3 Typewriter";
+            src: url("../static/fonts/Corona-3-Typewriter.ttf") format("truetype");
+        }
+
+        html {
+            font-family: "Corona-3-Typewriter";
+        }
+
+        body {
+            margin-top: 10rem;  {#- {{ ['2rem', '4rem', '6rem', '8rem']|random }}; -#}
+            margin-right: {{ ['2rem', '4rem', '6rem', '8rem']|random }};
+            margin-left: 7rem;
+            padding: 0;
+            font-family: "Corona 3 Typewriter";
+            background: white;
+        }
+
+        {#- Feste Hauptüberschrift-Deklarationen -#}
+        h2 {
+            text-align: center;
+            font-size: 24px;
+            {#- text-decoration: underline; -#}
+            {#- margin-right: {{ ['1rem', '2rem']|random }}; -#}
+            {#- margin-left: {{ ['1rem', '2rem']|random }}; -#}
+            font-weight: 300;
+        }
+
+        h3 {
+            text-align: left;
+            font-size: 24px;
+            margin-right: {{ ['1rem', '2rem']|random }};
+            margin-left: {{ ['1rem', '2rem']|random }};
+        }
+
+        hr.thick-line { /* Neue Klasse für die dicke Linie */
+          border-top: 3px solid #1e1e1e;
+      }
+
+      .dashed-line {
+        background-image: linear-gradient(to right, black 10px, transparent 2px);
+        background-repeat: repeat-x;
+        background-size: 25px 100%; 
+        height: 3px;
+        width: 250px;
+        margin: 0 auto; /* Zentriert das Element horizontal */
+    }
+    
+    
+
+      .sonder_Text {
+        position: absolute;
+        top: {{- sonder_Text_position_top -}}px;
+        left: {{- sonder_Text_position_left -}}px;
+        font-size: 24px;
+    }
+
+    .sonder_Text .company-name {
+      letter-spacing: 6px; /* Beispiel: Buchstabenabstand von 2 Pixel */
+  }
+
+
+    .seitennummer {
+      position: absolute;
+      top: {{- seitennummer_position_top -}}px;
+      left: {{- seitennummer_position_left -}}px;
+      font-size: 24px;
+  }
+
+
+
+        {% for i in range(1, 10) %}
+        .hauptueberschrift_{{ i }} {
+            font-size: 24px;          {#- {{ ['19px', '20px', '21px']|random }}; -#}
+            margin: {{ ['5px', '10px', '15px']|random }};
+            text-align: {{ ['left', 'center']|random }};
+            text-decoration: {{ ['none', 'none', 'none', 'underline', 'dotted']|random }};
+            font-weight: {{ ['bold', '400', '600']|random }};
+            letter-spacing: {{ ['normal', '2px', '3px']|random }};
+        }
+        {% endfor %}
+
+        /* Automatisiert CSS für typueberschrift HTML-Tag-Klassen erzeugen */
+        {%- for i in range(11, 20) -%} {# Für typueberschrift von 11 bis 20 #}
+        .typueberschrift_{{ i }} {
+            font-size: {{ ['14px', '15px', '16px']|random }};
+            line-height: {{ ['1.1', '1.2', '1.3']|random }};
+            text-align: left;
+            letter-spacing: {{ ['normal', '1px', '2px', '3px']|random }};
+            margin-top: {{ ['4px', '5px', '6px']|random }};
+            margin-bottom: {{ ['0', '4px', '6px']|random }};
+            margin-left: {{ ['0', '10px', '15px', '20px', '25px']|random }};
+            padding-top: {{ ['2px', '4px']|random }};
+            padding-right: {{ ['0', '5px', '10px']|random }};
+            padding-bottom: {{ ['0', '3px', '4px']|random }};
+            padding-left: {{ ['0', '5px', '10px', '15px']|random }};
+        }
+        {% endfor %}
+
+        /* Automatisiert CSS für zwischenueberschrift HTML-Tag-Klassen erzeugen */
+        {%- for i in range(21, 30) %}
+        .zwischenueberschrift_{{ i }} {
+            font-size: {{ ['15px', '16px']|random }};
+            line-height: {{ ['1.1', '1.2', '1.3']|random }};
+            text-align: {{ ['left', 'center', 'justify']|random }};
+            letter-spacing: {{ ['normal', '1px', '2px']|random }};
+            padding-top: {{ ['8px', '12px']|random }};
+            padding-right: {{ ['0', '5px', '10px']|random }};
+            padding-bottom: {{ ['0', '3px', '4px']|random }};
+        }
+        {% endfor %}
+
+        {%- for i in range(31, 41) %}
+        .artikelueberschrift_{{ i }} {
+            font-size: {{ ['21px', '22px']|random }};
+            line-height: {{ ['1.1', '1.2', '1.3']|random }};
+            text-align: {{ ['left', 'center', 'justify']|random }};
+            letter-spacing: {{ ['normal', '1px', '2px']|random }};
+            {#- margin-top: {{ ['0', '1rem', '2rem', '3rem', '4rem']|random }}; -#}
+            margin-right: {{ ['0', '1rem', '2rem', '3rem']|random }};
+            {#- margin-left: {{ ['0', '0.5rem', '1rem']|random }}; -#}
+            {#- padding-top: {{ ['0', '1rem', '2rem', '3rem', '4rem']|random }}; -#}
+            padding-right: {{ ['0', '1rem', '2rem', '3rem', '4rem']|random }};
+            padding-bottom: {{ ['0', '1rem', '2rem', '3rem', '4rem']|random }};
+            {#- padding-left: {{ ['0', '1rem', '2rem', '3rem', '4rem']|random }}; -#}
+        }
+        {% endfor %}
+
+
+      {%- for i in range(41, 51) -%}
+      .artikel_{{ i }} {
+        font-size: 24px;
+        line-height: {{ ['1.1', '1.2']|random }};
+        text-align: left;
+        padding-top: {{ ['5px', '7px']|random }};
+        padding-right: 15px;
+        margin-right: {{ ['0', '0.5rem']|random }};
+        margin-left: {{ ['0', '0.5rem', '1rem']|random }};
+        position: relative;
+        display: block;
+      }
+      {% endfor %}
+
+
+
+ /* erste Tabelle */
+.info-table {
+  width: 100%; /* Stellen Sie sicher, dass die Tabelle die volle Breite einnimmt */
+  border-collapse: collapse; /* Entfernt den Abstand zwischen den Zellen */
+  font-size: 24px;
+  margin-top: 2rem;
+}
+
+info-table td {
+  padding: 10px;
+  border: none; 
+  vertical-align: middle; /* Vertikale Zentrierung innerhalb der Zelle */
+}
+
+.pruefstelle {
+  text-align: center; /* Zentriert den Text "Prüfstelle:" */
+  text-decoration: underline; /* Unterstreicht den Text "Prüfstelle:" */
+}
+
+.pruefstelle-details {
+  display: flex; /* Aktiviert Flexbox für die Zelle */
+  justify-content: center; /* Zentriert den Textblock horizontal */
+  align-items: center; /* Zentriert den Textblock vertikal */
+  width: 100%; 
+}
+
+.pruefstelle-details p {
+  text-align: left; /* Linksbündige Ausrichtung innerhalb des Textblocks */
+  margin: 0; /* Entfernt den Standard-Rand */
+}
+
+.indented-cell {
+  padding-left: 150px; /* Das ist der Texteinzug 1. Tabelle; linke Spalte */
+}
+
+
+
+  /* zweite Tabelle */
+.table {
+  font-size: 24px;      
+    display: flex;
+    justify-content: center;
+}
+
+
+  .aufbau-nummer {
+    display: inline-block;
+    width: 33px;
+    text-align: right;
+}
+
+.value-unit {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+}
+        
+    .table div {
+        text-align: left; /* Linksbündige Ausrichtung für den Text */
+    }
+    
+    .letter-cell {
+        padding-right: 10px; 
+        text-align: right; /* Buchstaben rechtsbündig ausrichten */
+    }
+
+/* dritte Tabelle */
+.dritte-table {
+  font-size: 24px; 
+  width: 100%; /* Stellen Sie sicher, dass die Tabelle die volle Breite einnimmt */
+  border-collapse: collapse; /* Entfernt den Abstand zwischen den Zellen */
+  line-height: 1.0;
+}
+
+.dritte-table th, .dritte-table td {
+  padding: 10px;
+  border: none; /* Keine sichtbaren Ränder */
+  vertical-align: top;
+}
+
+.centered-underlined {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.dritte-table .underlined {
+  text-decoration: underline;
+}
+
+.dritte-table .nested-table-cell {
+  padding: 0; /* Entfernt den Innenabstand für diese Zelle */
+}
+
+.dritte-table .nested-table {
+  display: table;
+  width: 100%;
+}
+
+.dritte-table .nested-row {
+  display: table-row;
+  line-height: 0.9;
+}
+
+
+.dritte-table .nested-row > div {
+  display: table-cell;
+  padding: 10px; /* Innenabstand für die Zellen der inneren Tabelle */
+}
+
+.dritte-table .nested-row > div {
+  display: table-cell;
+  padding: 10px; 
+}
+
+.dritte-table .aufbau-label { /* Neue Klasse für die "mit Aufbau"-Labels */
+  padding-left: 20px; /* Einrückung für die Labels */
+}
+
+.dritte-table .aufbau-a-row > div { /* Neue Regel für die Zeilen von Ausführung A */
+  line-height: 0.5; /* Reduzierter Zeilenabstand für diese Zeilen */
+}
+
+
+
+
+    
+
+      {#- Für datum von 51 bis 60 -#}
+      {% for i in range(51, 52) %}
+      .datum_{{ i }} {
+        position: absolute;
+        top: {{- datum_position_top -}}px;
+        left: {{- datum_position_left -}}px;
+      }
+      {% endfor %}  
+      
+      
+      {#- Für Adresse von 81 bis 90 -#}
+      {%- for i in range(81, 82) -%}
+      .adresse_{{ i }} {
+        position: absolute;
+        top: {{- adresse_position_top -}}px;
+        left: {{- adresse_position_left -}}px;
+        font-size: 24px;
+      }
+
+      {% endfor %}
+
+
+      {#- Stempelbilder von 61 bis 70 -#}
+      {%- for i in range(61, 62) -%}
+      .stempelbild_{{ i }} img {
+        display: block;
+        margin: 0 auto; /* Zentriert das Bild */
+        position: absolute;
+        top: {{ stempelbild_position_top }}px;
+        left: {{- stempelbild_position_left }}px;
+        max-width: 200px; /* Verhindert, dass das Bild größer als seine natürliche Breite angezeigt wird */
+        max-height: 100%; /* Verhindert, dass das Bild größer als seine natürliche Höhe angezeigt wird */
+        width: auto; /* Behält das Seitenverhältnis bei, wenn die Höhe angepasst wird */
+        height: auto; /* Behält das Seitenverhältnis bei, wenn die Breite angepasst wird */
+      }
+      {%- endfor -%}
+      
+      {#- Stempelbilder_unten_mittig von 71 bis 80 -#}
+      {%- for i in range(71, 72) -%}
+      .stempelbild_unten_mittig_{{- i }} img {
+        display: block;
+        margin: 0 auto; /* Zentriert das Bild */
+        position: absolute;
+        top: {{- stempelbild_unten_mittig_position_top }}px;
+        left: {{- stempelbild_unten_mittig_position_left }}px;
+        max-width: 380px; /* Verhindert, dass das Bild größer als seine natürliche Breite angezeigt wird */
+        max-height: 100%; /* Verhindert, dass das Bild größer als seine natürliche Höhe angezeigt wird */
+        width: auto; /* Behält das Seitenverhältnis bei, wenn die Höhe angepasst wird */
+        height: auto; /* Behält das Seitenverhältnis bei, wenn die Breite angepasst wird */
+      }
+      {%- endfor -%}
+
+      .bueroklammer-img {
+      display: block;
+      margin: 0 auto; /* Zentriert das Bild */
+      width: 35px; /* Breite des Bildes */
+      position: absolute;
+      top: 0px;
+      left: {{- left_position }}px; /* Dynamischer Abstand von links */
+    }
+
+    </style>
+  </head>
+  <body>
+
+{#- Initialisierung der Zähler -#}
+{%- set counter_hauptueberschrift = namespace(value=1) -%}
+{%- set counter_typueberschrift = namespace(value=11) -%}
+{%- set counter_zwischenueberschrift = namespace(value=21) -%}
+{%- set counter_artikelueberschrift = namespace(value=31) -%}
+{%- set counter_artikel = namespace(value=41) -%}
+{%- set counter_datum = namespace(value=51) -%}
+{%- set counter_stempelbild = namespace(value=61) -%}
+{%- set counter_stempelbild_unten_mittig = namespace(value=71) -%}
+{%- set counter_adresse = namespace(value=81) -%}
+{%- set counter_tabelle = namespace(value=82) -%}
+
+{# Nur zu 35% soll eine Büroklammer angezeigt werden. #}
+{%- set counter = namespace(value=0) -%} {%- set show_image_chance = range(1,
+101)|random -%} {# Zufällige Zahl zwischen 1 und 100 #}
+
+<div class="sonder_Text">
+  <span class="company-name">{{ fake.company().replace("GmbH", "Corp").replace("AG", "Industries") }}</span><br>
+  <span>Kfz —Anh. Typ:</span> <span>{{ fake.random_int(10, 800) }}</span><br>
+  ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+</div>
+
+<h2><span>Kraftfahrzeug—Typblatt</span></h2>
+
+<hr class="thick-line">
+
+<h2><span>Allgemeine Betriebserlaubnis Nr.</span> <span>{{ fake.random_int(10, 99) }}/{{ fake.random_int(1, 9) }}</span></h2>
+
+<h2><span>erteilt vom Kraftfahrt—Bundesamt am</span> <span>{{ 1939 | random_date(1997) }}</span></h2>
+
+{#- ....die Adresse wurde für dieses Template schlichtweg deaktiviert. und kann simpel aktiviert werden.
+<div class="adresse_{{ counter_adresse.value }}">
+  <span>{{ fake.address() }}</span>
+</div>
+{%- set counter_adresse.value = counter_adresse.value + 1 -%}
+-#}
+
+
+{#- erste Tabelle -#}
+<table class="info-table">
+  <tbody>
+      <tr>
+          <td><span>Kraftfahrzeug—Anhänger</span></td>
+          <td class="pruefstelle"><span>Prüfstelle:</span></td>
+      </tr>
+      <tr>
+          <td><span>Typ:<span> {{ fake.random_int(100, 999) }}</span></span></td>
+          <td class="pruefstelle-details">
+              <p><span>Technische Prüfstelle für den<br>Kraftfahrzeugverkehr Hannover,<br>Dienststelle in Paderborn</span></p>
+          </td>
+      </tr>
+      <tr>
+          <td><span>Hersteller:</span> <span>Westfalia—Werke KG.</span></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td class="indented-cell"><span>in Wiedenbrück</span></td> 
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+
+
+<hr class="thick-line">
+
+<div class="artikel_{{ counter_artikel.value }}">
+  <span>Die Allgemeine Betriebserlaubnis Nr. {{ fake.random_int(10, 99) }} in der Fassung vom <span>{{ 1919 | random_date(1987) }}</span> (einschl. Nachträge) wird hiermit augehoben. An ihrer Stelle wird wie folgt beurkundet:</span>
+</div>
+{%- set counter_artikel.value = counter_artikel.value + 1 -%}
+
+<br>
+
+
+<div class="artikel_{{ counter_artikel.value }}">
+  <span>Die Fahrzeuge werden in folgenden Ausführungen hergestellt:</span>
+</div>
+{%- set counter_artikel.value = counter_artikel.value + 1 -%}
+
+
+
+
+{#- zweite Tabelle -#}
+<br><br>
+
+<div class="table">
+  <div>
+      {%- for letter, items in table_data.items() -%}
+    <span>{{ letter }}:</span> <span class="description-cell">Kraftfahrzeug—Anhänger, {% if loop.index is even %}geschlossener{% else %}offener{% endif %} Kasten, mit</span><br>
+          {% for _ in items -%}
+              &nbsp;&nbsp;&nbsp;&nbsp;<span>Aufbau</span> <span class="aufbau-nummer">{{ fake.random_int(10, 99) }}</span> = <span>Länge des Laderaumes</span>&nbsp;<div class="value-unit"><span>{{ fake.random_int(1200, 2000) }}</span> <span>mm</span></div><br>
+          {% endfor %}
+          <br><br> 
+      {%- endfor -%}
+  </div>
+</div>
+
+
+
+
+
+<div class="dashed-line"></div>
+<br>
+
+
+
+{#- dritte Tabelle -#}
+<table class="dritte-table">
+  <thead>
+      <tr>
+          <th colspan="2" class="centered-underlined"><span>A. Angaben des Anhängerbriefes.</span></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td class="underlined"><span>1. Art des Anhängers:</td>
+          <td><span>Gewöhnlicher Anhänger ohne<br>Kippeinrichtung</span></td></span>
+      </tr>
+      <tr>
+          <td class="underlined"><span>2. Verwendungszweck, Aufbau:</span></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td colspan="2" class="nested-table-cell">
+              <div class="nested-table">
+                  <div class="nested-row">
+                      <div><span>Ausführung A:</span></div>
+                      <div></div>
+                  </div>
+                  {% for _ in range(random.randint(2, 4)) %} {# Zufällige Anzahl Aufbauten für Ausführung A #}
+                      <div class="nested-row aufbau-a-row">
+                          <div class="aufbau-label"><span>mit Aufbau</span> <span>{{ random.randint(10, 99) }}:</span></div>
+                          <div><span>offener Kasten in Holzausführung</span> <span>{{ fake.random_int(1000, 4000) }}</span> <span>mm</span> <span>lang</span></div>
+                      </div>
+                  {% endfor %}
+
+                  <div class="nested-row">
+                      <div><span>Ausführung B:</span></div>
+                      <div></div>
+                  </div>
+                  {% for _ in range(random.randint(2, 4)) %} {# Zufällige Anzahl Aufbauten für Ausführung B #}
+                      <div class="nested-row">
+                          <div class="aufbau-label"><span>mit Aufbau</span> <span>{{ random.randint(10, 99) }}:</span></div>
+                          <div>
+                          <div><span>geschlossener Kasten aus Hartholzgerippe mit äußerer<br>
+                              Sperrholz— oder Blechverkleidung</span> <span>{{ fake.random_int(1000, 4000) }}</span> <span>mm</span> <span>lang</span></div> 
+                          </div>
+                      </div>
+                  {% endfor %}
+              </div>
+          </td>
+      </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+{#-
+{%- for i in range(1, 10) %}
+<div class="typueberschrift_{{ counter_typueberschrift.value }}">
+  <span>{{ fake.sentence(nb_words=40)[:-1] }}</span>
+</div>
+{%- set counter_typueberschrift.value = counter_typueberschrift.value + 1 -%}
+
+
+<div class="artikel_{{ counter_artikel.value }}">
+  <span>{{ fake.sentence(nb_words=randint(12, 18) ) }}</span>
+</div>
+{%- set counter_artikel.value = counter_artikel.value + 1 -%}
+
+<div class="datum_{{ counter_datum.value }}">
+  <span>{{ fake.date() | format_date }}</span>
+</div>
+{%- set counter_datum.value = counter_datum.value + 1 -%}
+-#}
+
+{%- if
+klammer_bildpfad and show_image_chance <= 35 -%} {# Bild anzeigen in 35% der Fälle #} <span class="bueroklammer-img">
+  <img src="{{ klammer_bildpfad }}" alt="Büroklammer" class="bueroklammer-img" />
+  </span>
+  {%- endif -%}
+
+{#-
+  <div class="stempelbild_{{ counter_stempelbild.value }}">
+    <img src="{{ bildpfad }}" alt="Stempelbild" />
+  </div>
+  {%- set counter_stempelbild.value = counter_stempelbild.value + 1 -%}
+
+  <div class="stempelbild_unten_mittig_{{ counter_stempelbild_unten_mittig.value }}">
+    <img src="{{ bildpfad_stempel_unten_mittig }}" alt="Stempelbild_unten_mittig" />
+  </div>
+  {%- set counter_stempelbild_unten_mittig.value = counter_stempelbild_unten_mittig.value + 1 -%}
+-#}
+
+
+<span class="seitennummer">- {{ fake.random_int(1, 9) }} -</span>
+
+
+    </body>
+  </html>

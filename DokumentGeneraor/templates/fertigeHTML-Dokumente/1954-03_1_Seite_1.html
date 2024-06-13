@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <title>Typgutachten</title>
+    <style>@font-face {
+            font-family: "Corona 3 Typewriter";
+            src: url("../static/fonts/Corona-3-Typewriter.ttf") format("truetype");
+        }
+
+        html {
+            font-family: "Corona-3-Typewriter";
+        }
+
+        body {
+            margin-top: 10rem;margin-right: 2rem;
+            margin-left: 7rem;
+            padding: 0;
+            font-family: "Corona 3 Typewriter";
+            background: white;
+        }h2 {
+            text-align: center;
+            font-size: 24px;font-weight: 300;
+        }
+
+        h3 {
+            text-align: left;
+            font-size: 24px;
+            margin-right: 2rem;
+            margin-left: 2rem;
+        }
+
+        hr.thick-line { /* Neue Klasse für die dicke Linie */
+          border-top: 3px solid #1e1e1e;
+      }
+
+      .dashed-line {
+        background-image: linear-gradient(to right, black 10px, transparent 2px);
+        background-repeat: repeat-x;
+        background-size: 25px 100%; 
+        height: 3px;
+        width: 250px;
+        margin: 0 auto; /* Zentriert das Element horizontal */
+    }
+    
+    
+
+      .sonder_Text {
+        position: absolute;
+        top:78px;
+        left:815px;
+        font-size: 24px;
+    }
+
+    .sonder_Text .company-name {
+      letter-spacing: 6px; /* Beispiel: Buchstabenabstand von 2 Pixel */
+  }
+
+
+    .seitennummer {
+      position: absolute;
+      top:1669px;
+      left:1109px;
+      font-size: 24px;
+  }
+
+
+
+        .hauptueberschrift_1 {
+            font-size: 24px;margin: 15px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: normal;
+        }
+        .hauptueberschrift_2 {
+            font-size: 24px;margin: 15px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 400;
+            letter-spacing: normal;
+        }
+        .hauptueberschrift_3 {
+            font-size: 24px;margin: 10px;
+            text-align: left;
+            text-decoration: underline;
+            font-weight: 600;
+            letter-spacing: 3px;
+        }
+        .hauptueberschrift_4 {
+            font-size: 24px;margin: 5px;
+            text-align: left;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+        .hauptueberschrift_5 {
+            font-size: 24px;margin: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+        .hauptueberschrift_6 {
+            font-size: 24px;margin: 15px;
+            text-align: center;
+            text-decoration: dotted;
+            font-weight: 400;
+            letter-spacing: normal;
+        }
+        .hauptueberschrift_7 {
+            font-size: 24px;margin: 5px;
+            text-align: left;
+            text-decoration: underline;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+        .hauptueberschrift_8 {
+            font-size: 24px;margin: 10px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 3px;
+        }
+        .hauptueberschrift_9 {
+            font-size: 24px;margin: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 3px;
+        }
+
+        /* Automatisiert CSS für typueberschrift HTML-Tag-Klassen erzeugen */        .typueberschrift_11 {
+            font-size: 15px;
+            line-height: 1.3;
+            text-align: left;
+            letter-spacing: 3px;
+            margin-top: 6px;
+            margin-bottom: 6px;
+            margin-left: 20px;
+            padding-top: 2px;
+            padding-right: 10px;
+            padding-bottom: 0;
+            padding-left: 10px;
+        }
+        .typueberschrift_12 {
+            font-size: 16px;
+            line-height: 1.3;
+            text-align: left;
+            letter-spacing: 3px;
+            margin-top: 5px;
+            margin-bottom: 0;
+            margin-left: 20px;
+            padding-top: 2px;
+            padding-right: 10px;
+            padding-bottom: 0;
+            padding-left: 10px;
+        }
+        .typueberschrift_13 {
+            font-size: 15px;
+            line-height: 1.2;
+            text-align: left;
+            letter-spacing: 1px;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            margin-left: 10px;
+            padding-top: 4px;
+            padding-right: 0;
+            padding-bottom: 3px;
+            padding-left: 0;
+        }
+        .typueberschrift_14 {
+            font-size: 15px;
+            line-height: 1.2;
+            text-align: left;
+            letter-spacing: 2px;
+            margin-top: 6px;
+            margin-bottom: 0;
+            margin-left: 25px;
+            padding-top: 2px;
+            padding-right: 5px;
+            padding-bottom: 4px;
+            padding-left: 10px;
+        }
+        .typueberschrift_15 {
+            font-size: 15px;
+            line-height: 1.3;
+            text-align: left;
+            letter-spacing: 3px;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            margin-left: 15px;
+            padding-top: 2px;
+            padding-right: 5px;
+            padding-bottom: 0;
+            padding-left: 5px;
+        }
+        .typueberschrift_16 {
+            font-size: 15px;
+            line-height: 1.3;
+            text-align: left;
+            letter-spacing: 3px;
+            margin-top: 4px;
+            margin-bottom: 0;
+            margin-left: 10px;
+            padding-top: 4px;
+            padding-right: 5px;
+            padding-bottom: 3px;
+            padding-left: 0;
+        }
+        .typueberschrift_17 {
+            font-size: 16px;
+            line-height: 1.2;
+            text-align: left;
+            letter-spacing: 1px;
+            margin-top: 5px;
+            margin-bottom: 6px;
+            margin-left: 0;
+            padding-top: 2px;
+            padding-right: 5px;
+            padding-bottom: 4px;
+            padding-left: 5px;
+        }
+        .typueberschrift_18 {
+            font-size: 16px;
+            line-height: 1.3;
+            text-align: left;
+            letter-spacing: normal;
+            margin-top: 4px;
+            margin-bottom: 6px;
+            margin-left: 10px;
+            padding-top: 4px;
+            padding-right: 10px;
+            padding-bottom: 3px;
+            padding-left: 5px;
+        }
+        .typueberschrift_19 {
+            font-size: 14px;
+            line-height: 1.3;
+            text-align: left;
+            letter-spacing: normal;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            margin-left: 15px;
+            padding-top: 4px;
+            padding-right: 5px;
+            padding-bottom: 3px;
+            padding-left: 10px;
+        }
+
+        /* Automatisiert CSS für zwischenueberschrift HTML-Tag-Klassen erzeugen */        .zwischenueberschrift_21 {
+            font-size: 16px;
+            line-height: 1.1;
+            text-align: left;
+            letter-spacing: 2px;
+            padding-top: 12px;
+            padding-right: 5px;
+            padding-bottom: 4px;
+        }
+        .zwischenueberschrift_22 {
+            font-size: 16px;
+            line-height: 1.3;
+            text-align: center;
+            letter-spacing: normal;
+            padding-top: 12px;
+            padding-right: 10px;
+            padding-bottom: 4px;
+        }
+        .zwischenueberschrift_23 {
+            font-size: 15px;
+            line-height: 1.1;
+            text-align: left;
+            letter-spacing: normal;
+            padding-top: 8px;
+            padding-right: 10px;
+            padding-bottom: 4px;
+        }
+        .zwischenueberschrift_24 {
+            font-size: 15px;
+            line-height: 1.3;
+            text-align: center;
+            letter-spacing: normal;
+            padding-top: 8px;
+            padding-right: 5px;
+            padding-bottom: 4px;
+        }
+        .zwischenueberschrift_25 {
+            font-size: 16px;
+            line-height: 1.3;
+            text-align: left;
+            letter-spacing: 2px;
+            padding-top: 12px;
+            padding-right: 0;
+            padding-bottom: 4px;
+        }
+        .zwischenueberschrift_26 {
+            font-size: 15px;
+            line-height: 1.1;
+            text-align: center;
+            letter-spacing: 1px;
+            padding-top: 8px;
+            padding-right: 5px;
+            padding-bottom: 3px;
+        }
+        .zwischenueberschrift_27 {
+            font-size: 15px;
+            line-height: 1.2;
+            text-align: justify;
+            letter-spacing: normal;
+            padding-top: 12px;
+            padding-right: 0;
+            padding-bottom: 4px;
+        }
+        .zwischenueberschrift_28 {
+            font-size: 15px;
+            line-height: 1.3;
+            text-align: justify;
+            letter-spacing: 2px;
+            padding-top: 12px;
+            padding-right: 10px;
+            padding-bottom: 3px;
+        }
+        .zwischenueberschrift_29 {
+            font-size: 15px;
+            line-height: 1.2;
+            text-align: left;
+            letter-spacing: normal;
+            padding-top: 8px;
+            padding-right: 0;
+            padding-bottom: 3px;
+        }
+        .artikelueberschrift_31 {
+            font-size: 22px;
+            line-height: 1.3;
+            text-align: center;
+            letter-spacing: normal;margin-right: 1rem;padding-right: 0;
+            padding-bottom: 3rem;}
+        .artikelueberschrift_32 {
+            font-size: 21px;
+            line-height: 1.1;
+            text-align: justify;
+            letter-spacing: normal;margin-right: 2rem;padding-right: 1rem;
+            padding-bottom: 0;}
+        .artikelueberschrift_33 {
+            font-size: 21px;
+            line-height: 1.3;
+            text-align: center;
+            letter-spacing: normal;margin-right: 3rem;padding-right: 2rem;
+            padding-bottom: 3rem;}
+        .artikelueberschrift_34 {
+            font-size: 21px;
+            line-height: 1.2;
+            text-align: justify;
+            letter-spacing: 2px;margin-right: 1rem;padding-right: 3rem;
+            padding-bottom: 0;}
+        .artikelueberschrift_35 {
+            font-size: 21px;
+            line-height: 1.3;
+            text-align: left;
+            letter-spacing: 2px;margin-right: 2rem;padding-right: 2rem;
+            padding-bottom: 0;}
+        .artikelueberschrift_36 {
+            font-size: 21px;
+            line-height: 1.3;
+            text-align: left;
+            letter-spacing: normal;margin-right: 2rem;padding-right: 0;
+            padding-bottom: 0;}
+        .artikelueberschrift_37 {
+            font-size: 21px;
+            line-height: 1.2;
+            text-align: justify;
+            letter-spacing: normal;margin-right: 1rem;padding-right: 2rem;
+            padding-bottom: 0;}
+        .artikelueberschrift_38 {
+            font-size: 21px;
+            line-height: 1.1;
+            text-align: justify;
+            letter-spacing: 2px;margin-right: 0;padding-right: 4rem;
+            padding-bottom: 2rem;}
+        .artikelueberschrift_39 {
+            font-size: 21px;
+            line-height: 1.1;
+            text-align: justify;
+            letter-spacing: 1px;margin-right: 2rem;padding-right: 4rem;
+            padding-bottom: 4rem;}
+        .artikelueberschrift_40 {
+            font-size: 22px;
+            line-height: 1.3;
+            text-align: center;
+            letter-spacing: 2px;margin-right: 2rem;padding-right: 1rem;
+            padding-bottom: 1rem;}
+.artikel_41 {
+        font-size: 24px;
+        line-height: 1.2;
+        text-align: left;
+        padding-top: 5px;
+        padding-right: 15px;
+        margin-right: 0;
+        margin-left: 1rem;
+        position: relative;
+        display: block;
+      }
+.artikel_42 {
+        font-size: 24px;
+        line-height: 1.2;
+        text-align: left;
+        padding-top: 7px;
+        padding-right: 15px;
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+        position: relative;
+        display: block;
+      }
+.artikel_43 {
+        font-size: 24px;
+        line-height: 1.1;
+        text-align: left;
+        padding-top: 5px;
+        padding-right: 15px;
+        margin-right: 0.5rem;
+        margin-left: 0;
+        position: relative;
+        display: block;
+      }
+.artikel_44 {
+        font-size: 24px;
+        line-height: 1.1;
+        text-align: left;
+        padding-top: 5px;
+        padding-right: 15px;
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+        position: relative;
+        display: block;
+      }
+.artikel_45 {
+        font-size: 24px;
+        line-height: 1.1;
+        text-align: left;
+        padding-top: 7px;
+        padding-right: 15px;
+        margin-right: 0.5rem;
+        margin-left: 0;
+        position: relative;
+        display: block;
+      }
+.artikel_46 {
+        font-size: 24px;
+        line-height: 1.1;
+        text-align: left;
+        padding-top: 5px;
+        padding-right: 15px;
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+        position: relative;
+        display: block;
+      }
+.artikel_47 {
+        font-size: 24px;
+        line-height: 1.2;
+        text-align: left;
+        padding-top: 5px;
+        padding-right: 15px;
+        margin-right: 0.5rem;
+        margin-left: 1rem;
+        position: relative;
+        display: block;
+      }
+.artikel_48 {
+        font-size: 24px;
+        line-height: 1.1;
+        text-align: left;
+        padding-top: 7px;
+        padding-right: 15px;
+        margin-right: 0;
+        margin-left: 1rem;
+        position: relative;
+        display: block;
+      }
+.artikel_49 {
+        font-size: 24px;
+        line-height: 1.2;
+        text-align: left;
+        padding-top: 7px;
+        padding-right: 15px;
+        margin-right: 0.5rem;
+        margin-left: 1rem;
+        position: relative;
+        display: block;
+      }
+.artikel_50 {
+        font-size: 24px;
+        line-height: 1.1;
+        text-align: left;
+        padding-top: 5px;
+        padding-right: 15px;
+        margin-right: 0;
+        margin-left: 0;
+        position: relative;
+        display: block;
+      }
+
+
+
+ /* erste Tabelle */
+.info-table {
+  width: 100%; /* Stellen Sie sicher, dass die Tabelle die volle Breite einnimmt */
+  border-collapse: collapse; /* Entfernt den Abstand zwischen den Zellen */
+  font-size: 24px;
+  margin-top: 2rem;
+}
+
+info-table td {
+  padding: 10px;
+  border: none; 
+  vertical-align: middle; /* Vertikale Zentrierung innerhalb der Zelle */
+}
+
+.pruefstelle {
+  text-align: center; /* Zentriert den Text "Prüfstelle:" */
+  text-decoration: underline; /* Unterstreicht den Text "Prüfstelle:" */
+}
+
+.pruefstelle-details {
+  display: flex; /* Aktiviert Flexbox für die Zelle */
+  justify-content: center; /* Zentriert den Textblock horizontal */
+  align-items: center; /* Zentriert den Textblock vertikal */
+  width: 100%; 
+}
+
+.pruefstelle-details p {
+  text-align: left; /* Linksbündige Ausrichtung innerhalb des Textblocks */
+  margin: 0; /* Entfernt den Standard-Rand */
+}
+
+.indented-cell {
+  padding-left: 150px; /* Das ist der Texteinzug 1. Tabelle; linke Spalte */
+}
+
+
+
+  /* zweite Tabelle */
+.table {
+  font-size: 24px;      
+    display: flex;
+    justify-content: center;
+}
+
+
+  .aufbau-nummer {
+    display: inline-block;
+    width: 33px;
+    text-align: right;
+}
+
+.value-unit {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+}
+        
+    .table div {
+        text-align: left; /* Linksbündige Ausrichtung für den Text */
+    }
+    
+    .letter-cell {
+        padding-right: 10px; 
+        text-align: right; /* Buchstaben rechtsbündig ausrichten */
+    }
+
+/* dritte Tabelle */
+.dritte-table {
+  font-size: 24px; 
+  width: 100%; /* Stellen Sie sicher, dass die Tabelle die volle Breite einnimmt */
+  border-collapse: collapse; /* Entfernt den Abstand zwischen den Zellen */
+  line-height: 1.0;
+}
+
+.dritte-table th, .dritte-table td {
+  padding: 10px;
+  border: none; /* Keine sichtbaren Ränder */
+  vertical-align: top;
+}
+
+.centered-underlined {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.dritte-table .underlined {
+  text-decoration: underline;
+}
+
+.dritte-table .nested-table-cell {
+  padding: 0; /* Entfernt den Innenabstand für diese Zelle */
+}
+
+.dritte-table .nested-table {
+  display: table;
+  width: 100%;
+}
+
+.dritte-table .nested-row {
+  display: table-row;
+  line-height: 0.9;
+}
+
+
+.dritte-table .nested-row > div {
+  display: table-cell;
+  padding: 10px; /* Innenabstand für die Zellen der inneren Tabelle */
+}
+
+.dritte-table .nested-row > div {
+  display: table-cell;
+  padding: 10px; 
+}
+
+.dritte-table .aufbau-label { /* Neue Klasse für die "mit Aufbau"-Labels */
+  padding-left: 20px; /* Einrückung für die Labels */
+}
+
+.dritte-table .aufbau-a-row > div { /* Neue Regel für die Zeilen von Ausführung A */
+  line-height: 0.5; /* Reduzierter Zeilenabstand für diese Zeilen */
+}      .datum_51 {
+        position: absolute;
+        top:823px;
+        left:337px;
+      }
+.adresse_81 {
+        position: absolute;
+        top:91px;
+        left:879px;
+        font-size: 24px;
+      }
+
+.stempelbild_61 img {
+        display: block;
+        margin: 0 auto; /* Zentriert das Bild */
+        position: absolute;
+        top: 1123px;
+        left:374px;
+        max-width: 200px; /* Verhindert, dass das Bild größer als seine natürliche Breite angezeigt wird */
+        max-height: 100%; /* Verhindert, dass das Bild größer als seine natürliche Höhe angezeigt wird */
+        width: auto; /* Behält das Seitenverhältnis bei, wenn die Höhe angepasst wird */
+        height: auto; /* Behält das Seitenverhältnis bei, wenn die Breite angepasst wird */
+      }.stempelbild_unten_mittig_71 img {
+        display: block;
+        margin: 0 auto; /* Zentriert das Bild */
+        position: absolute;
+        top:1444px;
+        left:308px;
+        max-width: 380px; /* Verhindert, dass das Bild größer als seine natürliche Breite angezeigt wird */
+        max-height: 100%; /* Verhindert, dass das Bild größer als seine natürliche Höhe angezeigt wird */
+        width: auto; /* Behält das Seitenverhältnis bei, wenn die Höhe angepasst wird */
+        height: auto; /* Behält das Seitenverhältnis bei, wenn die Breite angepasst wird */
+      }.bueroklammer-img {
+      display: block;
+      margin: 0 auto; /* Zentriert das Bild */
+      width: 35px; /* Breite des Bildes */
+      position: absolute;
+      top: 0px;
+      left:px; /* Dynamischer Abstand von links */
+    }
+
+    </style>
+  </head>
+  <body>
+<div class="sonder_Text">
+  <span class="company-name">Trub Industries & Co. KGaA</span><br>
+  <span>Kfz —Anh. Typ:</span> <span>269</span><br>
+  ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+</div>
+
+<h2><span>Kraftfahrzeug—Typblatt</span></h2>
+
+<hr class="thick-line">
+
+<h2><span>Allgemeine Betriebserlaubnis Nr.</span> <span>33/3</span></h2>
+
+<h2><span>erteilt vom Kraftfahrt—Bundesamt am</span> <span>10.07.1975</span></h2><table class="info-table">
+  <tbody>
+      <tr>
+          <td><span>Kraftfahrzeug—Anhänger</span></td>
+          <td class="pruefstelle"><span>Prüfstelle:</span></td>
+      </tr>
+      <tr>
+          <td><span>Typ:<span> 818</span></span></td>
+          <td class="pruefstelle-details">
+              <p><span>Technische Prüfstelle für den<br>Kraftfahrzeugverkehr Hannover,<br>Dienststelle in Paderborn</span></p>
+          </td>
+      </tr>
+      <tr>
+          <td><span>Hersteller:</span> <span>Westfalia—Werke KG.</span></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td class="indented-cell"><span>in Wiedenbrück</span></td> 
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+
+
+<hr class="thick-line">
+
+<div class="artikel_41">
+  <span>Die Allgemeine Betriebserlaubnis Nr. 97 in der Fassung vom <span>30.10.1982</span> (einschl. Nachträge) wird hiermit augehoben. An ihrer Stelle wird wie folgt beurkundet:</span>
+</div><br>
+
+
+<div class="artikel_42">
+  <span>Die Fahrzeuge werden in folgenden Ausführungen hergestellt:</span>
+</div><br><br>
+
+<div class="table">
+  <div><span>A:</span> <span class="description-cell">Kraftfahrzeug—Anhänger, offener Kasten, mit</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span>Aufbau</span> <span class="aufbau-nummer">37</span> = <span>Länge des Laderaumes</span>&nbsp;<div class="value-unit"><span>1677</span> <span>mm</span></div><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span>Aufbau</span> <span class="aufbau-nummer">66</span> = <span>Länge des Laderaumes</span>&nbsp;<div class="value-unit"><span>1628</span> <span>mm</span></div><br>
+          <br><br><span>B:</span> <span class="description-cell">Kraftfahrzeug—Anhänger, geschlossener Kasten, mit</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span>Aufbau</span> <span class="aufbau-nummer">80</span> = <span>Länge des Laderaumes</span>&nbsp;<div class="value-unit"><span>1860</span> <span>mm</span></div><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span>Aufbau</span> <span class="aufbau-nummer">69</span> = <span>Länge des Laderaumes</span>&nbsp;<div class="value-unit"><span>1628</span> <span>mm</span></div><br>
+          <br><br></div>
+</div>
+
+
+
+
+
+<div class="dashed-line"></div>
+<br><table class="dritte-table">
+  <thead>
+      <tr>
+          <th colspan="2" class="centered-underlined"><span>A. Angaben des Anhängerbriefes.</span></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td class="underlined"><span>1. Art des Anhängers:</td>
+          <td><span>Gewöhnlicher Anhänger ohne<br>Kippeinrichtung</span></td></span>
+      </tr>
+      <tr>
+          <td class="underlined"><span>2. Verwendungszweck, Aufbau:</span></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td colspan="2" class="nested-table-cell">
+              <div class="nested-table">
+                  <div class="nested-row">
+                      <div><span>Ausführung A:</span></div>
+                      <div></div>
+                  </div>
+                       <div class="nested-row aufbau-a-row">
+                          <div class="aufbau-label"><span>mit Aufbau</span> <span>73:</span></div>
+                          <div><span>offener Kasten in Holzausführung</span> <span>3845</span> <span>mm</span> <span>lang</span></div>
+                      </div>
+                       <div class="nested-row aufbau-a-row">
+                          <div class="aufbau-label"><span>mit Aufbau</span> <span>62:</span></div>
+                          <div><span>offener Kasten in Holzausführung</span> <span>1412</span> <span>mm</span> <span>lang</span></div>
+                      </div>
+                       <div class="nested-row aufbau-a-row">
+                          <div class="aufbau-label"><span>mit Aufbau</span> <span>64:</span></div>
+                          <div><span>offener Kasten in Holzausführung</span> <span>2836</span> <span>mm</span> <span>lang</span></div>
+                      </div>
+
+                  <div class="nested-row">
+                      <div><span>Ausführung B:</span></div>
+                      <div></div>
+                  </div>
+                       <div class="nested-row">
+                          <div class="aufbau-label"><span>mit Aufbau</span> <span>72:</span></div>
+                          <div>
+                          <div><span>geschlossener Kasten aus Hartholzgerippe mit äußerer<br>
+                              Sperrholz— oder Blechverkleidung</span> <span>2754</span> <span>mm</span> <span>lang</span></div> 
+                          </div>
+                      </div>
+                       <div class="nested-row">
+                          <div class="aufbau-label"><span>mit Aufbau</span> <span>28:</span></div>
+                          <div>
+                          <div><span>geschlossener Kasten aus Hartholzgerippe mit äußerer<br>
+                              Sperrholz— oder Blechverkleidung</span> <span>1025</span> <span>mm</span> <span>lang</span></div> 
+                          </div>
+                      </div>
+                       <div class="nested-row">
+                          <div class="aufbau-label"><span>mit Aufbau</span> <span>57:</span></div>
+                          <div>
+                          <div><span>geschlossener Kasten aus Hartholzgerippe mit äußerer<br>
+                              Sperrholz— oder Blechverkleidung</span> <span>2349</span> <span>mm</span> <span>lang</span></div> 
+                          </div>
+                      </div>
+              </div>
+          </td>
+      </tr>
+  </tbody>
+</table><span class="seitennummer">- 1 -</span>
+
+
+    </body>
+  </html>

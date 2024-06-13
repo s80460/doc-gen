@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <title>Typgutachten</title>
+    <style>
+        {#-/* Zufällige left-px-Berechnung für Büroklammerbild*/-#}
+        {%- set left_position_klammer = range(5, 100)|random -%}
+
+        {#-/* Zufällige Positions-px-Berechnung für allgemeine StempelBilder*/-#}
+        {%- set stempelbild_position_top = range(1100, 1180)|random -%}
+        {%- set stempelbild_position_left = range(350, 380)|random -%}
+
+        {#-/* Zufällige Positions-px-Berechnung für StempelBilder, welche nur unten_mittig sind!!! */-#}
+        {%- set stempelbild_unten_mittig_position_top = range(1400, 1500)|random -%}
+        {%- set stempelbild_unten_mittig_position_left = range(300, 350)|random -%}
+
+        {#- /* Zufällige Positions-px-Berechnung für Datum */ -#}
+        {%- set datum_position_top = range(820, 825)|random -%}
+        {%- set datum_position_left = range(325, 380)|random -%}
+
+        {#- /* Zufällige Positions-px-Berechnung für Adresse */ -#}
+        {%- set adresse_position_top = range(90, 100)|random -%}
+        {%- set adresse_position_left = range(860, 915)|random -%}
+
+        {#- /* Zufällige Positions-px-Berechnung für Firmenname  (oft rechts oben) */ -#}
+        {%- set firmenname_position_top = range(150, 170)|random -%}
+        {%- set firmenname_position_left = range(180, 120)|random -%}
+    
+        {#- /* Zufällige Positions-px-Berechnung für Seitennummer_1 (oben) */ -#}
+        {%- set seitennummer_1_position_top = range(80, 120)|random -%}
+        {%- set seitennummer_1_position_left = range(600, 620)|random -%}
+
+        {#- /* Zufällige Positions-px-Berechnung für Seitennummer_2 (oben) */ -#}
+        {%- set seitennummer_2_position_top = range(1570, 1630)|random -%}
+        {%- set seitennummer_2_position_left = range(1000, 1100)|random -%}
+
+        {#- /* ----------------------------------------- */ -#}
+        {#- /* Ab hier werden zufällige Zähler berechnet */ -#}
+
+        {#- /* zeigt "entfällt" ODER eine Zufallszahl an -> Siehe in Liste */ -#}
+        {% set option = ['entfällt', fake.random_int(550, 950)] | random %}
+        {{ option if option == 'entfällt' else option ~ ' kg' }}
+
+        {#- /* Nummerierung der Tabelle */ -#}
+        {% set startnummer = range(1, 14) | random %}
+        {% set num = namespace(value=startnummer) %}
+
+        {#- /* Zufällige Seitennummer für die obere Seitenzahl generieren */ -#}
+        {% set obere_seitenzahl = fake.random_int(1, 19) %}
+
+        {#- /* Zweite Seitenzahl als obere Seitenzahl + 1 berechnen */ -#}
+        {% set zweite_seitenzahl = obere_seitenzahl + 1 %}
+
+        
+
+        @font-face {
+            font-family: "Corona 3 Typewriter";
+            src: url("../static/fonts/Corona-3-Typewriter.ttf") format("truetype");
+        }
+
+        html {
+            font-family: "Corona-3-Typewriter";
+        }
+
+        body {
+            margin-top: 230px;
+            margin-left: 0px;
+            padding: 0px;
+            font-family: "Corona 3 Typewriter";
+            background: white;
+            font-size: 23px;
+            margin-left: 4rem;
+        }
+        
+        .hauptueberschrift {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 120px;
+            margin-bottom: 1rem;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+        }
+
+
+        .sonder_Text {
+            position: absolute;
+            top: {{- firmenname_position_top -}}px;
+            left: {{- firmenname_position_left -}}px;
+            font-size: 24px;
+            line-height: 0.4;
+        }
+          
+        .sonder_Text .company-name {
+            letter-spacing: 6px; /* Beispiel: Buchstabenabstand von 6 Pixel */
+        }
+
+        .blatt_nummer {
+            letter-spacing: 6px; /* Beispiel: Buchstabenabstand von 6 Pixel */
+        }
+          
+        .sonder_Text .line {
+            display: block;
+            margin: 10px 0; /* Passt den Abstand an, damit die Linie in der Mitte ist */
+            border: 1px solid black; /* Setzt eine Linie mit 1 Pixel Dicke */
+        }
+
+        .seitennummer_1 {
+            position: absolute;
+            top: {{- seitennummer_1_position_top -}}px;
+            left: {{- seitennummer_1_position_left -}}px;
+            font-size: 24px;
+        }
+
+        .seitennummer_2 {
+            position: absolute;
+            top: {{- seitennummer_2_position_top -}}px;
+            left: {{- seitennummer_2_position_left -}}px;
+            font-size: 24px;
+        }
+
+        .haupt_tabelle {
+            width: 95%;
+            margin-top: 20px;
+            margin-left: 50px;
+            margin-right: 30px;
+            line-height: 0.8;
+        }
+
+        .haupt_tabelle th, .haupt_tabelle td {
+            padding: 5px 5px;
+            text-align: left;
+            vertical-align: top;
+            font-weight: 600;
+        }
+
+        .haupt_tabelle td:nth-child(1) {
+            width: 7%; /* Breite der ersten Spalte */
+        }
+
+        .haupt_tabelle td:nth-child(2) {
+            width: 7%; /* Breite der ersten Spalte */
+        }
+
+        .haupt_tabelle td:nth-child(3) {
+            width: 51%; /* Breite der ersten Spalte */
+        }
+
+        .haupt_tabelle th:first-child, .haupt_tabelle td:first-child {
+            width: 49px;
+        }
+
+        .haupt_tabelle th:nth-child(3), .haupt_tabelle td:nth-child(3) {
+            min-width: 285px; /* Setzt die minimale Breite der dritten Spalte */
+            
+        }
+
+
+        .haupt_tabelle th .unterstrichen {
+            text-decoration: underline;
+        }
+
+        .haupt_tabelle td[colspan] {
+            text-align: left;
+        }
+
+
+
+
+
+
+    
+
+    
+        .inner_tabelle_LBH {
+            width: 70%; /* Die Tabelle nimmt 80% der verfügbaren Breite ein */
+            table-layout: fixed; /* Erlaubt eine feste Spaltenbreite */
+            margin-left: 20px;
+        }
+        
+        .inner_tabelle_LBH td {
+            padding: 1px 4px; /* Reduzierte Padding-Werte */
+            text-align: center; /* Standardmäßige zentrale Ausrichtung */
+        }
+        
+        /* Angabe der Breite für jede Spalte */
+        .inner_tabelle_LBH td:nth-child(1) {
+            width: 10%; /* Breite der ersten Spalte */
+        }
+        
+        .inner_tabelle_LBH td:nth-child(2) {
+            width: 7%; /* Breite der zweiten Spalte */
+        }
+        
+        .inner_tabelle_LBH td:nth-child(3) {
+            width: 10%; /* Breite der dritten Spalte */
+        }
+        
+        .inner_tabelle_LBH td:nth-child(4), 
+        .inner_tabelle_LBH td:nth-child(5), 
+        .inner_tabelle_LBH td:nth-child(6) {
+            text-align: left; /* Links ausgerichteter Text für die Spalten 4, 5 und 6 */
+            width: 25%; /* Breite der vierten Spalte */
+        }
+        
+        .inner_tabelle_LBH td:nth-child(5) {
+            width: 15%; /* Breite der fünften Spalte */
+        }
+        
+        .inner_tabelle_LBH td:nth-child(6) {
+            width: 15%; /* Breite der sechsten Spalte */
+        }
+        
+        
+
+
+        .inner_tabelle_3-Spalt {
+            width: 105%; /* Die Tabelle nimmt 80% der verfügbaren Breite ein */
+            table-layout: fixed; /* Erlaubt eine feste Spaltenbreite */
+            margin-left: 60px;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .inner_tabelle_3-Spalt td {
+            padding: 1px 4px; /* Reduzierte Padding-Werte */
+            text-align: left; /* Standardmäßige zentrale Ausrichtung */
+        }
+
+        .inner_tabelle_3-Spalt td:nth-child(1) {
+            width: 7%; /* Breite der zweiten Spalte */
+        }
+
+        .inner_tabelle_3-Spalt td:nth-child(2) {
+            width: 64%; /* Breite der zweiten Spalte */
+        }
+
+        .inner_tabelle_3-Spalt td:nth-child(3) {
+            width: 76%; /* Breite der zweiten Spalte */
+        }
+
+        .inner_tabelle_3-Spalt td {
+            vertical-align: bottom;  /* Stellt sicher, dass dies überall angewendet wird */
+            height: 50px;  /* Beispielhöhe; passe dies entsprechend an */
+        }
+
+        .align-bottom {
+            vertical-align: bottom;
+        }
+
+        .mini_tabelle {
+            width: 100%;
+            border-collapse: collapse;
+            border: none;
+        }
+
+        .mini_tabelle td:nth-child(1) {
+            padding: 0px;
+            margin: 0px;
+            width: 95%;
+        }
+
+        .mini_tabelle td:nth-child(2) {
+            padding: 0px;
+            margin: 0px;
+            width: 15%;
+        }
+
+
+
+
+        .table_herausgeber {
+            margin-top: 750px;
+            margin-left: 60px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .herausgeber-zelle {
+            vertical-align: top;
+        }
+        
+
+
+
+
+        /* Alle Linien sichtbar machen
+        .haupt_tabelle th, .haupt_tabelle td {
+            border: 2px solid black;
+        }
+        
+        .inner_tabelle_LBH th, .inner_tabelle_LBH td, .inner_tabelle_3-Spalt th, .inner_tabelle_3-Spalt td {
+            border: 1px solid grey;
+        }
+        */
+
+
+        .unterstrichen {
+            text-decoration: underline;
+        }
+
+        .unterstrichen_dashed {
+            border-bottom: 4px dashed black; /* Erhöht die Dicke der gestrichelten Linie */
+            text-decoration: none;
+        }
+        
+
+        hr {          
+            border-top: 1px solid black;
+        }
+
+        .bueroklammer-img {
+            display: block;
+            margin: 0 auto; /* Zentriert das Bild */
+            width: 35px; /* Breite des Bildes */
+            position: absolute;
+            top: 0px;
+            left: {{ left_position_klammer }}px; /* Dynamischer Abstand von links */
+        }
+
+        svg {
+            display: block;
+            position: absolute;
+            width: 1000px;  /* Feste Breite in Pixel */
+            height: 20px;  /* Feste Höhe */
+            top: 87%;  /* Positioniert das SVG vertikal in der Mitte */
+            left: 50%;  /* Positioniert das SVG horizontal in der Mitte */
+            transform: translate(-50%, -50%);  /* Zentriert das SVG genau in der Mitte des Bildschirms */
+        } 
+        
+
+
+    </style>
+</head>
+<body>
+
+
+
+{% set counter_tabelle = namespace(value=82) %}
+
+    {% if
+        klammer_bildpfad and show_image_chance <= 35 %}
+        {# Bild anzeigen in 35% der Fälle #}
+        <span class="bueroklammer-img">
+          <img src="{{ klammer_bildpfad }}"
+               alt="Büroklammer"
+               class="bueroklammer-img" />
+        </span>
+      {% endif %}
+
+    <span class="seitennummer_1">- {{ obere_seitenzahl }} -</span>
+
+    <div class="sonder_Text">
+        <span class="blatt_nummer">Nr.</span>  <span>{{ fake.random_int(10, 800) }}</span>/<span>{{ fake.random_int(1, 14) }}</span>
+        <span class="line"></span>
+        <span>Typ:</span> <span>{{ fake.random_int(10, 800) }}</span>  
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <table class="haupt_tabelle">
+<tr>
+    <td><span>{{ num.value }}.{% set num.value = num.value + 1 %}</span></td>
+    <td><span>b)</span></td>
+    <td>
+        <span>{{ fake.word() }}:</span>
+    </td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>{{ fake.word() }}:</span></td>
+    <td><span>{{ fake.company().replace("GmbH", "Corp").replace("AG", "Industries") }}</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>{{ fake.word() }}:</span></td>
+    <td><span>{{ fake.random_element('ABCDEFGHIJKLMNOPQRSTUVWXYZ') }}{{ fake.random_element('ABCDEFGHIJKLMNOPQRSTUVWXYZ') }}</span> <span>{{ fake.random_int(3, 33) }}</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>{{ fake.word() }}:</span></td>
+    <td><span>{{ fake.random_element('ABCDEFGHIJKLMNOPQRSTUVWXYZ') }} {{ fake.random_int(1000, 2999) }}</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>{{ fake.words(nb=4, ext_word_list=None) | join(' ') }}:</span></td>
+    <td><span>{{ fake.words(nb=2, ext_word_list=None) | join(' ') }}</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td>c)</td>
+    <td><span>{{ fake.word() }}:</span></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>{{ fake.word() }}:</span></td>
+    <td><span>{{ fake.company().replace("GmbH", "Corp").replace("AG", "Industries") }}</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td><span></span></td>
+    <td><span>{{ fake.word() }}:</span></td>
+    <td><table class="mini_tabelle">
+        <tr>
+            <td><span>{{ fake.words(nb=3, ext_word_list=None) | join(' ') }}</span> <span>b)</span></td>
+            <td><span>{{ fake.words(nb=3, ext_word_list=None) | join(' ') }}</span></td>
+        </tr>
+
+    </table></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>{{ fake.word() }}:</span></td>
+    <td><table class="mini_tabelle">
+        <tr>
+            <td><span>{{ fake.words(nb=3, ext_word_list=None) | join(' ') }}</span> <span>b)</span></td>
+            <td><span>{{ fake.words(nb=2, ext_word_list=None) | join(' ') }}<br>{{ fake.words(nb=2, ext_word_list=None) | join(' ') }}</span></td>
+        </tr>
+    </table></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>{{ fake.words(nb=3, ext_word_list=None) | join(' ') }}:</span></td>
+    <td><span>{{ fake.words(nb=2, ext_word_list=None) | join(' ') }}</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>{{ fake.words(nb=3, ext_word_list=None) | join(' ') }}:</span></td>
+    <td><span>{{ fake.random_int(270, 520) }}</span> <span>mm</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>{{ fake.words(nb=2, ext_word_list=None) | join(' ') }}<br>{{ fake.words(nb=2, ext_word_list=None) | join(' ') }}</span></td>
+    <td><span>{{ fake.words(nb=3, ext_word_list=None) | join(' ') }}</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td><span>d)</span></td>
+    <td><span>{{ fake.word() }}:<br><br><br></span></td>
+    <td><span>{{ fake.words(nb=3, ext_word_list=None) | join(' ') }}</span></td>
+</tr>
+<tr>
+    <td><span>{{ num.value }}.{% set num.value = num.value + 1 %}</span></td>
+    <td colspan="2"><span class="unterstrichen">{{ fake.word() }}:</span></td>
+    <td><span>{{ fake.word() }}</span></td>
+</tr>
+    </table>
+
+
+
+    <svg viewBox="0 0 1000 20" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,10 C160,0 300,14 420,8 S600,10 750,8 S900,0 1000,10" stroke="black" stroke-width="2" fill="none"/>
+    </svg>
+    
+    
+ 
+
+    <table class="table_herausgeber">
+        <tr>
+            <td class="herausgeber-zelle unterstrichen"><span>Herausgeber:</span></td>
+            <td><span>{{ fake.company().replace("GmbH", "Corp").replace("AG", "Industries") }}<br>Nur für den Dienstgebrauch; Nachruck verboten !</span><br><span style="padding-left: 370px;">{{ range(1, 13)|random|month_name }} {{ 1940 + range(0, 51)|random }}</span></td>
+        </tr>
+    </table>
+
+
+    <!-- <span class="seitennummer_2">- {{ zweite_seitenzahl }} -</span> -->
+
+
+</body>
+</html>

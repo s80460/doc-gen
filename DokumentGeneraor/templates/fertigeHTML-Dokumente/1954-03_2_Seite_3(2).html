@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <title>Typgutachten</title>
+    <style>        entfällt
+        @font-face {
+            font-family: "Corona 3 Typewriter";
+            src: url("../static/fonts/Corona-3-Typewriter.ttf") format("truetype");
+        }
+
+        html {
+            font-family: "Corona-3-Typewriter";
+        }
+
+        body {
+            margin: 7rem 2rem 0;
+            padding: 0;
+            font-family: "Corona 3 Typewriter";
+            background: white;
+            font-size: 24px;
+            margin-left: 4rem;
+        }
+
+
+        .sonder_Text {
+            position: absolute;
+            top:66px;
+            left:px;
+            font-size: 24px;
+            line-height: 0.4;
+        }
+          
+        .sonder_Text .company-name {
+            letter-spacing: 6px; /* Beispiel: Buchstabenabstand von 6 Pixel */
+        }
+          
+        .sonder_Text .line {
+            display: block;
+            border-bottom: 1px solid black;
+            margin: 10px 0; /* Passt den Abstand an, damit die Linie in der Mitte ist */
+        }
+
+        .sonder_Text, .haupt_tabelle td {
+            hyphens: auto;
+        }
+
+        .seitennummer_1 {
+            position: absolute;
+            top:48px;
+            left:618px;
+            font-size: 24px;
+        }
+
+        .seitennummer_2 {
+            position: absolute;
+            top:1415px;
+            left:1088px;
+            font-size: 24px;
+        }
+
+        .haupt_tabelle {
+            width: 95%;
+            margin-top: 10rem;
+        }
+
+        .haupt_tabelle th, .haupt_tabelle td {
+            padding: 10px 10px;
+            text-align: left;
+            vertical-align: top;
+            font-weight: normal;
+            border: 1px solid black;
+        }
+
+        .haupt_tabelle th:first-child, .haupt_tabelle td:first-child {
+            width: 49px;
+        }
+
+        .haupt_tabelle th:nth-child(3), .haupt_tabelle td:nth-child(3) {
+            min-width: 285px; /* Setzt die minimale Breite der dritten Spalte */
+
+        }
+
+
+        /* Alle Linien entfernen */
+        .haupt_tabelle, .inner_table_1, .inner_table_2 {
+            border: none; /* Entfernt die Umrandung der Tabelle */
+        }
+
+        .haupt_tabelle th, .haupt_tabelle td, .inner_table_1 th, .inner_table_1 td, .inner_table_2 th, .inner_table_2 td {
+            border: none; /* Entfernt die Umrandung der Zellen */
+        }
+        
+
+        .haupt_tabelle th span {
+            text-decoration: none;
+        }
+
+
+        .haupt_tabelle th .unterstrichen {
+            text-decoration: underline;
+        }
+
+        .haupt_tabelle td[colspan] {
+            text-align: left;
+        }
+
+
+        .inner_table_1, .inner_table_2 {
+            margin: 0px; /* Entfernt den Außenabstand um die Tabelle */
+            width: 100%; /* Optional: stellt sicher, dass die Tabelle die gesamte Breite des Elternelements ausnutzt */
+        }
+
+
+        .inner_table_1 td {
+            padding: 2px 5px; /* Reduziert das Padding in den Zellen für weniger Innenraum */
+        }
+
+        inner_table_2 td {
+            padding: 4px 6px; /* Reduziert das Padding in den Zellen für weniger Innenraum */
+        }
+
+
+        .unterstrichen {
+            text-decoration: underline;
+        }
+
+        hr {          
+            border-top: 1px solid black;
+        }
+
+        .bueroklammer-img {
+            display: block;
+            margin: 0 auto; /* Zentriert das Bild */
+            width: 35px; /* Breite des Bildes */
+            position: absolute;
+            top: 0px;
+            left:42px; /* Dynamischer Abstand von links */
+        }
+
+        
+
+
+        
+
+    </style>
+</head>
+<body>
+
+        <span class="bueroklammer-img">
+          <img src="../../../static/images/bueroklammern/Klammer (7).png"
+               alt="Büroklammer"
+               class="bueroklammer-img" />
+        </span>
+
+    <span class="seitennummer_1">- 16 -</span>
+
+    <div class="sonder_Text">
+        <span class="company-name">Nr.</span>  <span>692</span>
+        <span class="line"></span>
+        <span>Typ:</span> <span>427</span>  
+    </div>
+
+    <table class="haupt_tabelle">
+<tr>
+    <td><span class="unterstrichen">9.</span></td>
+    <td>
+        <span class="unterstrichen">Zahl der Achsen: </span>
+    </td>
+    <td><span>1</span></td>
+</tr>
+<tr>
+    <td><span class="unterstrichen">10.</span></td>
+    <td><span class="unterstrichen">Zul. Achslast und zul. Felgendruck: </span></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td><span class="nummeriert">a)</span> <span>Achslast: </span></td>
+    <td><span>645</span><span> kg</span></td>
+</tr>
+<tr>
+    <td><span class="unterstrichen">11.</span></td>
+    <td>
+        <span class="unterstrichen">Bremsanlage:</span>
+    </td>
+    <td><span>keine</span></td>
+</tr>
+<tr>
+    <td><span class="unterstrichen">12.</span></td>
+    <td>
+        <span class="unterstrichen">Anhängervorrichtung:</span>
+    </td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td colspan="2"><table class="inner_table_1">
+        <tr>
+            <td><span>A)</span></td>
+            <td><span>Art, Hersteller, Typ und Nr. der Allg.Betriebserl.:</span></td>
+            <td><span>Kugelpfanne für Kugeldurchmesser</span> <span>50</span> <span>mm</span></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><span>Hersteller:</span></td>
+            <td><span>Westfalia-Werke, Franz Knöbel & Söhne KG., Wiedenbrück</span></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><span>Typ:</span><br><span>Allg. Bauartgenehmigung:</span></td>
+            <td><span>Köbel-Patent Nr.</span><br><span>R-485</span></td>
+        </tr>
+        <tr>
+            <td><span>b)</span></td>
+            <td><span>Ist Anhängerkupplung zum Mitnehmen eines weiteren Anhängers vorhanden?</span></td>
+            <td><span><br><br>nein</span></td>
+        </tr>
+        <tr>
+            <td><span>c)</span></td>
+            <td><span>Höhe über der Fahrbahn: (Bolzenmittel)</span></td>
+            <td><span>entfällt</span></td>
+        </tr>
+        <tr>
+            <td><span>d)</span></td>
+            <td><span>Bolzenstärke:</span></td>
+            <td><span>entfällt</span></td>
+        </tr>
+
+    </table></td>
+</tr>
+<tr>
+    <td><span class="unterstrichen">13.</span></td>
+    <td><span>Listenpreis:</span></td>
+    <td><span>entfällt</span></td>
+</tr>
+<tr>
+    <td><span class="unterstrichen">14.</span></td>
+    <td><span>Bemerkungen:</span></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td colspan="2">
+        <table class="inner_table_2">
+            <tr>
+                <td><span>a)</span></td>
+                <td><span>Angaben über den Sitz der Fahrgestell—Nr.: unmittelbar hinter Kugelkupplung auf dem Deichselrohr</span></td>
+            </tr>
+            <tr>
+                <td><span>b)</span></td>
+                <td><span>Falls der Boden oder auch die Seitenwände des Anhängers mit Blech ausgeschlagen werden oder der Anhänger fest eingebaute Einrichtungen, wie Zwischenböden oder dergleichen erhält, erhöht sich das Leergewicht bzw. Eigengewicht entsprechend unter Herabsetzung der Nutzlest. Das zulässige gesamtgewicht bleibt dabei unverändert.</span></td>
+            </tr>
+            <tr>
+                <td><span>c)</span></td>
+                <td><span>Bei Mitführen dieser Anhänger hinter Personenkraftwagen oder anderen Kraftwagen mit Personenwagenfahrgestell ist zu beachten:<br></span><br>
+                    <span>Die Anhängerlast darf bei Personenkraftwagen nicht mehr als die Hälfte des um</span> <span>150</span> <span>kg</span> <span>erhöhten Leergewichts, bei anderen Kraftfahrzeugen mit Personenwagenfahrgestell nicht mehr als die Hälfte des Leergewichtes des ziehenden Kraftfahrzeuges betragen.</span></td>
+            </tr>
+        </table>
+    </td>
+
+</tr>
+
+    </table>
+
+
+
+
+
+
+
+
+    <span class="seitennummer_2">- 17 -</span>
+
+</body>
+</html>

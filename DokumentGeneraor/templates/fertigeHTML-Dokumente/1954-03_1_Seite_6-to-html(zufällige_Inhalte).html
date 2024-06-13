@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <title>Typgutachten</title>
+    <style>        entfällt
+        
+
+        @font-face {
+            font-family: "Corona 3 Typewriter";
+            src: url("../static/fonts/Corona-3-Typewriter.ttf") format("truetype");
+        }
+
+        html {
+            font-family: "Corona-3-Typewriter";
+        }
+
+        body {
+            margin-top: 230px;
+            margin-left: 0px;
+            padding: 0px;
+            font-family: "Corona 3 Typewriter";
+            background: white;
+            font-size: 23px;
+            margin-left: 4rem;
+        }
+        
+        .hauptueberschrift {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 120px;
+            margin-bottom: 1rem;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+        }
+
+
+        .sonder_Text {
+            position: absolute;
+            top:163px;
+            left:px;
+            font-size: 24px;
+            line-height: 0.4;
+        }
+          
+        .sonder_Text .company-name {
+            letter-spacing: 6px; /* Beispiel: Buchstabenabstand von 6 Pixel */
+        }
+
+        .blatt_nummer {
+            letter-spacing: 6px; /* Beispiel: Buchstabenabstand von 6 Pixel */
+        }
+          
+        .sonder_Text .line {
+            display: block;
+            margin: 10px 0; /* Passt den Abstand an, damit die Linie in der Mitte ist */
+            border: 1px solid black; /* Setzt eine Linie mit 1 Pixel Dicke */
+        }
+
+        .seitennummer_1 {
+            position: absolute;
+            top:85px;
+            left:601px;
+            font-size: 24px;
+        }
+
+        .seitennummer_2 {
+            position: absolute;
+            top:1594px;
+            left:1033px;
+            font-size: 24px;
+        }
+
+        .haupt_tabelle {
+            width: 95%;
+            margin-top: 20px;
+            margin-left: 50px;
+            margin-right: 30px;
+            line-height: 0.8;
+        }
+
+        .haupt_tabelle th, .haupt_tabelle td {
+            padding: 5px 5px;
+            text-align: left;
+            vertical-align: top;
+            font-weight: 600;
+        }
+
+        .haupt_tabelle td:nth-child(1) {
+            width: 7%; /* Breite der ersten Spalte */
+        }
+
+        .haupt_tabelle td:nth-child(2) {
+            width: 7%; /* Breite der ersten Spalte */
+        }
+
+        .haupt_tabelle td:nth-child(3) {
+            width: 51%; /* Breite der ersten Spalte */
+        }
+
+        .haupt_tabelle th:first-child, .haupt_tabelle td:first-child {
+            width: 49px;
+        }
+
+        .haupt_tabelle th:nth-child(3), .haupt_tabelle td:nth-child(3) {
+            min-width: 285px; /* Setzt die minimale Breite der dritten Spalte */
+            
+        }
+
+
+        .haupt_tabelle th .unterstrichen {
+            text-decoration: underline;
+        }
+
+        .haupt_tabelle td[colspan] {
+            text-align: left;
+        }
+
+
+
+
+
+
+    
+
+    
+        .inner_tabelle_LBH {
+            width: 70%; /* Die Tabelle nimmt 80% der verfügbaren Breite ein */
+            table-layout: fixed; /* Erlaubt eine feste Spaltenbreite */
+            margin-left: 20px;
+        }
+        
+        .inner_tabelle_LBH td {
+            padding: 1px 4px; /* Reduzierte Padding-Werte */
+            text-align: center; /* Standardmäßige zentrale Ausrichtung */
+        }
+        
+        /* Angabe der Breite für jede Spalte */
+        .inner_tabelle_LBH td:nth-child(1) {
+            width: 10%; /* Breite der ersten Spalte */
+        }
+        
+        .inner_tabelle_LBH td:nth-child(2) {
+            width: 7%; /* Breite der zweiten Spalte */
+        }
+        
+        .inner_tabelle_LBH td:nth-child(3) {
+            width: 10%; /* Breite der dritten Spalte */
+        }
+        
+        .inner_tabelle_LBH td:nth-child(4), 
+        .inner_tabelle_LBH td:nth-child(5), 
+        .inner_tabelle_LBH td:nth-child(6) {
+            text-align: left; /* Links ausgerichteter Text für die Spalten 4, 5 und 6 */
+            width: 25%; /* Breite der vierten Spalte */
+        }
+        
+        .inner_tabelle_LBH td:nth-child(5) {
+            width: 15%; /* Breite der fünften Spalte */
+        }
+        
+        .inner_tabelle_LBH td:nth-child(6) {
+            width: 15%; /* Breite der sechsten Spalte */
+        }
+        
+        
+
+
+        .inner_tabelle_3-Spalt {
+            width: 105%; /* Die Tabelle nimmt 80% der verfügbaren Breite ein */
+            table-layout: fixed; /* Erlaubt eine feste Spaltenbreite */
+            margin-left: 60px;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .inner_tabelle_3-Spalt td {
+            padding: 1px 4px; /* Reduzierte Padding-Werte */
+            text-align: left; /* Standardmäßige zentrale Ausrichtung */
+        }
+
+        .inner_tabelle_3-Spalt td:nth-child(1) {
+            width: 7%; /* Breite der zweiten Spalte */
+        }
+
+        .inner_tabelle_3-Spalt td:nth-child(2) {
+            width: 64%; /* Breite der zweiten Spalte */
+        }
+
+        .inner_tabelle_3-Spalt td:nth-child(3) {
+            width: 76%; /* Breite der zweiten Spalte */
+        }
+
+        .inner_tabelle_3-Spalt td {
+            vertical-align: bottom;  /* Stellt sicher, dass dies überall angewendet wird */
+            height: 50px;  /* Beispielhöhe; passe dies entsprechend an */
+        }
+
+        .align-bottom {
+            vertical-align: bottom;
+        }
+
+        .mini_tabelle {
+            width: 100%;
+            border-collapse: collapse;
+            border: none;
+        }
+
+        .mini_tabelle td:nth-child(1) {
+            padding: 0px;
+            margin: 0px;
+            width: 95%;
+        }
+
+        .mini_tabelle td:nth-child(2) {
+            padding: 0px;
+            margin: 0px;
+            width: 15%;
+        }
+
+
+
+
+        .table_herausgeber {
+            margin-top: 750px;
+            margin-left: 60px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .herausgeber-zelle {
+            vertical-align: top;
+        }
+        
+
+
+
+
+        /* Alle Linien sichtbar machen
+        .haupt_tabelle th, .haupt_tabelle td {
+            border: 2px solid black;
+        }
+        
+        .inner_tabelle_LBH th, .inner_tabelle_LBH td, .inner_tabelle_3-Spalt th, .inner_tabelle_3-Spalt td {
+            border: 1px solid grey;
+        }
+        */
+
+
+        .unterstrichen {
+            text-decoration: underline;
+        }
+
+        .unterstrichen_dashed {
+            border-bottom: 4px dashed black; /* Erhöht die Dicke der gestrichelten Linie */
+            text-decoration: none;
+        }
+        
+
+        hr {          
+            border-top: 1px solid black;
+        }
+
+        .bueroklammer-img {
+            display: block;
+            margin: 0 auto; /* Zentriert das Bild */
+            width: 35px; /* Breite des Bildes */
+            position: absolute;
+            top: 0px;
+            left: 6px; /* Dynamischer Abstand von links */
+        }
+
+        svg {
+            display: block;
+            position: absolute;
+            width: 1000px;  /* Feste Breite in Pixel */
+            height: 20px;  /* Feste Höhe */
+            top: 87%;  /* Positioniert das SVG vertikal in der Mitte */
+            left: 50%;  /* Positioniert das SVG horizontal in der Mitte */
+            transform: translate(-50%, -50%);  /* Zentriert das SVG genau in der Mitte des Bildschirms */
+        } 
+        
+
+
+    </style>
+</head>
+<body>
+
+
+
+
+
+    <span class="seitennummer_1">- 1 -</span>
+
+    <div class="sonder_Text">
+        <span class="blatt_nummer">Nr.</span>  <span>426</span>/<span>6</span>
+        <span class="line"></span>
+        <span>Typ:</span> <span>273</span>  
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <table class="haupt_tabelle">
+<tr>
+    <td><span>7.</span></td>
+    <td><span>b)</span></td>
+    <td>
+        <span>stellen:</span>
+    </td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>gleich:</span></td>
+    <td><span>Benthin Mielcarek Corp & Co. KG</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>bringen:</span></td>
+    <td><span>UT</span> <span>29</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>Bein:</span></td>
+    <td><span>F 1601</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>spät nicht Stein Ende:</span></td>
+    <td><span>Zeitung Tag</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td>c)</td>
+    <td><span>die:</span></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>Feuer:</span></td>
+    <td><span>Kostolzin Schomber KG</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td><span></span></td>
+    <td><span>denken:</span></td>
+    <td><table class="mini_tabelle">
+        <tr>
+            <td><span>einigen schaffen alle</span> <span>b)</span></td>
+            <td><span>davon Teller Arzt</span></td>
+        </tr>
+
+    </table></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>beißen:</span></td>
+    <td><table class="mini_tabelle">
+        <tr>
+            <td><span>gewinnen Stein Arzt</span> <span>b)</span></td>
+            <td><span>anfangen zusammen<br>Familie Ende</span></td>
+        </tr>
+    </table></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>zur alle ab:</span></td>
+    <td><span>Schnee oft</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>spielen Welt wollen:</span></td>
+    <td><span>442</span> <span>mm</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td><span>weinen warten<br>führen schwarz</span></td>
+    <td><span>Monat fahren Minutenmir</span></td>
+</tr>
+<tr>
+    <td></td>
+    <td><span>d)</span></td>
+    <td><span>rufen:<br><br><br></span></td>
+    <td><span>Hund wohl beide</span></td>
+</tr>
+<tr>
+    <td><span>8.</span></td>
+    <td colspan="2"><span class="unterstrichen">dauern:</span></td>
+    <td><span>beim</span></td>
+</tr>
+    </table>
+
+
+
+    <svg viewBox="0 0 1000 20" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,10 C160,0 300,14 420,8 S600,10 750,8 S900,0 1000,10" stroke="black" stroke-width="2" fill="none"/>
+    </svg>
+    
+    
+ 
+
+    <table class="table_herausgeber">
+        <tr>
+            <td class="herausgeber-zelle unterstrichen"><span>Herausgeber:</span></td>
+            <td><span>Heß<br>Nur für den Dienstgebrauch; Nachruck verboten !</span><br><span style="padding-left: 370px;">März 1959</span></td>
+        </tr>
+    </table>
+
+
+    <!-- <span class="seitennummer_2">- 2 -</span> -->
+
+
+</body>
+</html>

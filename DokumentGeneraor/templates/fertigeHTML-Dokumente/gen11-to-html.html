@@ -1,0 +1,630 @@
+<!-- Ab hier Jinja-Tabelle zu html-table umbauen -->
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dokumentvorlage</title>
+    <style>
+           
+
+
+
+            
+
+
+
+            @font-face {
+                      font-family: "Corona 3 Typewriter";
+                      src: url("file:///C:/doc-gen/static/fonts/Corona-3-Typewriter.ttf") format("truetype");
+                  }
+
+
+
+            body {
+                margin: 0;
+                margin-left: 100px;
+                padding: 0;
+                font-family: "Corona 3 Typewriter";
+                background: white;
+            }
+
+
+            h3 {
+              text-align: center;
+              text-decoration: underline;
+              font-size: 22px;
+            }
+
+            hr.dotted {
+              border-top: 3px dotted #000; /* Definiert die Dicke und Farbe der gepunkteten Linie */
+              border-bottom: none; /* Entfernt die standardmäßige untere Linie */
+            }
+
+
+
+          
+
+
+
+
+
+          
+            .hauptueberschrift_1 {
+                font-size: 22px;
+                margin-top: 10px;
+                margin-left: 10px;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+          
+
+
+
+
+
+          
+            .hauptueberschrift_2 {
+                font-size: 22px;
+                margin-top: 10px;
+                margin-left: 10px;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+          
+
+
+
+
+
+          
+            .hauptueberschrift_3 {
+                font-size: 21px;
+                margin-top: 10px;
+                margin-left: 10px;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+          
+
+
+
+
+
+          
+            .hauptueberschrift_4 {
+                font-size: 22px;
+                margin-top: 10px;
+                margin-left: 10px;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+          
+
+
+
+
+
+          
+            .hauptueberschrift_5 {
+                font-size: 22px;
+                margin-top: 10px;
+                margin-left: 10px;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+          
+
+
+
+
+
+          
+            .hauptueberschrift_6 {
+                font-size: 21px;
+                margin-top: 10px;
+                margin-left: 10px;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+          
+
+
+
+
+
+          
+            .hauptueberschrift_7 {
+                font-size: 22px;
+                margin-top: 10px;
+                margin-left: 10px;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+          
+
+
+
+
+
+          
+            .hauptueberschrift_8 {
+                font-size: 21px;
+                margin-top: 10px;
+                margin-left: 10px;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+          
+
+
+
+
+
+          
+            .hauptueberschrift_9 {
+                font-size: 22px;
+                margin-top: 10px;
+                margin-left: 10px;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+          
+
+
+
+
+
+          
+            .hauptueberschrift_10 {
+                font-size: 21px;
+                margin-top: 10px;
+                margin-left: 10px;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+          
+          
+
+      
+/* Automatisiert CSS für typueberschrift HTML-Tag-Klassen erzeugen */
+  .typueberschrift_11 {
+  font-size: 22px;
+  text-align: center;
+  letter-spacing: normal;
+}
+  .typueberschrift_12 {
+  font-size: 22px;
+  text-align: center;
+  letter-spacing: normal;
+}
+  .typueberschrift_13 {
+  font-size: 22px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+  .typueberschrift_14 {
+  font-size: 22px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+  .typueberschrift_15 {
+  font-size: 22px;
+  text-align: center;
+  letter-spacing: normal;
+}
+  .typueberschrift_16 {
+  font-size: 21px;
+  text-align: center;
+  letter-spacing: normal;
+}
+  .typueberschrift_17 {
+  font-size: 21px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+  .typueberschrift_18 {
+  font-size: 21px;
+  text-align: center;
+  letter-spacing: 3px;
+}
+  .typueberschrift_19 {
+  font-size: 21px;
+  text-align: center;
+  letter-spacing: 3px;
+}
+  .typueberschrift_20 {
+  font-size: 21px;
+  text-align: center;
+  letter-spacing: normal;
+}
+     
+
+
+/* Automatisiert CSS für zwischenueberschrift HTML-Tag-Klassen erzeugen */
+.zwischenueberschrift_21 {
+  font-size: 21px;
+    text-align: left;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+
+
+
+
+
+
+.artikelueberschrift_31 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 6px;
+  text-align: left;  
+}
+.artikelueberschrift_32 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 6px;
+  text-align: left;  
+}
+.artikelueberschrift_33 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 6px;
+  text-align: left;  
+}
+.artikelueberschrift_34 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 6px;
+  text-align: left;  
+}
+.artikelueberschrift_35 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 6px;
+  text-align: left;  
+}
+.artikelueberschrift_36 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 6px;
+  text-align: left;  
+}
+.artikelueberschrift_37 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 6px;
+  text-align: left;  
+}
+.artikelueberschrift_38 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 6px;
+  text-align: left;  
+}
+.artikelueberschrift_39 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 6px;
+  text-align: left;  
+}
+.artikelueberschrift_40 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 6px;
+  text-align: left;  
+}
+
+
+
+.artikel_41 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: center;
+  display: block;
+  margin-left: 18px;
+}
+.artikel_42 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: center;
+  display: block;
+  margin-left: 18px;
+}
+.artikel_43 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: center;
+  display: block;
+  margin-left: 12px;
+}
+.artikel_44 {
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: center;
+  display: block;
+  margin-left: 12px;
+}
+.artikel_45 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: left;
+  display: block;
+  margin-left: 12px;
+}
+.artikel_46 {
+  font-size: 22px;
+  line-height: 1.3;
+  text-align: left;
+  display: block;
+  margin-left: 18px;
+}
+.artikel_47 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: center;
+  display: block;
+  margin-left: 18px;
+}
+.artikel_48 {
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: left;
+  display: block;
+  margin-left: 18px;
+}
+.artikel_49 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: center;
+  display: block;
+  margin-left: 12px;
+}
+.artikel_50 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: center;
+  display: block;
+  margin-left: 18px;
+}
+
+
+
+.daten-tabelle {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 22px;
+}
+
+.daten-tabelle, .daten-tabelle th, .daten-tabelle td {
+  border: 1px solid black;
+}
+
+.daten-tabelle th, .daten-tabelle td {
+  padding: 8px;
+  text-align: left;
+}
+
+.daten-tabelle th {
+  background-color: #f2f2f2;
+}
+
+
+             body {
+                 font-family: "Corona 3 Typewriter";
+                   padding: 20px;
+             }
+
+
+                    .datum_51 {
+                      position: absolute;
+                      top: 960px;
+                      left: 596px;
+                    }
+                    
+
+
+                    .stempelbild_61 img {
+                      display: block;
+                      margin: 0 auto; /* Zentriert das Bild */
+                      position: absolute;
+                      top: 402px;
+                      left: 596px;
+                      max-width: 100px; /* Verhindert, dass das Bild größer als seine natürliche Breite angezeigt wird */
+                      max-height: 100%; /* Verhindert, dass das Bild größer als seine natürliche Höhe angezeigt wird */
+                      width: auto; /* Behält das Seitenverhältnis bei, wenn die Höhe angepasst wird */
+                      height: auto; /* Behält das Seitenverhältnis bei, wenn die Breite angepasst wird */
+                    }
+                    
+                    .stempelbild_unten_mittig_71 img {
+                      display: block;
+                      margin: 0 auto; /* Zentriert das Bild */
+                      position: absolute;
+                      top: 935px; /* Zufällige Top-Position */
+                      left: 283px; /* Zufällige Left-Position */
+                      max-width: 400px; /* Verhindert, dass das Bild größer als seine natürliche Breite angezeigt wird */
+                      max-height: 100%; /* Verhindert, dass das Bild größer als seine natürliche Höhe angezeigt wird */
+                      width: auto; /* Behält das Seitenverhältnis bei, wenn die Höhe angepasst wird */
+                      height: auto; /* Behält das Seitenverhältnis bei, wenn die Breite angepasst wird */
+                    }
+
+                    .bueroklammer-img {
+                    display: block;
+                    margin: 0 auto; /* Zentriert das Bild */
+                    width: 35px; /* Breite des Bildes */
+                    position: absolute;
+                    top: 0px;
+                    left: px; /* Dynamischer Abstand von links */
+                  }
+    </style>
+  </head>
+  <body>
+
+
+
+
+
+
+
+
+
+  
+<hr class="dotted">
+
+
+<h3><span>Typgutachten</span></h3>
+
+  <div class="typueberschrift_11">
+      <span>Bauen erzählen Geschichte reiten bringen beim</span>
+  </div>
+
+  <div class="typueberschrift_12">
+    <span>Durch ins laufen einfach mich Sonne es</span>
+</div>
+
+<div class="typueberschrift_13">
+  <span>Lustig früh erzählen holen Sonntag</span>
+</div>
+
+<div class="typueberschrift_14">
+  <span>Selbst lesen weit Freund über Vogel einige sehen rechnen Wohnung</span>
+</div>
+<br>
+<div class="typueberschrift_15">
+  <span>Himmel Wort spät kein Stück mehr Geschichte</span>
+</div>
+
+<div class="typueberschrift_16">
+  <span>Her Wohnung Flasche sicher drehen Auge im</span>
+</div>
+
+
+
+
+  <div class="zwischenueberschrift_21">
+      <span>Endlich glauben Geschenk machen Sache ein nur laut Vogel Mama dabei Klasse kann gleich man fahren sich Schluss denken Blume es Himmel Wissen unter fröhlich Frage</span>
+  </div>
+
+
+<hr>
+
+    
+    
+<table class="daten-tabelle">
+  <thead>
+      <tr>
+        <th colspan="2"><span>Die Zugmaschine wird in folgenden Ausführungen hergestellt:</span></th>
+        </tr>
+  </thead>
+  <tbody><tr class="level-0_82">
+                  <td><span>Beschreibt das Baujahr</span></td>
+                  <td><span>869</span> <span>Ampere</span></td>
+              </tr>
+<tr class="level-0_83">
+                  <td><span>Beschreibt die Beschleunigung</span></td>
+                  <td><span>642</span> <span>m³</span></td>
+              </tr>
+<tr class="level-0_84">
+                  <td><span>Beschreibt die Farbe des Fahrzeugs</span></td>
+                  <td><span>736</span> <span>Ohm</span></td>
+              </tr>
+<tr class="level-0_85">
+                  <td><span>Beschreibt die Bremsanlage</span></td>
+                  <td><span>827</span> <span>kg</span></td>
+              </tr>
+<tr class="level-0_86">
+                  <td><span>Spurweite</span></td>
+                  <td><span>368</span> <span>g/cm³</span></td>
+              </tr>
+<tr class="level-0_87">
+                  <td><span>Beschreibt die Art des Fahrzeugs</span></td>
+                  <td><span>785</span> <span>cm</span></td>
+              </tr>
+<tr class="level-0_88">
+                  <td><span>Beschreibt die Zahl der Achsen</span></td>
+                  <td><span>263</span> <span>Bar</span></td>
+              </tr>
+
+  </tbody>
+</table>
+
+
+
+
+
+
+<ol>
+  <div class="artikelueberschrift_31"><span>4.</span>
+    <span>Arbeit neben fest weil Platz Weihnachten Stunde wo dick</span>
+  </div>
+  
+    <div class="artikelueberschrift_32"><span>5.</span>
+    <span>Erde können warum Minutenmir fast</span>
+  </div>
+  
+  </ol>
+</ol>
+
+
+
+
+  <ol>
+    <div class="artikelueberschrift_33"><span>6.</span>
+      <span>Wasser verkaufen hinein dich rot natürlich Leute Wasser essen wirklich aber</span>
+    </div>
+    
+      <div class="artikelueberschrift_34"><span>7.</span>
+      <span>Tier letzte wenn werden Feuer bekommen überall nimmt</span>
+    </div>
+    
+    </ol>
+  </ol>
+
+
+  <div class="artikel_41">
+    <span>Fressen dabei böse ziehen. Den ziehen heiß ohne dazu. Fahren Berg schwer setzen Familie lustig viel. Kennen Minutenmir fangen Fahrrad überall Polizei hinter. Besser machen fragen wichtig spät. Bis später suchen Schluss sicher vom Zug. Polizei lernen Tür Küche Nacht haben. Arbeit erschrecken Wetter reich Gott Arbeit. Alle bei Wald zwei vorbei steigen. Hase ich Wasser nichts finden weg Tante. Schreiben alle für wichtig ob verstehen denken mich. Darauf Brot Schnee uns kein. Mutter weiß Katze daran jung zeigen. Lesen gewinnen fragen bald darauf. Warum Straße Onkel nicht. Fünf denken zehn ganz schwimmen schenken wichtig. Zimmer kein offen Hund beide dem schauen. Schüler zehn Teller. Schwimmen verstehen scheinen dick fressen Land.</span>
+</div>
+
+<br><hr><br>
+
+<div class="artikel_42">
+  <span>Leicht nicht Leute Milch. Rund leise hat sind glücklich. Alle öffnen früh erklären vergessen. Fiel Eltern verstecken war möglich andere gelb. Klasse fiel schreiben er.</span>
+</div>
+ 
+
+<br>
+
+<div class="artikel_43">
+  <span>Wohnen beißen dann. Werfen vorbei Schluss besser scheinen nah Wissen. Sich sein dauern einmal. Mögen Mädchen Straße Sommer.</span>
+</div>
+ 
+
+
+<div class="datum_51">
+  <span>19.10.1970</span>
+</div>
+
+
+
+
+      <div class="stempelbild_61">
+        <img src="../../../static/images/stempel/stempel (79).png" alt="Stempelbild" />
+    </div>
+
+    <div class="stempelbild_unten_mittig_71">
+        <img src="../../../static/images/stempel/unten_mittig/stempel_unten_mittig (40).png" alt="Stempelbild" />
+    </div>
+
+
+    </body>
+  </html>

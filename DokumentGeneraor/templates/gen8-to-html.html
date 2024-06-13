@@ -1,0 +1,398 @@
+<!-- Ab hier Jinja-Tabelle zu html-table umbauen -->
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dokumentvorlage</title>
+    <style>
+      {#/* Zufällige left-px-Berechnung für Büroklammerbild*/#}
+      {% set left_position_klammer = range(5, 100)|random %}           
+
+      {#/* Zufällige Positions-px-Berechnung für allgemeine StempelBilder*/#}
+      {% set stempelbild_position_top = range(950, 1050)|random %}
+      {% set stempelbild_position_left = range(150, 160)|random %}
+
+      {#/* Zufällige left-px-Berechnung für StempelBilder, welche nur unten_mittig sind!!! */#}
+      {% set stempelbild_unten_mittig_position_top = range(1100, 1200)|random %}
+      {% set stempelbild_unten_mittig_position_left = range(220, 330)|random %}
+
+      {# /* Zufällige left-px-Berechnung für StempelBilder */ #}
+      {% set datum_position_top = range(1200, 1300)|random %}
+      {% set datum_position_left = range(325, 580)|random %}             
+
+      {#/* Zufällige Einzugs-px-Berechnung für Tabellen-Level*/#}
+      {% set margin_left_level_1 = range(60, 400)|random %}
+
+
+                @font-face {
+                    font-family: "Corona 3 Typewriter";
+                    src: url("file:///C:/doc-gen/static/fonts/Corona-3-Typewriter.ttf") format("truetype");
+                }
+
+
+            html {
+                font-family: "Corona-3-Typewriter";
+            }
+
+            body {
+              margin-left: {{ ['40px', '80px', '100px', '120px', '140px']|random }};
+                padding: 0;
+                font-family: "Corona 3 Typewriter";
+                font-size: 22px;
+                background: white;
+            }
+
+
+
+            {# Anpassung der CSS-Stile für Hauptüberschriften mit
+              spezifischen Wahrscheinlichkeiten für text-decoration und text-align.
+              In 20% der Fälle erhält die text-decoration den Wert "underline overline",
+              während in 70% der Fälle der Text zentriert ausgerichtet wird. #}
+            {% for i in range(1, 11) %}
+            {# Zufällige Auswahl für text-decoration mit 20% Chance für 'underline overline' #}
+            {% set decoration_chance = range(1, 101)|random %}
+            {% if decoration_chance <= 20 %}
+              {% set text_decoration = 'underline overline' %}
+            {% else %}
+              {% set text_decoration = ['underline', 'none']|random %}
+            {% endif %}
+          
+            {# Zufällige Auswahl für text-align mit 70% Chance für 'center' #}
+            {% set align_chance = range(1, 101)|random %}
+            {% if align_chance <= 70 %}
+              {% set text_align = 'center' %}
+            {% else %}
+              {% set text_align = ['justify', 'left']|random %}
+            {% endif %}
+          
+            .hauptueberschrift_{{ i }} {
+              font-size: {{ ['20px', '21px']|random }};
+                line-height: {{ ['1.1', '1.2', '1.3', '1.4', '1.5', '1.6']|random }};
+                padding: {{ ['0', '2px', '5px', '8px']|random }};
+                text-decoration: {{ text_decoration }};
+                font-weight: {{ ['normal', 'bold', '400', '600']|random }};
+                letter-spacing: {{ ['normal', '2px', '3px']|random }};
+                text-align: {{ text_align }};
+                text-transform: {{ ['none', 'none', 'uppercase']|random }};
+            }
+          {% endfor %}
+          
+          
+
+      
+/* Automatisiert CSS für typueberschrift HTML-Tag-Klassen erzeugen */
+{% for i in range(11, 21) %}  {# Für typueberschrift von 11 bis 20 #}
+.typueberschrift_{{ i }} {
+  font-size: {{ ['20px', '21px']|random }};
+  line-height: {{ ['1.1', '1.2', '1.3']|random }};
+  text-align: {{ ['left', 'center', 'justify']|random }};
+  letter-spacing: {{ ['normal', '1px', '2px', '3px']|random }};
+  margin-top: {{ ['4px', '5px', '6px']|random }};
+  margin-bottom: {{ ['0', '4px', '6px']|random }};
+  margin-left: {{ ['0', '10px', '15px', '20px', '25px']|random }};
+  padding-top: {{ ['2px', '4px']|random }};
+  padding-right: {{ ['0', '5px', '10px']|random }};
+  padding-bottom: {{ ['0', '3px', '4px']|random }};
+  padding-left: {{ ['0', '5px', '10px', '15px']|random }};
+  break-before: {{ ['auto', 'column']|random }};
+}
+{% endfor %}     
+
+
+/* Automatisiert CSS für zwischenueberschrift HTML-Tag-Klassen erzeugen */
+{% for i in range(21, 22) %}
+.zwischenueberschrift_{{ i }} {
+  font-size: {{ ['20px', '21px']|random }};
+    line-height: {{ ['1.1', '1.2', '1.3']|random }};
+    text-align: {{ ['left', 'center', 'justify']|random }};
+    letter-spacing: {{ ['normal', '1px', '2px']|random }};
+
+    padding-top: {{ ['8px', '12px']|random }};
+    padding-right: {{ ['0', '5px', '10px']|random }};
+    padding-bottom: {{ ['0', '3px', '4px']|random }};
+    break-before: {{ ['auto', 'column']|random }};
+}
+{% endfor %}
+
+
+
+
+
+
+
+{% for i in range(31, 41) %}
+.artikelueberschrift_{{ i }} {
+  font-size: {{ ['20px', '21px']|random }};
+  line-height: {{ ['1.1', '1.2', '1.3']|random }};
+  text-align: {{ ['left', 'center', 'justify']|random }};
+  letter-spacing: {{ ['normal', '1px', '2px']|random }};
+  {# margin-top: {{ ['0', '2px', '4px', '5px', '6px']|random }}; #}
+
+  {# margin-bottom: {{ ['0', '4px', '6px']|random }}; #}
+  {#margin-left: {{ ['0', '10px', '15px', '20px', '25px']|random }}; #}
+  {#padding-top: {{ ['0', '3px', '60px']|random }}; #}
+  padding-right: {{ ['0', '5px', '10px']|random }};
+  padding-bottom: {{ ['0', '3px', '4px']|random }};
+  {#padding-left: {{ ['0', '5px', '10px', '15px']|random }}; #}
+  break-before: {{ ['auto', 'column']|random }};  
+}
+{% endfor %}
+
+
+
+{% for i in range(41, 51) %}
+.artikel_{{ i }} {
+  font-size: {{ ['20px', '21px']|random }};
+  line-height: {{ ['1.1', '1.2', '1.3']|random }};
+  text-align: {{ ['left', 'justify']|random }};
+  {# text-indent: {{ ['0', '10px', '15px', '20px']|random }}; #}
+ margin-top: {{ ['10px', '20px']|random }};
+
+  margin-bottom: {{ ['0', '4px', '6px']|random }};
+  margin-left: {{ ['0', '10px', '15px', '20px', '25px']|random }};
+  padding-top: {{ ['0', '5px', '10px']|random }};
+  padding-right: {{ ['10px', '12px']|random }};
+  padding-bottom: {{ ['0', '5px', '10px']|random }};
+  padding-left: {{ ['10px', '12px']|random }};
+  break-before: {{ ['auto', 'column']|random }};
+  position: relative;
+  display: block;
+}
+{% endfor %}
+
+
+
+.data-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+  background-color: #fff; /* Reines Weiß */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02); /* Sehr leichter Schatten */
+  border: 1px solid #eee; /* Sehr helles Grau */
+}
+
+.data-table th, .data-table td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #eee; /* Sehr helles Grau */
+  font-size: 22px;
+  color: #777; /* Dunkleres Grau für den Text */
+}
+
+.data-table th {
+  background-color: #f9f9f9; /* Fast Weiß */
+  color: #666; /* Noch etwas dunkler für Überschriften */
+}
+
+.data-table tbody tr:nth-child(odd) {
+  background-color: #fff; /* Reines Weiß */
+}
+
+.data-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Fast Weiß */
+}
+
+/* Spezieller Stil für die erste Spalte */
+.data-table th:first-child, .data-table td:first-child {
+  text-align: center;
+}
+
+/* Rahmen um die ganze Tabelle */
+.data-table {
+  border: 2px solid #f9f9f9; /* Fast Weiß */
+}
+
+/* Entferne spezielle Linienstile */
+.data-table td::after {
+  display: none;
+}
+  
+
+             body {
+                 font-family: "Corona 3 Typewriter";
+                   padding: 20px;
+             }
+
+
+                    {# Für datum von 51 bis 60 #}
+                    {% for i in range(51, 52) %}
+                    .datum_{{ i }} {
+                      position: absolute;
+                      top: {{ datum_position_top }}px;
+                      left: {{ datum_position_left }}px;
+                    }
+                    {% endfor %}
+                    
+
+
+                    {# Stempelbilder von 61 bis 70 #}
+                    {% for i in range(61, 62) %}
+                    .stempelbild_{{ i }} img {
+                      display: block;
+                      margin: 0 auto; /* Zentriert das Bild */
+                      position: absolute;
+                      top: {{ stempelbild_position_top }}px;
+                      left: {{ stempelbild_position_left }}px;
+                      max-width: 200px; /* Verhindert, dass das Bild größer als seine natürliche Breite angezeigt wird */
+                      max-height: 100%; /* Verhindert, dass das Bild größer als seine natürliche Höhe angezeigt wird */
+                      width: auto; /* Behält das Seitenverhältnis bei, wenn die Höhe angepasst wird */
+                      height: auto; /* Behält das Seitenverhältnis bei, wenn die Breite angepasst wird */
+                    }
+                    {% endfor %}
+                    
+                    {# Stempelbilder_unten_mittig von 71 bis 80 #}
+                    {% for i in range(71, 72) %}
+                    .stempelbild_unten_mittig_{{ i }} img {
+                      display: block;
+                      margin: 0 auto; /* Zentriert das Bild */
+                      position: absolute;
+                      top: {{ stempelbild_unten_mittig_position_top }}px;
+                      left: {{ stempelbild_unten_mittig_position_left }}px;
+                      max-width: 400px; /* Verhindert, dass das Bild größer als seine natürliche Breite angezeigt wird */
+                      max-height: 100%; /* Verhindert, dass das Bild größer als seine natürliche Höhe angezeigt wird */
+                      width: auto; /* Behält das Seitenverhältnis bei, wenn die Höhe angepasst wird */
+                      height: auto; /* Behält das Seitenverhältnis bei, wenn die Breite angepasst wird */
+                    }
+                    {% endfor %}
+
+                    .bueroklammer-img {
+                    display: block;
+                    margin: 0 auto; /* Zentriert das Bild */
+                    width: 35px; /* Breite des Bildes */
+                    position: absolute;
+                    top: 0px;
+                    left: {{ left_position }}px; /* Dynamischer Abstand von links */
+                  }
+    </style>
+  </head>
+  <body>
+{# Hauptüberschrift #}
+{% set counter_hauptueberschrift = namespace(value=1) %}
+
+{# Typüberschrift #}
+{% set counter_typueberschrift = namespace(value=11) %}
+
+{# Zwischenüberschrift #}
+{% set counter_zwischenueberschrift = namespace(value=21) %}
+
+{# Artikelüberschrift #}
+{% set counter_artikelueberschrift = namespace(value=31) %}
+
+{# Artikel #}
+{% set counter_artikel = namespace(value=41) %}
+
+{# Datum #}
+{% set counter_datum = namespace(value=51) %}
+
+{# Stempelbild #}
+{% set counter_stempelbild = namespace(value=61) %}
+
+{# Stempelbild_unten_mittig #}
+{% set counter_stempelbild_unten_mittig = namespace(value=71) %}
+
+{% set counter_tabelle = namespace(value=82) %}
+
+{# Nur zu 35% soll eine Büroklammer angezeigt werden. #}
+    {% set counter = namespace(value=0) %} {% set show_image_chance = range(1,
+     101)|random %} {# Zufällige Zahl zwischen 1 und 100 #}
+
+
+<div class="hauptueberschrift_{{ counter_hauptueberschrift.value }}">
+  <span>{{ fake.sentence(nb_words=randint(3, 7))[:-1] }}</span>
+</div>
+{% set counter_hauptueberschrift.value = counter_hauptueberschrift.value + 1 %}
+
+
+
+
+<div class="artikel_{{ counter_artikel.value }}">
+    <span>{{ fake.paragraph(nb_sentences=randint(1, 3), variable_nb_sentences=False) }}</span>
+</div>
+{% set counter_artikel.value = counter_artikel.value + 1 %}
+
+<div class="hauptueberschrift_{{ counter_hauptueberschrift.value }}">
+  <span>{{ fake.sentence(nb_words=randint(6, 10))[:-1] }}</span>
+</div>
+{% set counter_hauptueberschrift.value = counter_hauptueberschrift.value + 1 %}
+
+<div class="typueberschrift_{{ counter_typueberschrift.value }}">
+  <span>{{ fake.sentence(nb_words=12)[:-1] }}</span>
+</div>
+{% set counter_typueberschrift.value = counter_typueberschrift.value + 1 %}
+
+
+<table class="data-table">
+  <thead>
+      <tr>
+          <span><td><span></span></td></span>
+      </tr>
+  </thead>
+  <tbody>
+      {% for first_level_key, second_levels in table_data.items() %}
+      <tr>
+          <td><span>{{ loop.index }}).</span></td>
+          <td>
+              <span>{{ first_level_key }}</span>
+          </td>
+          <td>
+              {% for second_level_key, third_levels in second_levels.items() %}
+                  <span><strong><span>{{ second_level_key }})</span></strong></span>
+                  {% for third_level_key, third_level in third_levels.items() %}
+                      <span class="level-2_{{ counter.value }}">
+                          <span>{{ third_level_key }}: {{ third_level['value'] }}</span>
+                          {% if third_level['display'] == 'inline' %}<span></span>{% else %}<span></span>{% endif %}
+                      </span>
+                      {% if not loop.last %}<span></span>{% endif %}
+                      {% set counter.value = counter.value + 1 %}
+                  {% endfor %}
+                  {% if not loop.last %}<span></span>{% endif %}
+              {% endfor %}
+              
+          </td>
+      </tr>
+      {% endfor %}
+  </tbody>
+</table>
+
+
+    <div class="typueberschrift_{{ counter_typueberschrift.value }}">
+      <span>{{ fake.sentence(nb_words=110)[:-1] }}</span>
+    </div>
+    {% set counter_typueberschrift.value = counter_typueberschrift.value + 1 %}
+
+
+      <div class="artikel_{{ counter_artikel.value }}">
+        <span>{{ fake.sentence(nb_words=randint(12, 18) ) }}</span>
+    </div>
+    {% set counter_artikel.value = counter_artikel.value + 1 %}
+
+    <div class="datum_{{ counter_datum.value }}">
+      <span>{{ fake.date() }}</span>
+  </div>
+  {% set counter_datum.value = counter_datum.value + 1 %}
+
+      {% if
+        klammer_bildpfad and show_image_chance <= 35 %}
+        {# Bild anzeigen in 35% der
+      Fälle #}
+        <span class="bueroklammer-img">
+          <img src="{{ klammer_bildpfad }}"
+               alt="Büroklammer"
+               class="bueroklammer-img" />
+        </span>
+      {% endif %}
+
+
+      <div class="stempelbild_{{ counter_stempelbild.value }}">
+        <img src="{{ bildpfad }}" alt="Stempelbild" />
+    </div>
+    {% set counter_stempelbild.value = counter_stempelbild.value + 1 %}
+
+    <div class="stempelbild_unten_mittig_{{ counter_stempelbild_unten_mittig.value }}">
+        <img src="{{ bildpfad_stempel_unten_mittig }}" alt="Stempelbild_unten_mittig" />
+    </div>
+    {% set counter_stempelbild_unten_mittig.value = counter_stempelbild_unten_mittig.value + 1 %}
+
+
+    </body>
+  </html>

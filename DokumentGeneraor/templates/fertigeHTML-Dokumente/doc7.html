@@ -1,0 +1,1584 @@
+<!-- Ab hier Jinja-Tabelle zu html-table umbauen -->
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dokumentvorlage</title>
+    <style>
+      
+                 
+
+      
+      
+      
+
+      
+      
+      
+
+      
+      
+                   
+
+      
+      
+
+              @font-face {
+                font-family: "Corona 3 Typewriter";
+                src: url("file:///C:/doc-gen/static/fonts/Corona-3-Typewriter.ttf") format("truetype");
+                }
+
+            html {
+                font-family: "Corona-3-Typewriter";
+            }
+
+            body {
+              margin-left: 50px;
+                padding: 0;
+                font-family: "Corona 3 Typewriter";
+                font-size: 22px;
+                background: white;
+            }
+
+
+            
+            
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_1 {
+              font-size: 22px;
+                line-height: 1.3;
+                margin: 15px;
+                padding: 8px;
+                text-decoration: underline;
+                font-weight: normal;
+                letter-spacing: 3px;
+                text-align: center;
+                text-transform: uppercase;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_2 {
+              font-size: 21px;
+                line-height: 1.6;
+                margin: 15px;
+                padding: 2px;
+                text-decoration: underline;
+                font-weight: normal;
+                letter-spacing: 2px;
+                text-align: left;
+                text-transform: none;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_3 {
+              font-size: 22px;
+                line-height: 1.3;
+                margin: 15px;
+                padding: 5px;
+                text-decoration: underline;
+                font-weight: bold;
+                letter-spacing: normal;
+                text-align: justify;
+                text-transform: uppercase;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_4 {
+              font-size: 21px;
+                line-height: 1.6;
+                margin: 5px;
+                padding: 2px;
+                text-decoration: underline;
+                font-weight: bold;
+                letter-spacing: 3px;
+                text-align: center;
+                text-transform: uppercase;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_5 {
+              font-size: 21px;
+                line-height: 1.5;
+                margin: 0;
+                padding: 5px;
+                text-decoration: underline;
+                font-weight: bold;
+                letter-spacing: 3px;
+                text-align: justify;
+                text-transform: none;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_6 {
+              font-size: 21px;
+                line-height: 1.3;
+                margin: 5px;
+                padding: 8px;
+                text-decoration: underline;
+                font-weight: 600;
+                letter-spacing: 3px;
+                text-align: center;
+                text-transform: uppercase;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_7 {
+              font-size: 21px;
+                line-height: 1.2;
+                margin: 10px;
+                padding: 0;
+                text-decoration: underline;
+                font-weight: 400;
+                letter-spacing: 2px;
+                text-align: left;
+                text-transform: uppercase;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_8 {
+              font-size: 22px;
+                line-height: 1.2;
+                margin: 0;
+                padding: 2px;
+                text-decoration: underline;
+                font-weight: bold;
+                letter-spacing: normal;
+                text-align: center;
+                text-transform: none;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_9 {
+              font-size: 22px;
+                line-height: 1.5;
+                margin: 0;
+                padding: 8px;
+                text-decoration: none;
+                font-weight: 600;
+                letter-spacing: 3px;
+                text-align: center;
+                text-transform: none;
+            }
+          
+            
+            
+            
+              
+            
+          
+            
+            
+            
+              
+            
+          
+            .hauptueberschrift_10 {
+              font-size: 22px;
+                line-height: 1.1;
+                margin: 0;
+                padding: 5px;
+                text-decoration: underline overline;
+                font-weight: normal;
+                letter-spacing: 2px;
+                text-align: center;
+                text-transform: none;
+            }
+          
+          
+          
+
+      
+/* Automatisiert CSS für typueberschrift HTML-Tag-Klassen erzeugen */
+  
+.typueberschrift_11 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: 4px;
+  margin-bottom: 6px;
+  margin-left: 15px;
+  padding-top: 4px;
+  padding-right: 5px;
+  padding-bottom: 3px;
+  padding-left: 15px;
+  break-before: auto;
+}
+  
+.typueberschrift_12 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: left;
+  letter-spacing: 2px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 10px;
+  padding-top: 4px;
+  padding-right: 0;
+  padding-bottom: 4px;
+  padding-left: 0;
+  break-before: column;
+}
+  
+.typueberschrift_13 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-top: 5px;
+  margin-bottom: 4px;
+  margin-left: 15px;
+  padding-top: 4px;
+  padding-right: 0;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  break-before: column;
+}
+  
+.typueberschrift_14 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: justify;
+  letter-spacing: 1px;
+  margin-top: 6px;
+  margin-bottom: 4px;
+  margin-left: 20px;
+  padding-top: 2px;
+  padding-right: 0;
+  padding-bottom: 4px;
+  padding-left: 0;
+  break-before: column;
+}
+  
+.typueberschrift_15 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: left;
+  letter-spacing: 1px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 15px;
+  padding-top: 2px;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  break-before: auto;
+}
+  
+.typueberschrift_16 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: normal;
+  margin-top: 4px;
+  margin-bottom: 6px;
+  margin-left: 25px;
+  padding-top: 2px;
+  padding-right: 0;
+  padding-bottom: 4px;
+  padding-left: 0;
+  break-before: auto;
+}
+  
+.typueberschrift_17 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: justify;
+  letter-spacing: 1px;
+  margin-top: 6px;
+  margin-bottom: 4px;
+  margin-left: 25px;
+  padding-top: 4px;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 10px;
+  break-before: auto;
+}
+  
+.typueberschrift_18 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: 4px;
+  margin-bottom: 6px;
+  margin-left: 10px;
+  padding-top: 2px;
+  padding-right: 5px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  break-before: column;
+}
+  
+.typueberschrift_19 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-top: 5px;
+  margin-bottom: 4px;
+  margin-left: 15px;
+  padding-top: 2px;
+  padding-right: 0;
+  padding-bottom: 3px;
+  padding-left: 0;
+  break-before: auto;
+}
+  
+.typueberschrift_20 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 20px;
+  padding-top: 4px;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 15px;
+  break-before: column;
+}
+     
+
+
+/* Automatisiert CSS für zwischenueberschrift HTML-Tag-Klassen erzeugen */
+
+.zwischenueberschrift_21 {
+  font-size: 22px;
+    line-height: 1.2;
+    text-align: justify;
+    letter-spacing: normal;
+    padding-top: 12px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+    break-before: column;
+}
+
+
+
+
+
+
+
+
+
+.artikelueberschrift_31 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: left;
+  letter-spacing: normal;
+  
+  
+  
+  
+  padding-right: 5px;
+  padding-bottom: 3px;
+  
+  break-before: auto;  
+}
+
+.artikelueberschrift_32 {
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 1px;
+  
+  
+  
+  
+  padding-right: 5px;
+  padding-bottom: 0;
+  
+  break-before: column;  
+}
+
+.artikelueberschrift_33 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: justify;
+  letter-spacing: 2px;
+  
+  
+  
+  
+  padding-right: 10px;
+  padding-bottom: 0;
+  
+  break-before: column;  
+}
+
+.artikelueberschrift_34 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: 1px;
+  
+  
+  
+  
+  padding-right: 10px;
+  padding-bottom: 4px;
+  
+  break-before: column;  
+}
+
+.artikelueberschrift_35 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: justify;
+  letter-spacing: 2px;
+  
+  
+  
+  
+  padding-right: 0;
+  padding-bottom: 4px;
+  
+  break-before: auto;  
+}
+
+.artikelueberschrift_36 {
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: justify;
+  letter-spacing: 2px;
+  
+  
+  
+  
+  padding-right: 10px;
+  padding-bottom: 4px;
+  
+  break-before: column;  
+}
+
+.artikelueberschrift_37 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: 1px;
+  
+  
+  
+  
+  padding-right: 5px;
+  padding-bottom: 3px;
+  
+  break-before: column;  
+}
+
+.artikelueberschrift_38 {
+  font-size: 22px;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: normal;
+  
+  
+  
+  
+  padding-right: 0;
+  padding-bottom: 3px;
+  
+  break-before: column;  
+}
+
+.artikelueberschrift_39 {
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: justify;
+  letter-spacing: 1px;
+  
+  
+  
+  
+  padding-right: 10px;
+  padding-bottom: 3px;
+  
+  break-before: auto;  
+}
+
+.artikelueberschrift_40 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: left;
+  letter-spacing: normal;
+  
+  
+  
+  
+  padding-right: 10px;
+  padding-bottom: 4px;
+  
+  break-before: column;  
+}
+
+
+
+
+
+.artikel_41 {
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: left;
+  
+ margin-top: 20px;
+  margin-bottom: 0;
+  margin-left: 25px;
+  padding-top: 0;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+  break-before: column;
+  position: relative;
+  display: block;
+}
+
+.artikel_42 {
+  font-size: 22px;
+  line-height: 1.3;
+  text-align: justify;
+  
+ margin-top: 10px;
+  margin-bottom: 6px;
+  margin-left: 15px;
+  padding-top: 5px;
+  padding-right: 12px;
+  padding-bottom: 0;
+  padding-left: 10px;
+  break-before: auto;
+  position: relative;
+  display: block;
+}
+
+.artikel_43 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: left;
+  
+ margin-top: 20px;
+  margin-bottom: 0;
+  margin-left: 15px;
+  padding-top: 0;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  break-before: column;
+  position: relative;
+  display: block;
+}
+
+.artikel_44 {
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: justify;
+  
+ margin-top: 20px;
+  margin-bottom: 4px;
+  margin-left: 0;
+  padding-top: 0;
+  padding-right: 12px;
+  padding-bottom: 10px;
+  padding-left: 12px;
+  break-before: column;
+  position: relative;
+  display: block;
+}
+
+.artikel_45 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: justify;
+  
+ margin-top: 10px;
+  margin-bottom: 0;
+  margin-left: 10px;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 12px;
+  break-before: column;
+  position: relative;
+  display: block;
+}
+
+.artikel_46 {
+  font-size: 22px;
+  line-height: 1.3;
+  text-align: left;
+  
+ margin-top: 10px;
+  margin-bottom: 4px;
+  margin-left: 20px;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  break-before: auto;
+  position: relative;
+  display: block;
+}
+
+.artikel_47 {
+  font-size: 21px;
+  line-height: 1.1;
+  text-align: left;
+  
+ margin-top: 20px;
+  margin-bottom: 4px;
+  margin-left: 0;
+  padding-top: 5px;
+  padding-right: 12px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+  break-before: column;
+  position: relative;
+  display: block;
+}
+
+.artikel_48 {
+  font-size: 22px;
+  line-height: 1.3;
+  text-align: justify;
+  
+ margin-top: 10px;
+  margin-bottom: 4px;
+  margin-left: 25px;
+  padding-top: 0;
+  padding-right: 12px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  break-before: auto;
+  position: relative;
+  display: block;
+}
+
+.artikel_49 {
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: justify;
+  
+ margin-top: 10px;
+  margin-bottom: 0;
+  margin-left: 20px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 10px;
+  break-before: auto;
+  position: relative;
+  display: block;
+}
+
+.artikel_50 {
+  font-size: 21px;
+  line-height: 1.2;
+  text-align: left;
+  
+ margin-top: 20px;
+  margin-bottom: 4px;
+  margin-left: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 10px;
+  break-before: column;
+  position: relative;
+  display: block;
+}
+
+
+
+
+.data-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin: 20px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.data-table th, .data-table td {
+  text-align: left;
+  padding: 12px 15px;
+}
+
+.data-table th {
+  background-color: #f5f5f0;
+  color: #292929;
+  font-weight: normal;
+}
+
+.data-table tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.data-table tbody tr:hover {
+  background-color: #ddd;
+}
+
+/* Stil für zusätzliche vertikale Linien */
+.data-table td::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #ccc;
+}
+
+/* Letzte Zelle einer Zeile soll keine vertikale Linie haben */
+.data-table td:last-child::after {
+  display: none;
+}
+
+  
+
+             body {
+                 font-family: "Corona 3 Typewriter";
+                   padding: 20px;
+             }
+
+
+                    
+                    
+                    .datum_51 {
+                      position: absolute;
+                      top: 1272px;
+                      left: 557px;
+                    }
+                    
+                    
+
+
+                    
+                    
+                    .stempelbild_61 img {
+                      display: block;
+                      margin: 0 auto; /* Zentriert das Bild */
+                      position: absolute;
+                      top: 999px;
+                      left: 153px;
+                      max-width: 200px; /* Verhindert, dass das Bild größer als seine natürliche Breite angezeigt wird */
+                      max-height: 100%; /* Verhindert, dass das Bild größer als seine natürliche Höhe angezeigt wird */
+                      width: auto; /* Behält das Seitenverhältnis bei, wenn die Höhe angepasst wird */
+                      height: auto; /* Behält das Seitenverhältnis bei, wenn die Breite angepasst wird */
+                    }
+                    
+                    
+                    
+                    
+                    .stempelbild_unten_mittig_71 img {
+                      display: block;
+                      margin: 0 auto; /* Zentriert das Bild */
+                      position: absolute;
+                      top: 1172px;
+                      left: 318px;
+                      max-width: 400px; /* Verhindert, dass das Bild größer als seine natürliche Breite angezeigt wird */
+                      max-height: 100%; /* Verhindert, dass das Bild größer als seine natürliche Höhe angezeigt wird */
+                      width: auto; /* Behält das Seitenverhältnis bei, wenn die Höhe angepasst wird */
+                      height: auto; /* Behält das Seitenverhältnis bei, wenn die Breite angepasst wird */
+                    }
+                    
+
+                    .bueroklammer-img {
+                    display: block;
+                    margin: 0 auto; /* Zentriert das Bild */
+                    width: 35px; /* Breite des Bildes */
+                    position: absolute;
+                    top: 0px;
+                    left: px; /* Dynamischer Abstand von links */
+                  }
+    </style>
+  </head>
+  <body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+<div class="hauptueberschrift_1">
+  <span>Vor Weg</span>
+</div>
+
+
+
+<div class="artikel_41">
+    <span>Angst Leben fünf Abend vorbei kein Leben.</span>
+</div>
+
+
+<div class="hauptueberschrift_2">
+  <span>Gesicht lassen Schuh neu Winter sind</span>
+</div>
+
+
+<div class="typueberschrift_11">
+  <span>Onkel turnen Mann liegen Familie Schule Minute schaffen Beispiel alt</span>
+</div>
+
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th colspan="3">
+                <div class="artikel_0">
+                    <span>Geben Stück noch dick neben dürfen gehen Zeitung Zeitung versuchen wünschen nach Rad später Frau ich hier fangen turnen Brot Stadt ein Spiel halten warum essen.</span>
+                <span></div></span>
+                
+            <span></th></span>
+        <span></tr></span>
+    <span></thead></span>
+    <span><tbody></span>
+        
+        <span><tr></span>
+            <span><td></span>1<span></td></span>
+            <span><td></span>
+                <span>Beschreibt den Aufbau</span>
+            <span></td></span>
+            <span><td></span>
+                
+                    <span><strong></span><span>p)</span><span></strong></span>
+                    
+                        <span><span class="level-2_1"></span>
+                            I: 23 MHz 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_2"></span>
+                            II: 997 Ohm 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_3"></span>
+                            III: 819 dB 
+                            <span></span>
+                        <span></span></span>
+                        
+                        
+                    
+                    <span></span>
+                
+                    <span><strong></span><span>s)</span><span></strong></span>
+                    
+                        <span><span class="level-2_4"></span>
+                            I: 195 Ampere 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_5"></span>
+                            II: 552 Bar 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_6"></span>
+                            III: 335 Ampere 
+                            <span></span>
+                        <span></span></span>
+                        
+                        
+                    
+                    <span></span>
+                
+                    <span><strong></span><span>d)</span><span></strong></span>
+                    
+                        <span><span class="level-2_7"></span>
+                            I: 266 g/cm³ 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_8"></span>
+                            II: 103 cm³ 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_9"></span>
+                            III: 729 Volt 
+                            <span></span>
+                        <span></span></span>
+                        
+                        
+                    
+                    <span></span>
+                
+                    <span><strong></span><span>m)</span><span></strong></span>
+                    
+                        <span><span class="level-2_10"></span>
+                            I: 156 km/h 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_11"></span>
+                            II: 446 Nm 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_12"></span>
+                            III: 187 Liter 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_13"></span>
+                            IV: 221 mm 
+                            <span></span>
+                        <span></span></span>
+                        
+                        
+                    
+                    <span></span>
+                
+                    <span><strong></span><span>c)</span><span></strong></span>
+                    
+                        <span><span class="level-2_14"></span>
+                            I: 436 cm 
+                            
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_15"></span>
+                            II: 164 °C 
+                            
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_16"></span>
+                            III: 153 m/s² 
+                            
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_17"></span>
+                            IV: 118 g/cm³ 
+                            
+                        <span></span></span>
+                        
+                        
+                    
+                    
+                
+            <span></td></span>
+        <span></tr></span>
+        
+        <span><tr></span>
+            <span><td></span>2<span></td></span>
+            <span><td></span>
+                <span>Anzahl der Räder</span>
+            <span></td></span>
+            <span><td></span>
+                
+                    <span><strong></span><span>x)</span><span></strong></span>
+                    
+                        <span><span class="level-2_18"></span>
+                            I: 88 cm³ 
+                            
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_19"></span>
+                            II: 84 Bar 
+                            
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_20"></span>
+                            III: 385 kg 
+                            
+                        <span></span></span>
+                        
+                        
+                    
+                    <span></span>
+                
+                    <span><strong></span><span>t)</span><span></strong></span>
+                    
+                        <span><span class="level-2_21"></span>
+                            I: 209 kW 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_22"></span>
+                            II: 13 km/h 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_23"></span>
+                            III: 246 kg 
+                            <span></span>
+                        <span></span></span>
+                        
+                        
+                    
+                    <span></span>
+                
+                    <span><strong></span><span>w)</span><span></strong></span>
+                    
+                        <span><span class="level-2_24"></span>
+                            I: 816 dB 
+                            
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_25"></span>
+                            II: 792 Ampere 
+                            
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_26"></span>
+                            III: 994 Watt 
+                            
+                        <span></span></span>
+                        
+                        
+                    
+                    <span></span>
+                
+                    <span><strong></span><span>g)</span><span></strong></span>
+                    
+                        <span><span class="level-2_27"></span>
+                            I: 240 km/h 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_28"></span>
+                            II: 233 MHz 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_29"></span>
+                            III: 427 dB 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_30"></span>
+                            IV: 979 dB 
+                            <span></span>
+                        <span></span></span>
+                        
+                        
+                    
+                    
+                
+            <span></td></span>
+        <span></tr></span>
+        
+        <span><tr></span>
+            <span><td></span>3<span></td></span>
+            <span><td></span>
+                <span>Kleinste Bodenfreiheit</span>
+            <span></td></span>
+            <span><td></span>
+                
+                    <span><strong></span><span>w)</span><span></strong></span>
+                    
+                        <span><span class="level-2_31"></span>
+                            I: 957 kg 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_32"></span>
+                            II: 211 kg 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_33"></span>
+                            III: 648 cm³ 
+                            <span></span>
+                        <span></span></span>
+                        
+                        
+                    
+                    <span></span>
+                
+                    <span><strong></span><span>j)</span><span></strong></span>
+                    
+                        <span><span class="level-2_34"></span>
+                            I: 565 Volt 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_35"></span>
+                            II: 415 kW 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_36"></span>
+                            III: 955 cm 
+                            <span></span>
+                        <span></span></span>
+                        
+                        
+                    
+                    <span></span>
+                
+                    <span><strong></span><span>a)</span><span></strong></span>
+                    
+                        <span><span class="level-2_37"></span>
+                            I: 496 Bar 
+                            
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_38"></span>
+                            II: 531 Ohm 
+                            
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_39"></span>
+                            III: 813 dB 
+                            
+                        <span></span></span>
+                        
+                        
+                    
+                    
+                
+            <span></td></span>
+        <span></tr></span>
+        
+        <span><tr></span>
+            <span><td></span>4<span></td></span>
+            <span><td></span>
+                <span>Beschreibt den Verwendungszweck</span>
+            <span></td></span>
+            <span><td></span>
+                
+                    <span><strong></span><span>d)</span><span></strong></span>
+                    
+                        <span><span class="level-2_40"></span>
+                            I: 972 Bar 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_41"></span>
+                            II: 261 kg 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_42"></span>
+                            III: 242 m/s² 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_43"></span>
+                            IV: 322 PS 
+                            <span></span>
+                        <span></span></span>
+                        
+                        
+                    
+                    <span></span>
+                
+                    <span><strong></span><span>n)</span><span></strong></span>
+                    
+                        <span><span class="level-2_44"></span>
+                            I: 111 Ohm 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_45"></span>
+                            II: 793 PS 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_46"></span>
+                            III: 853 kW 
+                            <span></span>
+                        <span></span></span>
+                        
+                        
+                    
+                    <span></span>
+                
+                    <span><strong></span><span>u)</span><span></strong></span>
+                    
+                        <span><span class="level-2_47"></span>
+                            I: 462 dB 
+                            
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_48"></span>
+                            II: 386 cm 
+                            
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_49"></span>
+                            III: 10 Ampere 
+                            
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_50"></span>
+                            IV: 210 Nm 
+                            
+                        <span></span></span>
+                        
+                        
+                    
+                    <span></span>
+                
+                    <span><strong></span><span>j)</span><span></strong></span>
+                    
+                        <span><span class="level-2_51"></span>
+                            I: 407 kW 
+                            
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_52"></span>
+                            II: 506 g/cm³ 
+                            
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_53"></span>
+                            III: 657 Bar 
+                            
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_54"></span>
+                            IV: 526 MHz 
+                            
+                        <span></span></span>
+                        
+                        
+                    
+                    
+                
+            <span></td></span>
+        <span></tr></span>
+        
+        <span><tr></span>
+            <span><td></span>5<span></td></span>
+            <span><td></span>
+                <span>Allgemeine Bemerkungen</span>
+            <span></td></span>
+            <span><td></span>
+                
+                    <span><strong></span><span>b)</span><span></strong></span>
+                    
+                        <span><span class="level-2_55"></span>
+                            I: 473 kW 
+                            
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_56"></span>
+                            II: 24 kW 
+                            
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_57"></span>
+                            III: 417 Watt 
+                            
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_58"></span>
+                            IV: 559 kg 
+                            
+                        <span></span></span>
+                        
+                        
+                    
+                    <span></span>
+                
+                    <span><strong></span><span>e)</span><span></strong></span>
+                    
+                        <span><span class="level-2_59"></span>
+                            I: 181 m³ 
+                            
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_60"></span>
+                            II: 47 Ohm 
+                            
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_61"></span>
+                            III: 173 km/h 
+                            
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_62"></span>
+                            IV: 104 Ampere 
+                            
+                        <span></span></span>
+                        
+                        
+                    
+                    <span></span>
+                
+                    <span><strong></span><span>o)</span><span></strong></span>
+                    
+                        <span><span class="level-2_63"></span>
+                            I: 478 cm³ 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_64"></span>
+                            II: 3 dB 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_65"></span>
+                            III: 362 km/h 
+                            <span></span>
+                        <span></span></span>
+                        <span>   </span>
+                        
+                    
+                        <span><span class="level-2_66"></span>
+                            IV: 778 m/s² 
+                            <span></span>
+                        <span></span></span>
+                        
+                        
+                    
+                    
+                
+            <span></td></span>
+        <span></tr></span>
+        
+    <span></tbody></span>
+</table>
+  
+
+    <div class="typueberschrift_12">
+      <span>Doch Milch Leute und legen treffen Straße zehn schauen springen Schüler Wetter genau jetzt kaufen führen was werden glauben aus Herz Stück Glück Schiff zusammen lachen dir dir weiter lachen verlieren Bild vom wollen nie wenn haben müde sein mal auch heute hinein steigen werden rot sollen vor Schule bekommen gut auf zur kann Erde hängen lieb schauen baden Monate wenn setzen sollen verstehen nass möglich Geburtstag weiß erklären Name Weihnachten schenken sind werden heraus Zimmer weg Bett fast wo Mann her schenken Tag spät Kind Nase laut hart See dir stehen dunkel fast fünf</span>
+    </div>
+    
+
+
+      <div class="artikel_42">
+        <span>Sprechen bleiben Hase traurig heiß Brot offen ins ist Bett vor traurig schwimmen kein rot gefährlich.</span>
+    </div>
+    
+
+    <div class="datum_51">
+      <span>2015-10-12</span>
+  </div>
+  
+
+      
+
+
+      <div class="stempelbild_61">
+        <img src="../../../static/images/stempel/stempel (63).png" alt="Stempelbild" />
+    </div>
+    
+
+    <div class="stempelbild_unten_mittig_71">
+        <img src="../../../static/images/stempel/unten_mittig/stempel_unten_mittig (14).png" alt="Stempelbild_unten_mittig" />
+    </div>
+    
+
+
+    </body>
+  </html>
